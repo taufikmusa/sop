@@ -34,6 +34,30 @@ Ujian ringkas: adakah jawapannya melibatkan sekurang-kurangnya satu langkah di d
 
 ---
 
+## Peta repo — baca ini dulu dalam session baru
+
+Repo: `taufikmusa/sop`. GitHub Pages dari branch `main`, root. Live di `https://taufikmusa.github.io/sop/`.
+
+```
+index.html            Hub - kotak search + senarai penuh, dirender daripada index
+search-index.json     Sumber tunggal untuk sidebar, senarai hub dan search
+assets/kb.css         Shell: sidebar, search, section A/B/C, butang Copy
+assets/kb.js          Bina sidebar, live filter, drawer mobile, copy-as-plain-text
+tools/check-pages.py  Penguat kuasa peraturan skill ini
+tekla/<slug>/         Satu folder satu page
+```
+
+**Langkah pertama sekali, sebelum apa-apa: baca `search-index.json`.** Ia memberitahu apa yang sudah ada dalam vault. Jangan andaikan vault kosong.
+
+Kalau soalan yang masuk itu **soalan sama yang dah ada page**, cuma berbunyi lain:
+
+- **Jangan buat page baru.** Tambah ayat baru tu ke blok "Also asked as" pada page sedia ada dan ke `variants` dalam index.
+- Page kedua untuk soalan yang sama memecahkan search dan memaksa Taufik pilih antara dua page yang hampir serupa.
+
+Buat page baru hanya bila ia soalan yang **berlainan**, bukan ayat yang berlainan.
+
+---
+
 ## Langkah 0 — Tentukan mod output
 
 | Isyarat daripada pengguna | Mod |
@@ -184,12 +208,29 @@ python3 -c "import json; d=json.load(open('search-index.json')); print(len(d['pa
 Tulis fail ke `/mnt/user-data/outputs/<slug>.html` dan panggil `present_files`. Jangan paste 300 baris HTML dalam chat. Selepas fail, tulis 2–3 baris sahaja: apa yang disemak, dan sebarang jurang yang TUA tak jawab.
 
 **Dalam Claude Code:**
-Simpan sebagai `tekla/<slug>/index.html` dalam repo SOP Taufik (`taufikmusa/sop`, GitHub Pages dari branch `main`, root). Kemudian:
+Simpan sebagai `tekla/<slug>/index.html`. Kemudian:
 
 1. Tambah entry dalam `search-index.json` (Langkah 4). Hub dan sidebar update sendiri — **jangan** edit `index.html` untuk tambah kad, hub tu render daripada index.
-2. Uji: `python3 -m http.server 8000`, buka page tu, sahkan sidebar terisi, search jumpa page baru, dan butang Copy keluarkan plain text yang betul.
-3. `git add . && git commit -m "tekla: <slug>" && git push`
-4. Beritahu URL live: `https://taufikmusa.github.io/sop/tekla/<slug>/`
+2. Jalankan penguat kuasa:
+
+   ```
+   python3 tools/check-pages.py
+   ```
+
+   Ia semak shell, padanan page dengan index, dan setiap peraturan Section B. **Kena PASS sebelum commit.** Jangan longgarkan checker tu supaya page lulus — betulkan page.
+3. Uji dalam browser: `python3 -m http.server 8000`, buka page tu, sahkan sidebar terisi, search jumpa page baru dengan perkataan daripada `variants`, dan butang Copy keluarkan plain text dengan `Title: URL` pada baris sendiri.
+4. Kerja atas branch, jangan tolak terus ke `main`:
+
+   ```
+   git checkout -b claude/tekla-<slug>
+   git add . && git commit -m "tekla: <slug>"
+   git push -u origin claude/tekla-<slug>
+   ```
+
+   Kemudian buka PR. **Jangan merge** melainkan Taufik suruh — dia yang merge.
+5. Beritahu URL live selepas merge: `https://taufikmusa.github.io/sop/tekla/<slug>/`
+
+Satu PR yang dah di-merge tak boleh terima commit baru. Kalau ada kerja susulan selepas PR di-merge, buat branch baru dan PR baru — jangan tolak atas branch lama dan sangka ia masuk.
 
 `<slug>` = kebab-case, deskriptif, kekal: `clash-check-setup`, `numbering-series-reset`, `drawing-not-updating`.
 
@@ -244,6 +285,8 @@ Elak dinding teks. Kalau jawapan melebihi ~12 langkah, tawarkan untuk tukar ke M
 - [ ] Tiada pautan video di mana-mana
 
 **Terbit**
+- [ ] `python3 tools/check-pages.py` PASS
+- [ ] Soalan ni memang belum ada page — kalau dah ada, `variants` ditambah, bukan page baru
 - [ ] Entry ditambah dalam `search-index.json` dan JSON masih sah
 - [ ] Diuji atas HTTP: sidebar terisi, search jumpa page baru
 - [ ] Fail dihantar (`present_files` dalam chat, atau di-push dalam Claude Code) — bukan sekadar dipaparkan
