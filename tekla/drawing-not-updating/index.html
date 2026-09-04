@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawings Not Updating After Model Changes | Service Documentation</title>
+    <title>Drawings Not Updating After Model Changes | Tekla Structures FAQ Vault</title>
     <!-- Google Fonts: Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
             <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
-            <a href="../../" class="std-brand" style="text-decoration:none;">Trimble <span>Service Documentation</span></a>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
         </div>
     </header>
 
@@ -76,20 +76,24 @@
                             </button>
                         </div>
                         <div class="kb-email-body" id="kb-email-body">
-                            <p>Hi [Name],</p>
-                            <p>Thanks for the details &mdash; this is expected behaviour rather than a defect. Tekla Structures does not refresh fabrication drawings continuously; it updates them when the model is numbered.</p>
+                            <p>This is expected behaviour, not a defect. Tekla Structures updates fabrication drawings when the model is numbered, not continuously.</p>
+                            <p>Running numbering after a model change is what flags the affected drawings for update.</p>
                             <ol>
-                                <li>On the Drawings &amp; reports tab, open Numbering settings and set Compare to old for new and modified parts.</li>
+                                <li>Open Numbering settings on the Drawings &amp; reports tab.</li>
+                                <li>Set Compare to old for both new and modified parts.</li>
                                 <li>Click Perform numbering, then Number modified objects.</li>
-                                <li>Open Document manager: the affected drawings are flagged, and the Changes column shows what changed.</li>
+                                <li>Open Document manager. The affected drawings are now flagged.</li>
                                 <li>Select them and click Update.</li>
                             </ol>
-                            <p>If parts move but dimensions and marks do not follow, the drawing is frozen. Check the <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_freezing" target="_blank" rel="noopener">Freeze</a> column in Document manager, not Lock &mdash; locking never stops updating, which is why unlocking made no difference.</p>
-                            <p>The full procedure is here: <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" rel="noopener">Update drawings when the model changes</a>.</p>
-                            <p>If it still will not update, send me the model and the numbering history log and I will take a look.</p>
-                            <p>Best regards,</p>
+                            <p>If parts move but dimensions and marks stay put, the drawing is frozen.</p>
+                            <p>Check the Freeze column in Document manager, not Lock. Locking never stops a drawing updating.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" rel="noopener">Update drawings when the model changes</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_freezing" target="_blank" rel="noopener">Freeze drawings</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know if this helps. Reply here if the drawings still show the old geometry after numbering.</p>
                         </div>
-                        <div class="kb-email-foot">Copy takes the plain text only &mdash; paste straight into the mail client.</div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each TUA link as &ldquo;Title: URL&rdquo; on its own line.</div>
                     </div>
                 </section>
 
@@ -373,7 +377,7 @@ XS_ENABLE_MODEL_EDITING_IN_GA          (new in 2026, default TRUE)
 
             <footer class="std-footer">
                 <div class="std-container">
-                    <p>&copy; 2026 Service Team Resources. Internal Use Only.</p>
+                    <p>&copy; Tekla Structures Service Team Resources. Internal Use Only.</p>
                 </div>
             </footer>
 
