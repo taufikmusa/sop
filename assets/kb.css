@@ -1,0 +1,458 @@
+/* ------------------------------------------------------------------
+   Trimble Service Documentation - knowledge base shell
+   Colours, type and components are the existing Trimble template
+   (Lampiran A). No new palette is introduced in this file.
+   ------------------------------------------------------------------ */
+
+:root {
+    --trimble-blue: #0063a3;
+    --trimble-blue-dark: #004f83;
+    --trimble-navy: #003054;
+    --trimble-light-blue: #368fc7;
+    --trimble-gray-dark: #252a2e;
+    --trimble-gray: #464b52;
+    --trimble-gray-light: #90939f;
+    --trimble-accent: #fbad26;
+    --slate-400: #94a3b8;
+    --slate-700: #334155;
+    --white: #ffffff;
+    --border-color: #d1d5db;
+    --sidebar-width: 292px;
+    --header-height: 61px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--trimble-gray-dark);
+    background-color: var(--white);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------- Header (Lampiran A) ---------- */
+
+header.std-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+}
+header.std-header .std-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: none;
+}
+.std-brand { font-size: 1.2rem; font-weight: 800; color: var(--trimble-blue); }
+.std-brand span { color: var(--trimble-gray-dark); font-weight: 400; }
+
+.kb-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--trimble-gray-dark);
+    cursor: pointer;
+    flex: none;
+}
+.kb-burger:hover { border-color: var(--trimble-blue); color: var(--trimble-blue); }
+
+/* ---------- Shell ---------- */
+
+.std-container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.kb-shell { display: flex; align-items: flex-start; min-width: 0; }
+
+/* Flex children default to min-width:auto, which lets a wide <pre> or table
+   stretch the whole column. Pin them to 0 so wide content scrolls in place. */
+.kb-main, .kb-main > main, .kb-main > section { min-width: 0; max-width: 100%; }
+
+/* The site is internal and may run behind a proxy that blocks the Tailwind CDN.
+   These re-declare the few utilities the content depends on for its layout,
+   so a blocked CDN degrades the styling instead of breaking the page. */
+.kb-main pre { overflow-x: auto; max-width: 100%; }
+.kb-main .overflow-x-auto { overflow-x: auto; }
+.kb-main table { width: 100%; }
+
+.kb-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height));
+}
+.kb-main > main { flex-grow: 1; }
+
+/* ---------- Sidebar ---------- */
+
+.kb-sidebar {
+    width: var(--sidebar-width);
+    flex: none;
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    background: #fafbfc;
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0 40px;
+    z-index: 50;
+}
+
+.kb-sidebar-search { padding: 0 18px 18px; }
+
+.kb-search-field { position: relative; }
+.kb-search-field svg {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--trimble-gray-light);
+    pointer-events: none;
+}
+.kb-search-input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: var(--trimble-gray-dark);
+    padding: 9px 12px 9px 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--white);
+    outline: none;
+}
+.kb-search-input::placeholder { color: var(--trimble-gray-light); }
+.kb-search-input:focus {
+    border-color: var(--trimble-blue);
+    box-shadow: 0 0 0 3px rgba(0, 99, 163, 0.12);
+}
+
+.kb-search-meta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--trimble-gray-light);
+    padding: 10px 18px 4px;
+}
+
+.kb-nav-group { margin-bottom: 18px; }
+.kb-nav-group-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--trimble-blue);
+    padding: 6px 18px;
+}
+.kb-nav-link {
+    display: block;
+    padding: 8px 18px 8px 17px;
+    border-left: 3px solid transparent;
+    color: var(--trimble-gray);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    text-decoration: none;
+}
+.kb-nav-link:hover { background: rgba(0, 99, 163, 0.06); color: var(--trimble-blue-dark); }
+.kb-nav-link.is-active {
+    border-left-color: var(--trimble-blue);
+    background: rgba(0, 99, 163, 0.08);
+    color: var(--trimble-blue-dark);
+    font-weight: 700;
+}
+.kb-nav-link small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--trimble-gray-light);
+    margin-top: 2px;
+}
+.kb-nav-empty, .kb-nav-note {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    color: var(--trimble-gray-light);
+    line-height: 1.5;
+}
+
+.kb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(37, 42, 46, 0.45);
+    z-index: 45;
+}
+
+@media (max-width: 1023px) {
+    .kb-burger { display: inline-flex; }
+    .kb-sidebar {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    body.kb-nav-open .kb-sidebar { transform: translateX(0); }
+    body.kb-nav-open .kb-overlay { display: block; }
+}
+
+/* ---------- Hero / footer (Lampiran A) ---------- */
+
+.std-hero {
+    background: linear-gradient(135deg, var(--trimble-blue-dark) 0%, #0077c8 100%);
+    color: white;
+    padding: 48px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.std-hero h1 { font-size: 2.2rem; line-height: 1.2; color: white; margin: 0 0 1rem; font-weight: 700; }
+.std-hero p { opacity: 0.95; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+.std-hero .kb-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+.std-footer {
+    background-color: var(--trimble-gray-dark);
+    color: var(--slate-400);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    border-top: 1px solid var(--slate-700);
+    margin-top: auto;
+}
+
+.stage-card { transition: all 0.3s ease; }
+.stage-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--trimble-blue);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Section A / B / C ---------- */
+
+.kb-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--trimble-blue);
+    margin-bottom: 10px;
+}
+.kb-section-label b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--trimble-blue);
+    color: var(--white);
+    font-size: 0.7rem;
+}
+
+/* A - Customer Question */
+.kb-question {
+    background: rgba(0, 99, 163, 0.06);
+    border-left: 4px solid var(--trimble-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+}
+.kb-question p {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--trimble-gray-dark);
+}
+.kb-question p:last-of-type { margin-bottom: 0; }
+.kb-question .kb-question-meta {
+    margin-top: 14px;
+    font-size: 0.75rem;
+    color: var(--trimble-gray-light);
+    font-style: normal;
+}
+
+/* B - Email Reply */
+.kb-email {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+}
+.kb-email-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 20px;
+}
+.kb-email-bar span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--trimble-gray);
+}
+.kb-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--trimble-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.kb-copy-btn:hover { background: var(--trimble-blue-dark); }
+.kb-copy-btn.is-done { background: var(--trimble-navy); }
+.kb-copy-btn svg { width: 15px; height: 15px; }
+
+.kb-email-body { padding: 22px 24px; }
+.kb-email-body p {
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--trimble-gray-dark);
+}
+.kb-email-body p:last-child { margin-bottom: 0; }
+.kb-email-body ol, .kb-email-body ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+.kb-email-body a { color: var(--trimble-blue); font-weight: 700; }
+.kb-email-body a:hover { text-decoration: underline; }
+
+.kb-email-foot {
+    border-top: 1px solid var(--border-color);
+    padding: 10px 24px;
+    font-size: 0.72rem;
+    color: var(--trimble-gray-light);
+    background: #f8fafc;
+}
+
+/* C - Detailed SOP */
+.kb-sop-intro {
+    font-size: 0.9rem;
+    color: var(--trimble-gray);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+/* ---------- Hub search (index page) ---------- */
+
+.kb-hero-search {
+    max-width: 620px;
+    margin: 26px auto 0;
+}
+.kb-hero-search .kb-search-field svg { left: 15px; width: 18px; height: 18px; }
+.kb-hero-search .kb-search-input {
+    font-size: 1rem;
+    padding: 14px 16px 14px 46px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+}
+.kb-hero-search .kb-search-input:focus {
+    border-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+}
+.kb-hero-hint {
+    margin-top: 12px;
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+.kb-hub-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--trimble-gray-light);
+    margin-bottom: 24px;
+}
+
+/* ---------- Hub listing (rendered by kb.js) ---------- */
+
+.kb-hub-group { margin-bottom: 48px; }
+.kb-hub-group-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--trimble-navy);
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+}
+.kb-hub-list {
+    border: 1px solid #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.kb-hub-row {
+    display: block;
+    padding: 20px 22px;
+    text-decoration: none;
+    border-top: 1px solid #f3f4f6;
+    transition: background 0.2s ease;
+}
+.kb-hub-row:first-child { border-top: none; }
+.kb-hub-row:hover { background: #f9fafb; }
+.kb-hub-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--trimble-blue);
+    margin-bottom: 8px;
+}
+.kb-hub-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--trimble-navy);
+    margin: 0 0 8px;
+}
+.kb-hub-question {
+    font-size: 0.85rem;
+    color: var(--trimble-gray-light);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 8px;
+}
+.kb-hub-summary {
+    font-size: 0.875rem;
+    color: var(--trimble-gray);
+    line-height: 1.7;
+    margin: 0;
+}
+.kb-hub-empty { font-size: 0.9rem; color: var(--trimble-gray-light); }
+
+/* A / B / C rhythm - kept in this file so the three-section structure holds
+   its spacing even if the Tailwind CDN is unreachable. */
+.kb-block { margin-bottom: 64px; }
+.kb-sub { margin-bottom: 56px; }
+.kb-sub:last-child { margin-bottom: 0; }

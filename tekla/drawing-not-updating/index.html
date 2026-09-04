@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawings Not Updating After Model Changes | Lifecycle Guide</title>
+    <title>Drawings Not Updating After Model Changes | Service Documentation</title>
     <!-- Google Fonts: Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
+        if (window.tailwind) tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
@@ -26,217 +26,250 @@
             }
         }
     </script>
-    <style>
-        body { font-family: 'Open Sans', sans-serif; color: #252A2E; display: flex; flex-direction: column; min-height: 100vh; background-color: #ffffff; overflow-x: hidden; }
-        :root { --trimble-blue: #0063a3; --trimble-blue-dark: #004f83; --trimble-gray-dark: #252a2e; --slate-400: #94a3b8; --slate-700: #334155; --white: #ffffff; --border-color: #d1d5db; }
-        .std-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header.std-header { background-color: var(--white); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
-        .std-brand { font-size: 1.2rem; font-weight: 800; color: var(--trimble-blue); }
-        .std-brand span { color: var(--trimble-gray-dark); font-weight: 400; }
-        .std-hero { background: linear-gradient(135deg, var(--trimble-blue-dark) 0%, #0077c8 100%); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px; }
-        .std-hero h1 { font-size: 2.5rem; line-height: 1.2; color: white; margin-bottom: 1rem; font-weight: 700; }
-        .std-hero p { opacity: 0.95; font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
-        .std-footer { background-color: var(--trimble-gray-dark); color: var(--slate-400); padding: 1.5rem 0; text-align: center; font-size: 0.875rem; border-top: 1px solid var(--slate-700); margin-top: auto; }
-        .stage-card { transition: all 0.3s ease; }
-        .stage-card:hover { transform: translateY(-5px); border-color: #0063A3; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-    </style>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
 </head>
 <body>
     <header class="std-header">
         <div class="std-container">
-            <div class="std-brand">Trimble <span>Service Documentation</span></div>
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Trimble <span>Service Documentation</span></a>
         </div>
     </header>
 
-    <section class="std-hero">
-        <div class="std-container">
-            <h1>Drawings Not Updating After Model Changes</h1>
-            <p class="mb-8">Tekla Structures 2026 &mdash; why a drawing still shows the old geometry, dimensions or marks after the model has been revised, and how to bring it back up to date without losing manual work.</p>
-            <div class="flex justify-center gap-4 mt-8 flex-wrap">
-                <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" class="bg-white text-trimble-darkBlue font-bold py-3 px-6 rounded shadow-lg hover:bg-gray-100 transition-colors flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-trimble-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Update Drawings (TUA)
-                </a>
-                <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_how_drawings_are_updated" target="_blank" class="bg-white text-trimble-darkBlue font-bold py-3 px-6 rounded shadow-lg hover:bg-gray-100 transition-colors flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-trimble-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> How Drawings Are Updated
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
 
-    <main class="flex-grow std-container pb-20">
+        <div class="kb-main">
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Issue Summary</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">The customer reports that after revising the model in Tekla Structures 2026, the related drawings still show the old content. In almost every case this is not a defect: Tekla Structures does not update fabrication drawings continuously. It updates them <strong>when the model is numbered</strong>, and it flags the affected drawings in <strong>Document manager</strong> so you can update them deliberately.</p>
-            <p class="text-gray-700 leading-relaxed">The three things that most often make a drawing look &ldquo;stuck&rdquo; are: the model has not been renumbered, the drawing is <strong>frozen</strong>, or the change made is one that requires the drawing to be <strong>recreated</strong> rather than updated. Work through the causes below before escalating.</p>
-        </section>
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Tekla Structures &middot; Drawings &middot; 2026</div>
+                    <h1>Drawings Not Updating After Model Changes</h1>
+                    <p>Why a drawing still shows the old geometry, dimensions or marks after the model has been revised, and how to bring it back up to date without losing manual work.</p>
+                </div>
+            </section>
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Before You Start</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSION</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Confirm the version</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">This guide is written against Tekla Structures 2026. Also confirm which version the <em>drawing</em> was originally created in &mdash; that matters, see the version notes below.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCESS</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Open Document manager</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Document manager</strong>. You can also type <em>document manager</em> in Quick Launch, or press <strong>Ctrl+L</strong> in the model and <strong>Ctrl+O</strong> when a drawing is open.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PERMISSION</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Activate the edit switch</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">The <strong>edit switch</strong> in Document manager must be active before you can change the <strong>Freeze</strong>, <strong>Lock</strong> or <strong>Ready for issuing</strong> status of a drawing.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BACKUP</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Save the model first</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Numbering and updating change drawing content permanently. Save the model before you renumber, especially if the drawings contain a lot of manual dimensioning.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Identify the drawing type</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">General arrangement (GA) drawings and fabrication drawings behave differently. GA drawings update when you open them; single-part, assembly, cast unit and multidrawings depend on numbering.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EVIDENCE</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Read the Changes column</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">In Document manager, the <strong>Changes</strong> column describes what changed &mdash; for example <em>Parts modified</em>, <em>Quantity increased</em>, or <em>All parts deleted</em>. The <strong>Up to date</strong> flag shows whether the drawing still needs updating.</p>
-                </div>
-            </div>
-        </section>
+            <main class="std-container pb-20">
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Likely Causes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 1 &middot; MOST COMMON</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">The model has not been numbered</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures updates drawings each time you number the model. If numbering was never run after the revision, the drawings are simply never told anything changed. Fix: run numbering, then update.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 2</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">The drawing is frozen</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Freezing stops the drawing intelligence (associativity). Parts and bolts still follow the model, but <strong>dimensions, marks, views and drawing shapes are not updated</strong>. This is the classic &ldquo;the part moved but the dimension didn't&rdquo; complaint.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 3</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">The change requires recreation</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Some drawing settings cannot be applied by updating. Changes such as <strong>Coordinate System</strong>, <strong>Around X/Y/Z</strong>, <strong>Undeformed</strong>, <strong>Unfolded</strong>, new views, or section settings force <strong>Recreate the drawing</strong> &mdash; and only take effect when you click <strong>Modify</strong>.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 4</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Automatic updating is switched off</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">The advanced option <strong>XS_INTELLIGENT_DRAWING_ALLOWED</strong> can be set to prevent Tekla Structures from updating drawings automatically when the model changes. <strong>XS_INTELLIGENT_DRAWING_ALLOWED_IN_GA</strong> does the same for general arrangement drawings only.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 5</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">The drawing came from an older version</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance warns that updating drawings created in an older version may cause problems after an upgrade. The official recommendation is to finish those drawings in the original version, or recreate them in the new one.</p>
-                </div>
-                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 6 &middot; 2026 ONLY</div>
-                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Editing the model with a GA drawing open</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">In 2026 you can edit the model while a GA drawing is open, and the GA drawing updates live. But <strong>numbering is not available</strong> in that mode &mdash; so fabrication drawings will not be flagged until you close the GA drawing and number the model.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Resolution &mdash; Official Update Procedure</h2>
-            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">1</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the numbering settings</h3>
-                    <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Numbering settings</strong> &gt; <strong>Numbering settings</strong>. Select <strong>Compare to old</strong> for both new parts and modified parts, so existing position numbers are reused wherever the part is unchanged.</p>
-                    <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
-                        <h3 class="text-sm font-bold text-amber-800 flex items-center">
-                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            Warning / Troubleshooting
-                        </h3>
-                        <p class="mt-1 text-sm text-amber-700">Position numbers are the identifiers that link a cast unit, assembly, single-part or multidrawing to the model. Many model changes affect numbering, so renumbering is often what actually triggers the drawing update. Getting these settings wrong renumbers parts that did not change and marks far more drawings for update than necessary.</p>
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Customer Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;We changed a few parts in the model last week, but the drawings still show the old geometry and the dimensions have not moved at all. A couple of them we cannot even open now. We already unlocked the drawings and it made no difference. Is this a bug in 2026?&rdquo;</p>
+                        <p class="kb-question-meta">Recorded verbatim from the ticket. Tekla Structures 2026.</p>
                     </div>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">2</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number the model</h3>
-                    <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Perform numbering</strong> and choose either <strong>Number series of selected objects</strong> or <strong>Number modified objects</strong> to number only new and modified parts. Tekla Structures updates drawings each time you number the model.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">3</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the status flags in Document manager</h3>
-                    <p class="text-sm text-gray-600">Open <strong>Document manager</strong> and look at the status flag columns &mdash; <strong>Issue</strong>, <strong>Ready for issuing</strong>, <strong>Lock</strong>, <strong>Freeze</strong>, <strong>Master</strong> and <strong>Up to date</strong>. Drawings that need updating are flagged. The <strong>Changes</strong> column tells you what changed in each one.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">4</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Locate the affected parts in the model</h3>
-                    <p class="text-sm text-gray-600">Select the flagged drawings and click the <strong>Select objects</strong> button in Document manager to highlight the related parts in the model. This confirms the flag corresponds to the revision the customer actually made.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">5</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Review the numbering history log</h3>
-                    <p class="text-sm text-gray-600">Click <strong>File</strong> &gt; <strong>Logs</strong> &gt; <strong>Numbering history log</strong> to see which parts and assemblies were renumbered. Use this to explain to the customer why a given drawing was, or was not, marked for update.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">6</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Update the drawings</h3>
-                    <p class="text-sm text-gray-600">Select the affected drawings in Document manager and click <strong>Update</strong>. Note that updating a multidrawing automatically updates the drawings linked to it, so you do not need to select those separately.</p>
-                    <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
-                        <h3 class="text-sm font-bold text-amber-800 flex items-center">
-                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            Warning / Troubleshooting
-                        </h3>
-                        <p class="mt-1 text-sm text-amber-700">You cannot open a drawing that is not up to date &mdash; Tekla Structures requires you to update it first. If a customer says they &ldquo;cannot open the drawing at all&rdquo;, this flag is usually the reason, not a corrupted file.</p>
-                    </div>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">7</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create drawings for new parts</h3>
-                    <p class="text-sm text-gray-600">Updating only refreshes drawings that already exist. Any part added to the model during the revision has no drawing yet &mdash; create the new drawings separately.</p>
-                </li>
-            </ol>
-        </section>
+                </section>
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">If the Drawing Still Does Not Change</h2>
-            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">A</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the Freeze column, not the Lock column</h3>
-                    <p class="text-sm text-gray-600">In <strong>Document manager</strong>, activate the <strong>edit switch</strong>, then click the <strong>Freeze</strong> column next to the drawing to unfreeze it. For single-part, cast unit and assembly drawings, save the model first and do not save when you reopen the drawing.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">B</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Recreate the drawing instead of updating it</h3>
-                    <p class="text-sm text-gray-600">If the change involves view orientation or section settings, open the drawing properties, set <strong>Recreate the drawing</strong> to <strong>Yes</strong>, and click <strong>Modify</strong>. The drawing is recreated only if and when you click <strong>Modify</strong>. Manual additions in the drawing are not preserved by recreation, so warn the customer first.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">C</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Verify the advanced options</h3>
-                    <p class="text-sm text-gray-600">Check whether automatic drawing updating has been disabled in this model or in the company environment. These options are model specific and saved in the options database, so a project handed over from another office can arrive with updating already switched off.</p>
-                    <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4 mt-4">
-                        <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">Category: Drawing Properties
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Email Reply</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Ready to send</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Hi [Name],</p>
+                            <p>Thanks for the details &mdash; this is expected behaviour rather than a defect. Tekla Structures does not refresh fabrication drawings continuously; it updates them when the model is numbered.</p>
+                            <ol>
+                                <li>On the Drawings &amp; reports tab, open Numbering settings and set Compare to old for new and modified parts.</li>
+                                <li>Click Perform numbering, then Number modified objects.</li>
+                                <li>Open Document manager: the affected drawings are flagged, and the Changes column shows what changed.</li>
+                                <li>Select them and click Update.</li>
+                            </ol>
+                            <p>If parts move but dimensions and marks do not follow, the drawing is frozen. Check the <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_freezing" target="_blank" rel="noopener">Freeze</a> column in Document manager, not Lock &mdash; locking never stops updating, which is why unlocking made no difference.</p>
+                            <p>The full procedure is here: <a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" rel="noopener">Update drawings when the model changes</a>.</p>
+                            <p>If it still will not update, send me the model and the numbering history log and I will take a look.</p>
+                            <p>Best regards,</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only &mdash; paste straight into the mail client.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed SOP</div>
+                    <p class="kb-sop-intro">Internal reference. Everything below is background for the reply above &mdash; do not paste it to the customer.</p>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">The customer reports that after revising the model in Tekla Structures 2026, the related drawings still show the old content. In almost every case this is not a defect: Tekla Structures does not update fabrication drawings continuously. It updates them <strong>when the model is numbered</strong>, and it flags the affected drawings in <strong>Document manager</strong> so you can update them deliberately.</p>
+                        <p class="text-gray-700 leading-relaxed">The three things that most often make a drawing look &ldquo;stuck&rdquo; are: the model has not been renumbered, the drawing is <strong>frozen</strong>, or the change made is one that requires the drawing to be <strong>recreated</strong> rather than updated. Work through the causes below before escalating.</p>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSION</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Confirm the version</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">This guide is written against Tekla Structures 2026. Also confirm which version the <em>drawing</em> was originally created in &mdash; that matters, see the version notes below.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCESS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Open Document manager</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Document manager</strong>. You can also type <em>document manager</em> in Quick Launch, or press <strong>Ctrl+L</strong> in the model and <strong>Ctrl+O</strong> when a drawing is open.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PERMISSION</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Activate the edit switch</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The <strong>edit switch</strong> in Document manager must be active before you can change the <strong>Freeze</strong>, <strong>Lock</strong> or <strong>Ready for issuing</strong> status of a drawing.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BACKUP</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Save the model first</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Numbering and updating change drawing content permanently. Save the model before you renumber, especially if the drawings contain a lot of manual dimensioning.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Identify the drawing type</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">General arrangement (GA) drawings and fabrication drawings behave differently. GA drawings update when you open them; single-part, assembly, cast unit and multidrawings depend on numbering.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EVIDENCE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Read the Changes column</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">In Document manager, the <strong>Changes</strong> column describes what changed &mdash; for example <em>Parts modified</em>, <em>Quantity increased</em>, or <em>All parts deleted</em>. The <strong>Up to date</strong> flag shows whether the drawing still needs updating.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Likely Causes</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 1 &middot; MOST COMMON</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The model has not been numbered</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures updates drawings each time you number the model. If numbering was never run after the revision, the drawings are simply never told anything changed. Fix: run numbering, then update.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 2</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The drawing is frozen</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Freezing stops the drawing intelligence (associativity). Parts and bolts still follow the model, but <strong>dimensions, marks, views and drawing shapes are not updated</strong>. This is the classic &ldquo;the part moved but the dimension didn't&rdquo; complaint.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 3</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The change requires recreation</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Some drawing settings cannot be applied by updating. Changes such as <strong>Coordinate System</strong>, <strong>Around X/Y/Z</strong>, <strong>Undeformed</strong>, <strong>Unfolded</strong>, new views, or section settings force <strong>Recreate the drawing</strong> &mdash; and only take effect when you click <strong>Modify</strong>.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 4</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Automatic updating is switched off</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The advanced option <strong>XS_INTELLIGENT_DRAWING_ALLOWED</strong> can be set to prevent Tekla Structures from updating drawings automatically when the model changes. <strong>XS_INTELLIGENT_DRAWING_ALLOWED_IN_GA</strong> does the same for general arrangement drawings only.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 5</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The drawing came from an older version</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance warns that updating drawings created in an older version may cause problems after an upgrade. The official recommendation is to finish those drawings in the original version, or recreate them in the new one.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 6 &middot; 2026 ONLY</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Editing the model with a GA drawing open</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">In 2026 you can edit the model while a GA drawing is open, and the GA drawing updates live. But <strong>numbering is not available</strong> in that mode &mdash; so fabrication drawings will not be flagged until you close the GA drawing and number the model.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Resolution &mdash; Official Update Procedure</h3>
+                        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the numbering settings</h4>
+                                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Numbering settings</strong> &gt; <strong>Numbering settings</strong>. Select <strong>Compare to old</strong> for both new parts and modified parts, so existing position numbers are reused wherever the part is unchanged.</p>
+                                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Warning / Troubleshooting
+                                    </h5>
+                                    <p class="mt-1 text-sm text-amber-700">Position numbers are the identifiers that link a cast unit, assembly, single-part or multidrawing to the model. Many model changes affect numbering, so renumbering is often what actually triggers the drawing update. Getting these settings wrong renumbers parts that did not change and marks far more drawings for update than necessary.</p>
+                                </div>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number the model</h4>
+                                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Perform numbering</strong> and choose either <strong>Number series of selected objects</strong> or <strong>Number modified objects</strong> to number only new and modified parts. Tekla Structures updates drawings each time you number the model.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the status flags in Document manager</h4>
+                                <p class="text-sm text-gray-600">Open <strong>Document manager</strong> and look at the status flag columns &mdash; <strong>Issue</strong>, <strong>Ready for issuing</strong>, <strong>Lock</strong>, <strong>Freeze</strong>, <strong>Master</strong> and <strong>Up to date</strong>. Drawings that need updating are flagged. The <strong>Changes</strong> column tells you what changed in each one.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Locate the affected parts in the model</h4>
+                                <p class="text-sm text-gray-600">Select the flagged drawings and click the <strong>Select objects</strong> button in Document manager to highlight the related parts in the model. This confirms the flag corresponds to the revision the customer actually made.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">5</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Review the numbering history log</h4>
+                                <p class="text-sm text-gray-600">Click <strong>File</strong> &gt; <strong>Logs</strong> &gt; <strong>Numbering history log</strong> to see which parts and assemblies were renumbered. Use this to explain to the customer why a given drawing was, or was not, marked for update.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">6</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Update the drawings</h4>
+                                <p class="text-sm text-gray-600">Select the affected drawings in Document manager and click <strong>Update</strong>. Note that updating a multidrawing automatically updates the drawings linked to it, so you do not need to select those separately.</p>
+                                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Warning / Troubleshooting
+                                    </h5>
+                                    <p class="mt-1 text-sm text-amber-700">You cannot open a drawing that is not up to date &mdash; Tekla Structures requires you to update it first. If a customer says they &ldquo;cannot open the drawing at all&rdquo;, this flag is usually the reason, not a corrupted file.</p>
+                                </div>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">7</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create drawings for new parts</h4>
+                                <p class="text-sm text-gray-600">Updating only refreshes drawings that already exist. Any part added to the model during the revision has no drawing yet &mdash; create the new drawings separately.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">If the Drawing Still Does Not Change</h3>
+                        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">A</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the Freeze column, not the Lock column</h4>
+                                <p class="text-sm text-gray-600">In <strong>Document manager</strong>, activate the <strong>edit switch</strong>, then click the <strong>Freeze</strong> column next to the drawing to unfreeze it. For single-part, cast unit and assembly drawings, save the model first and do not save when you reopen the drawing.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">B</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Recreate the drawing instead of updating it</h4>
+                                <p class="text-sm text-gray-600">If the change involves view orientation or section settings, open the drawing properties, set <strong>Recreate the drawing</strong> to <strong>Yes</strong>, and click <strong>Modify</strong>. The drawing is recreated only if and when you click <strong>Modify</strong>. Manual additions in the drawing are not preserved by recreation, so warn the customer first.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">C</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Verify the advanced options</h4>
+                                <p class="text-sm text-gray-600">Check whether automatic drawing updating has been disabled in this model or in the company environment. These options are model specific and saved in the options database, so a project handed over from another office can arrive with updating already switched off.</p>
+                                <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4 mt-4">
+                                    <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">Category: Drawing Properties
 
 XS_INTELLIGENT_DRAWING_ALLOWED
     Set to FALSE to stop Tekla Structures from automatically
@@ -253,93 +286,100 @@ XS_RECREATE_UNMODIFIED_DRAWINGS
 XS_ENABLE_MODEL_EDITING_IN_GA          (new in 2026, default TRUE)
     Controls whether the model can be edited while a general
     arrangement drawing is open.</pre>
+                                </div>
+                                <p class="text-sm text-gray-600">Confirm the exact wording and default of each option in the <a href="https://support.tekla.com/dist/sxf/document/TS_ADV_2026_en_Advanced_options.pdf" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 Advanced options reference</a> before changing anything in a live project.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">D</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Ask which version created the drawing</h4>
+                                <p class="text-sm text-gray-600">If the drawing was created in an earlier Tekla Structures version and the model has since been upgraded to 2026, updating it may misbehave. The documented options are to finish the drawing in the original version, or recreate it in 2026.</p>
+                            </li>
+                        </ol>
                     </div>
-                    <p class="text-sm text-gray-600">Confirm the exact wording and default of each option in the <a href="https://support.tekla.com/dist/sxf/document/TS_ADV_2026_en_Advanced_options.pdf" target="_blank" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 Advanced options reference</a> before changing anything in a live project.</p>
-                </li>
-                <li class="ml-8 relative">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
-                        <span class="text-white font-bold text-sm">D</span>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Ask which version created the drawing</h3>
-                    <p class="text-sm text-gray-600">If the drawing was created in an earlier Tekla Structures version and the model has since been upgraded to 2026, updating it may misbehave. The documented options are to finish the drawing in the original version, or recreate it in 2026.</p>
-                </li>
-            </ol>
-        </section>
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Freeze vs Lock &mdash; Do Not Confuse Them</h2>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm border border-gray-200 rounded-lg">
-                <thead class="bg-gray-50">
-                  <tr>
-                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Status</th>
-                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Behaviour / Path</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Frozen</td><td class="p-3 border-b border-gray-100 text-gray-600">Stops the drawing intelligence (associativity). Model geometry still updates &mdash; parts and bolts follow the model &mdash; but <strong>dimensions, marks, views and drawing shapes are not updated</strong>, and marks do not follow moved parts. Toggle via the <strong>Freeze</strong> column in <strong>Document manager</strong> with the edit switch active.</td></tr>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Locked</td><td class="p-3 border-b border-gray-100 text-gray-600">Marks the drawing as not available for editing, preventing accidental changes. It does <strong>not</strong> stop updating: the geometry of a locked drawing still changes when the model changes, and Tekla Structures flags locked drawings for update. The <strong>Locked by</strong> column shows who locked it. Toggle via the <strong>Lock</strong> column, or the <strong>Lock</strong> / <strong>Unlock</strong> buttons.</td></tr>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Neither</td><td class="p-3 border-b border-gray-100 text-gray-600">Normal behaviour: flagged in Document manager after numbering, updated with the <strong>Update</strong> button, fully associative.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
-                <h3 class="text-sm font-bold text-amber-800 flex items-center">
-                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                    Warning / Troubleshooting
-                </h3>
-                <p class="mt-1 text-sm text-amber-700">Unlocking a drawing will not fix a &ldquo;dimensions not updating&rdquo; complaint &mdash; locking was never the cause. Check the <strong>Freeze</strong> column instead. This is the single most common misdiagnosis on this issue.</p>
-            </div>
-        </section>
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Freeze vs Lock &mdash; Do Not Confuse Them</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm border border-gray-200 rounded-lg">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Status</th>
+                                        <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Behaviour / Path</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">Frozen</td><td class="p-3 border-b border-gray-100 text-gray-600">Stops the drawing intelligence (associativity). Model geometry still updates &mdash; parts and bolts follow the model &mdash; but <strong>dimensions, marks, views and drawing shapes are not updated</strong>, and marks do not follow moved parts. Toggle via the <strong>Freeze</strong> column in <strong>Document manager</strong> with the edit switch active.</td></tr>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">Locked</td><td class="p-3 border-b border-gray-100 text-gray-600">Marks the drawing as not available for editing, preventing accidental changes. It does <strong>not</strong> stop updating: the geometry of a locked drawing still changes when the model changes, and Tekla Structures flags locked drawings for update. The <strong>Locked by</strong> column shows who locked it. Toggle via the <strong>Lock</strong> column, or the <strong>Lock</strong> / <strong>Unlock</strong> buttons.</td></tr>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">Neither</td><td class="p-3 border-b border-gray-100 text-gray-600">Normal behaviour: flagged in Document manager after numbering, updated with the <strong>Update</strong> button, fully associative.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Warning / Troubleshooting
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">Unlocking a drawing will not fix a &ldquo;dimensions not updating&rdquo; complaint &mdash; locking was never the cause. Check the <strong>Freeze</strong> column instead. This is the single most common misdiagnosis on this issue.</p>
+                        </div>
+                    </div>
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Drawing Type and Version Notes</h2>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm border border-gray-200 rounded-lg">
-                <thead class="bg-gray-50">
-                  <tr>
-                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Version</th>
-                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Behaviour / Path</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">2026</td><td class="p-3 border-b border-gray-100 text-gray-600">The model can be edited while a GA drawing is open, and changes made to model objects are instantly visible in the drawing &mdash; marks, labels, dimensions and templates update automatically. However, <strong>numbering is not available</strong> in this mode, and the workflow applies to GA drawings only, not fabrication drawings. Controlled by <strong>XS_ENABLE_MODEL_EDITING_IN_GA</strong> (default TRUE).</td></tr>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">2023&ndash;2025</td><td class="p-3 border-b border-gray-100 text-gray-600">Same core update model: drawings are updated when the model is numbered, and Document manager flags what needs updating. There is no simultaneous model and GA drawing editing, so the drawing must be closed before the model is edited and numbered.</td></tr>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">All versions &mdash; GA drawings</td><td class="p-3 border-b border-gray-100 text-gray-600">GA drawings are updated when you open them if the model has changed, whether or not the model has been numbered. But if the marks use part position numbers, numbering is still required &mdash; otherwise old marks show question marks.</td></tr>
-                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Upgraded models</td><td class="p-3 border-b border-gray-100 text-gray-600">Updating drawings created in an older version may cause problems after upgrading. Finish those drawings in the original version, or recreate them in the new version.</td></tr>
-                </tbody>
-              </table>
-            </div>
-        </section>
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Drawing Type and Version Notes</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm border border-gray-200 rounded-lg">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Version</th>
+                                        <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Behaviour / Path</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">2026</td><td class="p-3 border-b border-gray-100 text-gray-600">The model can be edited while a GA drawing is open, and changes made to model objects are instantly visible in the drawing &mdash; marks, labels, dimensions and templates update automatically. However, <strong>numbering is not available</strong> in this mode, and the workflow applies to GA drawings only, not fabrication drawings. Controlled by <strong>XS_ENABLE_MODEL_EDITING_IN_GA</strong> (default TRUE).</td></tr>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">2023&ndash;2025</td><td class="p-3 border-b border-gray-100 text-gray-600">Same core update model: drawings are updated when the model is numbered, and Document manager flags what needs updating. There is no simultaneous model and GA drawing editing, so the drawing must be closed before the model is edited and numbered.</td></tr>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">All versions &mdash; GA drawings</td><td class="p-3 border-b border-gray-100 text-gray-600">GA drawings are updated when you open them if the model has changed, whether or not the model has been numbered. But if the marks use part position numbers, numbering is still required &mdash; otherwise old marks show question marks.</td></tr>
+                                    <tr><td class="p-3 border-b border-gray-100 font-semibold">Upgraded models</td><td class="p-3 border-b border-gray-100 text-gray-600">Updating drawings created in an older version may cause problems after upgrading. Finish those drawings in the original version, or recreate them in the new version.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-        <section class="mb-20">
-            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Official Reference</h2>
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
-                <div class="space-y-2">
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" class="text-trimble-blue font-bold hover:underline">Update drawings when the model changes &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_how_drawings_are_updated" target="_blank" class="text-trimble-blue font-bold hover:underline">How to keep your drawings up to date? &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_freezing" target="_blank" class="text-trimble-blue font-bold hover:underline">Freeze drawings &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_locking_drawings" target="_blank" class="text-trimble-blue font-bold hover:underline">Lock drawings &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_recreation_of_drawings" target="_blank" class="text-trimble-blue font-bold hover:underline">Recreation of drawings &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_document_manager" target="_blank" class="text-trimble-blue font-bold hover:underline">Document manager &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_what_is_shown_in_the_drawing_list" target="_blank" class="text-trimble-blue font-bold hover:underline">Drawing list &mdash; columns and status flags &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_managing_drawings" target="_blank" class="text-trimble-blue font-bold hover:underline">Manage drawings &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rel_edit_model_and_ga_dra_together" target="_blank" class="text-trimble-blue font-bold hover:underline">Edit the model and general arrangement drawing together (2026) &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rel_changes_in_advanced_options" target="_blank" class="text-trimble-blue font-bold hover:underline">What's new in advanced options in Tekla Structures 2026 &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/dist/sxf/document/TS_ADV_2026_en_Advanced_options.pdf" target="_blank" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 Advanced options (PDF) &rarr;</a></div>
-                    <div><a href="https://support.tekla.com/video/revising-the-model-and-updating-drawings" target="_blank" class="text-trimble-blue font-bold hover:underline">Video: Revising the model and updating drawings &rarr;</a></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+                            <div class="space-y-2">
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_updating_drawings_when_the_model_changes" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Update drawings when the model changes &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_how_drawings_are_updated" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How to keep your drawings up to date? &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_freezing" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Freeze drawings &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_locking_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Lock drawings &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_recreation_of_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Recreation of drawings &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_document_manager" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Document manager &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_what_is_shown_in_the_drawing_list" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Drawing list &mdash; columns and status flags &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_managing_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Manage drawings &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rel_edit_model_and_ga_dra_together" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Edit the model and general arrangement drawing together (2026) &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rel_changes_in_advanced_options" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">What's new in advanced options in Tekla Structures 2026 &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/dist/sxf/document/TS_ADV_2026_en_Advanced_options.pdf" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 Advanced options (PDF) &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/video/revising-the-model-and-updating-drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Video: Revising the model and updating drawings &rarr;</a></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Steps may differ in older versions. Tekla User Assistance does not publish a dedicated troubleshooting article for &ldquo;drawing not updating&rdquo; &mdash; the causes above are assembled from the update, freeze, lock and recreation topics. If none of them resolves the case, escalate to your local Tekla support or Trimble SEA with the model, the numbering history log, and the Document manager status flags.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Service Team Resources. Internal Use Only.</p>
                 </div>
-                <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Steps may differ in older versions. Tekla User Assistance does not publish a dedicated troubleshooting article for &ldquo;drawing not updating&rdquo; &mdash; the causes above are assembled from the update, freeze, lock and recreation topics. If none of them resolves the case, escalate to your local Tekla support or Trimble SEA with the model, the numbering history log, and the Document manager status flags.</p>
-            </div>
-        </section>
+            </footer>
 
-    </main>
-
-    <footer class="std-footer">
-        <div class="std-container">
-            <p>&copy; 2026 Service Team Resources. Internal Use Only.</p>
         </div>
-    </footer>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
 </body>
 </html>
