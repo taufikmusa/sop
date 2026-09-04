@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-   Trimble Service Documentation - knowledge base runtime
+   Tekla Structures FAQ Vault - knowledge base runtime
    - builds the left sidebar on every page from /search-index.json
    - live client-side filtering on title + question + keywords
    - hamburger drawer on mobile
@@ -228,10 +228,20 @@
     function emailToPlainText(node) {
         var clone = node.cloneNode(true);
 
+        // TUA links sit on their own line at the bottom of the reply, so they are
+        // copied as "Title: https://..." on a line of their own. An anchor that is
+        // not alone in its block keeps the inline "Title (url)" form.
         Array.prototype.slice.call(clone.querySelectorAll('a')).forEach(function (anchor) {
             var label = anchor.textContent.trim();
             var href = anchor.getAttribute('href') || '';
-            var text = href && href.indexOf('http') === 0 ? label + ' (' + href + ')' : label;
+            var text = label;
+
+            if (href && href.indexOf('http') === 0) {
+                var block = anchor.parentNode;
+                var alone = block && block.textContent.trim() === label;
+                text = alone ? label + ': ' + href : label + ' (' + href + ')';
+            }
+
             anchor.parentNode.replaceChild(document.createTextNode(text), anchor);
         });
 

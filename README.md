@@ -1,7 +1,8 @@
-# Service Documentation Knowledge Base
+# Tekla Structures FAQ Vault
 
-Internal support knowledge base for Tekla Structures and Tekla PowerFab, built on
-the existing Trimble Service Documentation template (Lampiran A).
+Internal support knowledge base for Tekla Structures, built on the Trimble
+Service Documentation visual template (Lampiran A in the tekla-site-helper skill).
+Scope is Tekla Structures only.
 
 ## Structure
 

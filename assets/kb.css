@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-   Trimble Service Documentation - knowledge base shell
+   Tekla Structures FAQ Vault - knowledge base shell
    Colours, type and components are the existing Trimble template
    (Lampiran A). No new palette is introduced in this file.
    ------------------------------------------------------------------ */
@@ -456,3 +456,13 @@ header.std-header .std-container {
 .kb-block { margin-bottom: 64px; }
 .kb-sub { margin-bottom: 56px; }
 .kb-sub:last-child { margin-bottom: 0; }
+
+/* TUA links at the foot of an Email Reply - one per line, never mid-sentence. */
+.kb-email-links {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-color);
+}
+.kb-email-link { margin: 0 0 6px; }
+.kb-email-link:last-child { margin-bottom: 0; }
+.kb-email-body .kb-email-sign { margin-top: 20px; }
