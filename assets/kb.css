@@ -14,6 +14,7 @@
     --trimble-gray-light: #90939f;
     --trimble-accent: #fbad26;
     --slate-400: #94a3b8;
+    --slate-450: #8792a3;
     --slate-700: #334155;
     --white: #ffffff;
     --border-color: #d1d5db;
@@ -241,6 +242,20 @@ header.std-header .std-container {
     border-top: 1px solid var(--slate-700);
     margin-top: auto;
 }
+.std-footer p { margin: 0; }
+
+/* Line 2 is smaller and softer than line 1, but still holds 4.5:1 against
+   the footer background - it carries the disclaimer, so it has to be read. */
+.footer-note {
+    font-size: 0.75rem;
+    color: var(--slate-450);
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 10px auto 0;
+}
+.footer-links { margin-top: 10px; font-size: 0.8rem; }
+.footer-links a { color: var(--slate-400); text-decoration: underline; }
+.footer-links a:hover { color: #ffffff; }
 
 .stage-card { transition: all 0.3s ease; }
 .stage-card:hover {
