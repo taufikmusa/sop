@@ -3,15 +3,15 @@ name: tekla-site-helper
 description: >
   Jawab soalan sokongan Tekla Structures berdasarkan dokumentasi rasmi Tekla User Assistance
   (support.tekla.com, docs.tekla.com) sahaja, kemudian hantar dalam chat ATAU sebagai satu page
-  HTML dalam knowledge base "Tekla Structures FAQ Vault" (struktur A/B/C: Customer Question, Email
-  Reply, Detailed SOP). Guna skill ini SETIAP KALI ada soalan "macam mana nak buat X dalam Tekla",
-  mesej ralat Tekla, atau permintaan SOP/guide/page untuk workflow Tekla — termasuk sebutan "tekla
-  sop", "tekla site helper", "buat page Tekla", "guide Tekla", "cari dalam TUA", "FAQ Vault",
-  "service documentation". Trigger walaupun HTML atau skill tak disebut. WAJIB cari dokumentasi
-  rasmi dahulu dan jangan reka laluan menu. Subjek mesti Tekla Structures; PowerFab hanya kalau ia
-  sebelah integrasi Tekla Structures, soalan PowerFab tulen ke powerfab-training-docs. BERBEZA
-  daripada tekla-model-macro, tekla-drawing-macro, tekla-visual-studio-skill (kod C#) dan
-  sop-retro-brutalist-style (SOP dalaman retro-brutalist).
+  HTML dalam knowledge base "Tekla Structures FAQ Vault" (struktur A/B/C: Customer Question, Short
+  Answer, Detailed Answer). Guna skill ini SETIAP KALI ada soalan "macam mana nak buat X dalam
+  Tekla", mesej ralat Tekla, atau permintaan SOP/guide/page untuk workflow Tekla — termasuk
+  sebutan "tekla sop", "tekla site helper", "buat page Tekla", "guide Tekla", "cari dalam TUA",
+  "FAQ Vault", "service documentation". Trigger walaupun HTML atau skill tak disebut. WAJIB cari
+  dokumentasi rasmi dahulu dan jangan reka laluan menu. Subjek mesti Tekla Structures; PowerFab
+  hanya kalau ia sebelah integrasi Tekla Structures, soalan PowerFab tulen ke
+  powerfab-training-docs. BERBEZA daripada tekla-model-macro, tekla-drawing-macro,
+  tekla-visual-studio-skill (kod C#) dan sop-retro-brutalist-style (SOP dalaman retro-brutalist).
 ---
 
 # Tekla Site Helper
@@ -19,7 +19,7 @@ description: >
 Tiga kerja dalam satu skill:
 
 1. **Jawapan sokongan yang sahih** — berpandukan Tekla User Assistance (TUA) rasmi, bukan ingatan.
-2. **Susun jadi A/B/C** — Customer Question, Email Reply, Detailed SOP.
+2. **Susun jadi A/B/C** — Customer Question, Short Answer, Detailed Answer.
 3. **Terbit ke FAQ Vault** — satu page HTML dalam knowledge base, plus satu entry dalam `search-index.json`.
 
 Jangan sesekali langkau kerja 1 dan terus ke kerja 3. Page yang cantik tapi menu path salah lebih memudaratkan daripada tiada page langsung.
@@ -79,14 +79,14 @@ Jalannya begini:
 1. **Asingkan Q dan A** daripada bahan tu.
 2. **Jadikan soalan generic** ikut peraturan Section A di bawah.
 3. **Sahkan setiap dakwaan dalam jawapan lama terhadap TUA.** Ini bahagian yang paling penting dan paling kerap dilangkau. Jawapan yang ditulis tergesa-gesa untuk satu customer selalunya ada satu butiran yang salah, dan butiran tu akan hidup selama-lamanya kalau disalin masuk vault. Nama laluan menu, nama advanced option, dan **tempat sesuatu setting itu ditetapkan** adalah yang paling kerap tersasar.
-4. **Betulkan apa yang salah, dan catat pembetulan tu** dalam Detailed SOP sebagai warning box — supaya orang seterusnya tak ulang silap yang sama.
+4. **Betulkan apa yang salah, dan catat pembetulan tu** dalam Detailed Answer sebagai warning box — supaya orang seterusnya tak ulang silap yang sama.
 5. **Tulis semula reply** ikut peraturan Section B. Jawapan lama hampir pasti melanggar peraturan tu: ada salam pembuka, perenggan panjang, pautan tersisip tengah ayat.
-6. **Kembangkan jadi Detailed SOP.** Jawapan asal biasanya cukup untuk satu customer sahaja. Section C perlu punca, langkah penuh, perbezaan versi, dan jalan escalate.
+6. **Kembangkan jadi Detailed Answer.** Jawapan asal biasanya cukup untuk satu customer sahaja. Section C perlu punca, langkah penuh, perbezaan versi, dan jalan escalate.
 7. **Tambah topik berkaitan** yang jawapan asal tak sentuh tetapi TUA sahkan — mesej ralat berkaitan, versi lama yang berlainan caranya, dan cara elak berulang.
 
 **Bila jawapan lama bercanggah dengan TUA, TUA menang.** Beritahu Taufik apa yang dibetulkan dan mana sumbernya. Jangan senyap-senyap tukar, dan jangan kekalkan yang salah semata-mata sebab itu yang dah dihantar kepada customer.
 
-**Kalau butiran teknikal dalam jawapan lama tak dapat disahkan langsung dalam TUA:** buang daripada Email Reply, dan dalam Detailed SOP tandakan ia belum disahkan. Jangan naikkan taraf tekaan jadi prosedur rasmi.
+**Kalau butiran teknikal dalam jawapan lama tak dapat disahkan langsung dalam TUA:** buang daripada Short Answer, dan dalam Detailed Answer tandakan ia belum disahkan. Jangan naikkan taraf tekaan jadi prosedur rasmi.
 
 ## Langkah 1 — Riset (WAJIB, tiada pengecualian)
 
@@ -101,9 +101,9 @@ Jalannya begini:
 **Garis merah:**
 - Jangan reka laluan menu, nama butang, nama fail `.ini`/`.xml`, atau nilai advanced option. Kalau tak jumpa dalam dokumen rasmi, cakap tak jumpa.
 - Jangan bina URL TUA sendiri. Guna hanya URL yang muncul dalam keputusan carian atau halaman yang telah di-fetch.
-- Kalau TUA memang senyap tentang isu tu, katakan dengan jelas dan cadangkan escalate kepada local Tekla support / Trimble SEA. Lebih baik jawapan pendek yang jujur daripada page penuh yang mengarut.
+- Kalau TUA memang senyap tentang isu tu, katakan dengan jelas dan arahkan pembaca kepada local Tekla Support mereka. Lebih baik jawapan pendek yang jujur daripada page penuh yang mengarut.
 - Forum, blog pihak ketiga dan YouTube boleh jadi petunjuk arah, tetapi tidak boleh jadi satu-satunya sumber. Tandakan ia sebagai tidak rasmi kalau terpaksa dipakai.
-- **Tiada pautan video** di mana-mana dalam page — tidak dalam hero, tidak dalam Email Reply. Dalam Official Reference pun, utamakan artikel bertulis.
+- **Tiada pautan video** di mana-mana dalam page — tidak dalam hero, tidak dalam Short Answer. Dalam Official Reference pun, utamakan artikel bertulis.
 
 ---
 
@@ -134,9 +134,9 @@ Hasilnya satu soalan, dalam kotak berlorek, pendek.
 - Kalau dia mahu page disiapkan juga tanpa punca, tulis `{{CUSTOMER_QUESTION}}` sebagai placeholder yang jelas dan beritahu section A masih kosong. Jangan buat rekaan nampak macam rekod sebenar.
 - Baris meta bawah kotak jangan kata "verbatim". Ia berbunyi: bentuk generic soalan customer sebenar, butiran identiti dibuang, plus versi.
 
-### B. Email Reply
+### B. Short Answer
 
-Jawapan siap-hantar. Peraturan ni wajib, satu pun tak boleh dilanggar:
+Jawapan ringkas yang siap dibaca sesiapa, dan siap disalin terus ke emel. Peraturan ni wajib, satu pun tak boleh dilanggar:
 
 - **Buka terus dengan jawapan.** Tiada "Hi [Name]", tiada nama orang, tiada nama syarikat. Reply ni generic, sedia pakai untuk sesiapa.
 - **Satu idea satu perenggan.** Perenggan maksimum 2 ayat.
@@ -150,9 +150,11 @@ Jawapan siap-hantar. Peraturan ni wajib, satu pun tak boleh dilanggar:
 
 Butang Copy mesti bawa URL TUA sekali dalam teks yang disalin, format `Title: https://...` pada baris sendiri. Itu berlaku automatik selagi setiap pautan berdiri sendiri dalam `<p class="kb-email-link">` — anchor yang bersendirian dalam bloknya disalin sebagai `Title: URL`, anchor di tengah ayat disalin sebagai `Title (URL)`. Selepas menulis, uji hasil salinan: plain text bersih, tiada tag HTML, tiada entity seperti `&amp;`.
 
-### C. Detailed SOP
+### C. Detailed Answer
 
-Rujukan penuh untuk Taufik sendiri, bukan untuk customer. Boleh panjang. Petakan bahan riset kepada blok ni:
+Jawapan penuh di belakang jawapan ringkas tu. Boleh panjang. **Laman ni awam** — tulis untuk pembaca luar, bukan untuk staff. Sebut "you", bukan "the customer", dan jangan tinggalkan apa-apa nota dalaman: tiada "do not paste this to the customer", tiada nama pasukan dalaman, tiada laluan escalate dalaman. "Contact your local Tekla Support" boleh; "escalate to Trimble SEA" tidak.
+
+Petakan bahan riset kepada blok ni:
 
 - **Issue Summary** — 1–2 ayat, sahkan kefahaman.
 - **Before You Start / Prerequisites** → Stage Cards (lesen, role, versi, fail konfigurasi yang perlu ada).
@@ -163,7 +165,9 @@ Rujukan penuh untuk Taufik sendiri, bukan untuk customer. Boleh panjang. Petakan
 
 Section C tiada had panjang dan tiada had pautan — semua rujukan TUA yang dibaca masuk sini.
 
-Nada page: Bahasa Inggeris (customer-facing, Trimble SEA), melainkan Taufik minta Bahasa Melayu. Istilah UI Tekla kekal dalam Bahasa Inggeris walau apa pun bahasa page.
+Peraturan sama pakai pada Section A dan B: soalan, jawapan ringkas, dan jawapan penuh semuanya dibaca orang luar.
+
+Nada page: Bahasa Inggeris (laman ni awam), melainkan Taufik minta Bahasa Melayu. Istilah UI Tekla kekal dalam Bahasa Inggeris walau apa pun bahasa page.
 
 ---
 
@@ -260,6 +264,11 @@ Elak dinding teks. Kalau jawapan melebihi ~12 langkah, tawarkan untuk tukar ke M
 - [ ] URL sumber sah dan boleh diklik (muncul dalam keputusan carian, bukan direka)
 - [ ] Versi dinyatakan; perbezaan antara versi ditandakan kalau ada
 - [ ] Skop Tekla Structures sahaja
+
+**Awam**
+- [ ] Tiada "internal", "do not paste to the customer", atau nota untuk staff di mana-mana
+- [ ] Pembaca disebut sebagai "you", bukan "the customer"
+- [ ] Tiada laluan escalate dalaman (contoh "Trimble SEA") — pakai "your local Tekla Support"
 
 **Section A**
 - [ ] Soalan datang daripada punca sebenar — atau Taufik sudah ditanya dan sedar ia placeholder
@@ -361,7 +370,7 @@ Salin bulat-bulat. Tukar hanya placeholder.
                 <section class="kb-block mb-16">
                     <div class="kb-section-label"><b>A</b> Customer Question</div>
                     <div class="kb-question">
-                        <p>&ldquo;{{GENERIC_CUSTOMER_QUESTION}}&rdquo;</p>
+                        <p>&ldquo;{{GENERIC_QUESTION}}&rdquo;</p>
                         <div class="kb-question-variants">
                             <p class="kb-question-variants-title">Also asked as</p>
                             <ul>
@@ -376,33 +385,33 @@ Salin bulat-bulat. Tukar hanya placeholder.
 
                 <!-- ============ B. EMAIL REPLY ============ -->
                 <section class="kb-block mb-16">
-                    <div class="kb-section-label"><b>B</b> Email Reply</div>
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
                     <div class="kb-email">
                         <div class="kb-email-bar">
-                            <span>Ready to send</span>
+                            <span>Short answer</span>
                             <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                                 <span data-kb-copy-label>Copy</span>
                             </button>
                         </div>
                         <div class="kb-email-body" id="kb-email-body">
-                            {{EMAIL_REPLY_PARAGRAPHS_AND_STEPS}}
+                            {{SHORT_ANSWER_PARAGRAPHS_AND_STEPS}}
                             <div class="kb-email-links">
                                 <p class="kb-email-link"><a href="{{TUA_URL_1}}" target="_blank" rel="noopener">{{TUA_TITLE_1}}</a></p>
                                 <p class="kb-email-link"><a href="{{TUA_URL_2}}" target="_blank" rel="noopener">{{TUA_TITLE_2}}</a></p>
                             </div>
                             <p class="kb-email-sign">{{CLOSING_INVITATION}}</p>
                         </div>
-                        <div class="kb-email-foot">Copy takes the plain text only, with each TUA link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
                     </div>
                 </section>
 
                 <!-- ============ C. DETAILED SOP ============ -->
                 <section>
-                    <div class="kb-section-label"><b>C</b> Detailed SOP</div>
-                    <p class="kb-sop-intro">Internal reference. Everything below is background for the reply above &mdash; do not paste it to the customer.</p>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
 
-                    {{SOP_CONTENT}}
+                    {{DETAILED_ANSWER}}
                 </section>
 
             </main>
@@ -411,7 +420,7 @@ Salin bulat-bulat. Tukar hanya placeholder.
                 <div class="std-container">
                     <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
                     <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
-                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="../../license.html">License</a></p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
                 </div>
             </footer>
 
@@ -437,7 +446,7 @@ Kandungan:
 5. Copyable Code / Prompt Box
 6. Blok Official Reference
 7. Jadual perbezaan versi
-8. Blok Email Reply (section B)
+8. Blok Short Answer (section B)
 
 ---
 
@@ -553,7 +562,7 @@ URL mesti URL sebenar daripada keputusan carian. Kalau tiada artikel rasmi, tuka
 
 ---
 
-## 8. Blok Email Reply — badan section B
+## 8. Blok Short Answer — badan section B
 
 Perenggan dan langkah masuk sebelum `.kb-email-links`. Pautan satu baris satu, penutup selepasnya.
 

@@ -1,6 +1,6 @@
 # Tekla Structures FAQ Vault
 
-Internal support knowledge base for Tekla Structures, built on the Trimble
+Public reference notes for Tekla Structures, built on the Trimble
 Service Documentation visual template (Lampiran A in the tekla-site-helper skill).
 
 The subject of every page is Tekla Structures. Another product may appear where
@@ -27,9 +27,9 @@ Every page has the same three sections, in this order:
 
 | Section | Purpose | Rules |
 | --- | --- | --- |
-| **A. Customer Question** | The question in generic form, in a shaded box, with an "Also asked as" list | Strip identifying detail, keep the customer's symptom words |
-| **B. Email Reply** | Ready-to-send answer with a Copy button | Max 150 words, 1-2 TUA links inline |
-| **C. Detailed SOP** | Full internal reference | Timeline steps, warning boxes, version tables. Can be long |
+| **A. Customer Question** | The question in generic form, in a shaded box, with an "Also asked as" list | Strip identifying detail, keep the asker's symptom words |
+| **B. Short Answer** | The answer in brief, with a Copy button | Max 150 words, 1-2 TUA links on their own lines |
+| **C. Detailed Answer** | The full answer behind it | Timeline steps, warning boxes, version tables. Can be long |
 
 The Copy button copies plain text only - never HTML. Links are flattened to
 `anchor text (url)` so the URL survives the paste into the mail client.
@@ -39,7 +39,7 @@ The Copy button copies plain text only - never HTML. Links are flattened to
 A .docx, an old email or pasted text can become a page directly, but the
 existing answer is treated as a draft, not as truth: every claim in it is
 re-checked against Tekla User Assistance first, corrections are recorded in
-the Detailed SOP, and the reply is rewritten to the Email Reply rules above.
+the Detailed Answer, and the reply is rewritten to the Short Answer rules above.
 Where the old answer and the documentation disagree, the documentation wins.
 
 ## Adding a page
@@ -89,7 +89,7 @@ python3 tools/check-pages.py
 Validates every page against the rules: the shell is intact, the question and
 "Also asked as" list match `search-index.json` word for word, no page is
 missing from the index and no index entry points at a page that does not
-exist, and the Email Reply obeys every constraint above. Exits non-zero on
+exist, and the Short Answer obeys every constraint above. Exits non-zero on
 failure, so it can gate a commit. Fix the page rather than the checker.
 
 ## Running locally

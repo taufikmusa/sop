@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-09-04",
-  "note": "Single source of truth for the left sidebar and the client-side search. Every new page adds exactly one entry to pages[]. url is relative to the site root. question is the generic form of the customer question; variants are other wordings of the same question, so a differently worded ticket still finds this page.",
+  "note": "Single source of truth for the left sidebar and the client-side search. Every new page adds exactly one entry to pages[]. url is relative to the site root. question is the generic form of the question; variants are other wordings of the same question, so a differently worded search still finds this page.",
   "pages": [
     {
       "id": "tekla-onboarding-new-customer",
@@ -17,7 +17,7 @@
         "Which desktop icon should I use, the classic startup screen or Tekla Launcher?",
         "How do I create my very first model?"
       ],
-      "summary": "Onboarding a new customer - Trimble Identity and subscription, the classic startup screen vs Tekla Launcher, choosing environment, role and configuration, and creating the first model.",
+      "summary": "Trimble Identity and subscription, the classic startup screen vs Tekla Launcher, choosing environment, role and configuration, and creating your first model.",
       "keywords": [
         "onboarding",
         "new customer",

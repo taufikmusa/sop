@@ -9,7 +9,8 @@ Exits non-zero if anything fails, so it can gate a commit. Checks:
   page <-> index     question and variants match word for word
   shell              head/sidebar/footer/scripts present and KB_ROOT correct
   Section A          question box present, no "verbatim" claim, 3-5 variants
-  Section B          the full Email Reply rule set
+  Section B          the full Short Answer rule set
+  Public voice       no internal or staff-facing framing anywhere on the page
 """
 import glob
 import html
@@ -35,15 +36,26 @@ SHELL_ANCHORS = [
     '<a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>',
     '<p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>',
     '<p class="footer-note">',
-    '<a href="../../license.html">License</a>',
+    '<a href=\"https://github.com/taufikmusa/sop/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener\">License</a>',
     '<script src="../../assets/kb.js"></script>',
     '<div class="kb-section-label"><b>A</b> Customer Question</div>',
-    '<div class="kb-section-label"><b>B</b> Email Reply</div>',
-    '<div class="kb-section-label"><b>C</b> Detailed SOP</div>',
+    '<div class="kb-section-label"><b>B</b> Short Answer</div>',
+    '<div class="kb-section-label"><b>C</b> Detailed Answer</div>',
 ]
 
 INDEX_FIELDS = ['id', 'title', 'folder', 'category', 'product',
                 'url', 'question', 'variants', 'summary', 'keywords']
+
+# The site is public. These read as notes written for a support desk rather
+# than for the person with the problem, so none of them belongs on a page.
+INTERNAL_PHRASES = [
+    r'\binternal\b',
+    r'do not paste',
+    r'\bthe customer\b',
+    r'\bTrimble SEA\b',
+    r'\bescalate\b',
+    r'Internal Use Only',
+]
 
 
 def text_of(fragment):
@@ -110,6 +122,13 @@ def check_page(path, entry):
     if 'verbatim' in src.lower():
         errs.append('A: the page still claims to be verbatim')
 
+    # ---- public voice ----
+    readable = text_of(re.sub(r'(?s)<(script|style)\b.*?</\1>', ' ', src))
+    for pattern in INTERNAL_PHRASES:
+        hit = re.search(pattern, readable, re.I)
+        if hit:
+            errs.append('public: staff-facing wording %r - this page is public' % hit.group(0))
+
     # ---- Section B ----
     bm = re.search(r'<div class="kb-email-body" id="kb-email-body">(.*?)\n\s*<div class="kb-email-foot">',
                    src, re.S)
@@ -145,7 +164,7 @@ def check_page(path, entry):
     if '<ol>' not in body:
         errs.append('B: sequential steps are not in a numbered list')
     if len(urls) > MAX_LINKS:
-        errs.append('B: %d TUA links > %d' % (len(urls), MAX_LINKS))
+        errs.append('B: %d links > %d' % (len(urls), MAX_LINKS))
 
     for am in re.finditer(r'<a\b[^>]*>.*?</a>', body, re.S):
         open_p = body.rfind('<p', 0, am.start())
