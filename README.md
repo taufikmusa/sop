@@ -27,7 +27,7 @@ Every page has the same three sections, in this order:
 
 | Section | Purpose | Rules |
 | --- | --- | --- |
-| **A. Customer Question** | The question in generic form, in a shaded box, with an "Also asked as" list | Strip identifying detail, keep the asker's symptom words |
+| **A. Question** | The question in generic form, in a shaded box, with an "Also asked as" list | Strip identifying detail, keep the asker's symptom words |
 | **B. Short Answer** | The answer in brief, with a Copy button | Max 150 words, 1-2 TUA links on their own lines |
 | **C. Detailed Answer** | The full answer behind it | Timeline steps, warning boxes, version tables. Can be long |
 

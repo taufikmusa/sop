@@ -38,7 +38,7 @@ SHELL_ANCHORS = [
     '<p class="footer-note">',
     '<a href=\"https://github.com/taufikmusa/sop/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener\">License</a>',
     '<script src="../../assets/kb.js"></script>',
-    '<div class="kb-section-label"><b>A</b> Customer Question</div>',
+    '<div class="kb-section-label"><b>A</b> Question</div>',
     '<div class="kb-section-label"><b>B</b> Short Answer</div>',
     '<div class="kb-section-label"><b>C</b> Detailed Answer</div>',
 ]

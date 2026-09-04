@@ -3,15 +3,15 @@ name: tekla-site-helper
 description: >
   Jawab soalan sokongan Tekla Structures berdasarkan dokumentasi rasmi Tekla User Assistance
   (support.tekla.com, docs.tekla.com) sahaja, kemudian hantar dalam chat ATAU sebagai satu page
-  HTML dalam knowledge base "Tekla Structures FAQ Vault" (struktur A/B/C: Customer Question, Short
-  Answer, Detailed Answer). Guna skill ini SETIAP KALI ada soalan "macam mana nak buat X dalam
-  Tekla", mesej ralat Tekla, atau permintaan SOP/guide/page untuk workflow Tekla — termasuk
-  sebutan "tekla sop", "tekla site helper", "buat page Tekla", "guide Tekla", "cari dalam TUA",
-  "FAQ Vault", "service documentation". Trigger walaupun HTML atau skill tak disebut. WAJIB cari
-  dokumentasi rasmi dahulu dan jangan reka laluan menu. Subjek mesti Tekla Structures; PowerFab
-  hanya kalau ia sebelah integrasi Tekla Structures, soalan PowerFab tulen ke
-  powerfab-training-docs. BERBEZA daripada tekla-model-macro, tekla-drawing-macro,
-  tekla-visual-studio-skill (kod C#) dan sop-retro-brutalist-style (SOP dalaman retro-brutalist).
+  HTML dalam knowledge base "Tekla Structures FAQ Vault" (struktur A/B/C: Question, Short Answer,
+  Detailed Answer). Guna skill ini SETIAP KALI ada soalan "macam mana nak buat X dalam Tekla",
+  mesej ralat Tekla, atau permintaan SOP/guide/page untuk workflow Tekla — termasuk sebutan "tekla
+  sop", "tekla site helper", "buat page Tekla", "guide Tekla", "cari dalam TUA", "FAQ Vault",
+  "service documentation". Trigger walaupun HTML atau skill tak disebut. WAJIB cari dokumentasi
+  rasmi dahulu dan jangan reka laluan menu. Subjek mesti Tekla Structures; PowerFab hanya kalau ia
+  sebelah integrasi Tekla Structures, soalan PowerFab tulen ke powerfab-training-docs. BERBEZA
+  daripada tekla-model-macro, tekla-drawing-macro, tekla-visual-studio-skill (kod C#) dan
+  sop-retro-brutalist-style (SOP dalaman retro-brutalist).
 ---
 
 # Tekla Site Helper
@@ -19,7 +19,7 @@ description: >
 Tiga kerja dalam satu skill:
 
 1. **Jawapan sokongan yang sahih** — berpandukan Tekla User Assistance (TUA) rasmi, bukan ingatan.
-2. **Susun jadi A/B/C** — Customer Question, Short Answer, Detailed Answer.
+2. **Susun jadi A/B/C** — Question, Short Answer, Detailed Answer.
 3. **Terbit ke FAQ Vault** — satu page HTML dalam knowledge base, plus satu entry dalam `search-index.json`.
 
 Jangan sesekali langkau kerja 1 dan terus ke kerja 3. Page yang cantik tapi menu path salah lebih memudaratkan daripada tiada page langsung.
@@ -111,7 +111,7 @@ Jalannya begini:
 
 Setiap page dalam vault ada **tiga section tetap, dalam susunan ni**. Tiada section tambahan di aras atas, tiada susunan lain.
 
-### A. Customer Question
+### A. Question
 
 Bukan transkrip satu tiket. Ini **bentuk generic** soalan itu — satu ayat rujukan yang customer seterusnya, yang tanya benda lebih kurang sama, akan cam sebagai soalan dia juga.
 
@@ -368,7 +368,7 @@ Salin bulat-bulat. Tukar hanya placeholder.
 
                 <!-- ============ A. CUSTOMER QUESTION ============ -->
                 <section class="kb-block mb-16">
-                    <div class="kb-section-label"><b>A</b> Customer Question</div>
+                    <div class="kb-section-label"><b>A</b> Question</div>
                     <div class="kb-question">
                         <p>&ldquo;{{GENERIC_QUESTION}}&rdquo;</p>
                         <div class="kb-question-variants">
