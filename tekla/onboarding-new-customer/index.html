@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started: First Launch to First Model | Lifecycle Guide</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; color: #252A2E; display: flex; flex-direction: column; min-height: 100vh; background-color: #ffffff; overflow-x: hidden; }
+        :root { --trimble-blue: #0063a3; --trimble-blue-dark: #004f83; --trimble-gray-dark: #252a2e; --slate-400: #94a3b8; --slate-700: #334155; --white: #ffffff; --border-color: #d1d5db; }
+        .std-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header.std-header { background-color: var(--white); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+        .std-brand { font-size: 1.2rem; font-weight: 800; color: var(--trimble-blue); }
+        .std-brand span { color: var(--trimble-gray-dark); font-weight: 400; }
+        .std-hero { background: linear-gradient(135deg, var(--trimble-blue-dark) 0%, #0077c8 100%); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px; }
+        .std-hero h1 { font-size: 2.5rem; line-height: 1.2; color: white; margin-bottom: 1rem; font-weight: 700; }
+        .std-hero p { opacity: 0.95; font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        .std-footer { background-color: var(--trimble-gray-dark); color: var(--slate-400); padding: 1.5rem 0; text-align: center; font-size: 0.875rem; border-top: 1px solid var(--slate-700); margin-top: auto; }
+        .stage-card { transition: all 0.3s ease; }
+        .stage-card:hover { transform: translateY(-5px); border-color: #0063A3; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <div class="std-brand">Trimble <span>Service Documentation</span></div>
+        </div>
+    </header>
+
+    <section class="std-hero">
+        <div class="std-container">
+            <h1>Getting Started with Tekla Structures 2026</h1>
+            <p class="mb-8">A new customer's first session: signing in with your Trimble Identity, choosing an environment, role and configuration, and getting your first model open on screen.</p>
+            <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                <a href="https://support.tekla.com/doc/tekla-structures/2026/gen_start_tekla_structures" target="_blank" class="bg-white text-trimble-darkBlue font-bold py-3 px-6 rounded shadow-lg hover:bg-gray-100 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-trimble-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Classic Startup Screen
+                </a>
+                <a href="https://support.tekla.com/doc/tekla-structures/2026/gen_start_tekla_structures_with_launcher" target="_blank" class="bg-white text-trimble-darkBlue font-bold py-3 px-6 rounded shadow-lg hover:bg-gray-100 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-trimble-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Tekla Launcher
+                </a>
+                <a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_new_model" target="_blank" class="bg-white text-trimble-darkBlue font-bold py-3 px-6 rounded shadow-lg hover:bg-gray-100 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-trimble-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Create a New Model
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow std-container pb-20">
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">What This Guide Covers</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">This guide takes a brand-new Tekla Structures 2026 user from a freshly installed machine to a model open on screen. It stops there on purpose &mdash; modeling workflows, drawing production and numbering are separate guides.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STEP 01 &middot; IDENTITY</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Trimble Identity &amp; Subscription</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">You need a Trimble Identity to download Tekla Structures and to use your subscriptions. The subscription itself is assigned to that identity by your company administrator before you can start.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STEP 02 &middot; FIRST LAUNCH</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Sign In and Pick Your Setup</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">On first start you sign in, confirm which licensing option to use, and choose the three settings that shape your whole session: environment, role and configuration.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STEP 03 &middot; FIRST MODEL</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Create the Model</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Name the model, decide where it is stored, choose single-user or multi-user mode, then let Tekla Structures open the default model view.</p>
+                </div>
+            </div>
+            <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Out of scope
+                </h3>
+                <p class="mt-1 text-sm text-amber-700">Modeling workflow, drawing creation and numbering are deliberately not covered here. This guide ends the moment the first model view is open.</p>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Prerequisites Before You Launch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCOUNT</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">A Trimble Identity</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Required both to download the software and to use your subscription. Use your <strong>company email address</strong> &mdash; verification and sign-in codes are sent there.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCOUNT</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Membership of the Company Account</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Your identity must belong to your company's Tekla account. Accept the administrator's invitation from your Online Profile, ask for one, or submit a join request if your email domain matches.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LICENSING</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">A Subscription Assigned to You</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Administrators assign subscriptions and access in the <strong>Tekla Online Admin Tool</strong> (admin.account.tekla.com). Once a subscription is activated for your Trimble Identity, you can select a license when you sign in.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SOFTWARE</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Tekla Structures 2026 Installed</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Install the software itself, plus at least one environment package. If no environment is installed, only the <strong>Blank</strong> environment will be offered at startup.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SECURITY</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Access to Your Mailbox</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Users get 2-step verification with one-time passcodes unless the organization has enabled multi-factor authentication. Without access to that mailbox, you cannot sign in.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LICENSING &middot; LEGACY</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">On-Premises Server (Only If Applicable)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">New customers normally use subscription (online) licensing. If your company runs an on-premises server, its tools must be at the 2025 versions or later &mdash; see the version notes below.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Step 1 &mdash; Create and Prepare Your Trimble Identity</h2>
+            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">1</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check your inbox for an invitation</h3>
+                    <p class="text-sm text-gray-600">When your company buys a Tekla subscription, the named contact receives an email invitation. Create your Trimble Identity using the link in that email and fill in all of the required user profile information.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">2</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">No invitation? Create the identity yourself</h3>
+                    <p class="text-sm text-gray-600">Create a Trimble ID following Trimble's own account instructions, then open your Online Profile at <strong>account.tekla.com</strong>, set <strong>Profile type</strong> to <strong>Professional</strong>, and complete the mandatory fields.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">3</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Join your company account</h3>
+                    <p class="text-sm text-gray-600">Three routes are available: accept an administrator invitation from your Online Profile, ask your administrator to send one, or submit a join request if your email domain matches your company's.</p>
+                    <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                        <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            Warning / Troubleshooting
+                        </h3>
+                        <p class="mt-1 text-sm text-amber-700">Use a company email address you will keep access to. If you lose access to the mailbox used to create your Trimble Identity, you will not be able to sign in using 2-step verification.</p>
+                    </div>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">4</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Have the administrator assign your subscription</h3>
+                    <p class="text-sm text-gray-600">An administrator activates the subscription for your Trimble Identity in the <strong>Tekla Online Admin Tool</strong>. Only after that can you select a license when you sign in to Tekla Structures.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Two Ways to Start Tekla Structures</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">When you install Tekla Structures, two desktop icons appear: one opens the <strong>classic startup screen</strong>, the other opens the <strong>Tekla Launcher</strong> startup screen. Both lead to the same product &mdash; the difference is where you choose your setup and how models are managed.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OPTION A</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Classic Startup Screen</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">You pick environment, role and configuration up front in the setup dialog, then reach a start screen with tabs for recent models, all models, shared models, and creating a new one. This is the familiar route for anyone who has used earlier versions.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OPTION B</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Tekla Launcher</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">You choose your subscription once, then work from <strong>Models</strong>, <strong>Recent</strong> and <strong>New</strong> tabs. Version and environment are chosen per model, and the role is selected as the model opens.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Step 2A &mdash; First Launch via the Classic Startup Screen</h2>
+            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">1</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Start the application</h3>
+                    <p class="text-sm text-gray-600">Double-click the Tekla Structures desktop icon, or select <strong>Tekla Structures</strong> from the Windows <strong>Start</strong> menu.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">2</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Sign in with your Trimble Identity</h3>
+                    <p class="text-sm text-gray-600">Sign in when prompted. This is the sign-in that connects Tekla Structures to the subscription assigned to you.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">3</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Confirm the licensing option</h3>
+                    <p class="text-sm text-gray-600">A dialog appears where you choose your Tekla Structures setup and the license to use. The default is the <strong>Tekla Structures subscription</strong>, which is what most new customers need. If your company uses an on-premises license server instead, click <strong>Change license server</strong> at the bottom of the dialog and select <strong>Use your on-premises license server</strong>.</p>
+                    <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                        <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            Warning / Troubleshooting
+                        </h3>
+                        <p class="mt-1 text-sm text-amber-700">If Tekla Structures starts with the wrong licensing method, you do not need to reinstall. Reopen the startup dialog, click <strong>Change license server</strong>, pick the correct option and click <strong>OK</strong>. On-premises setups on a separate machine require the license server address to be entered manually.</p>
+                    </div>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">4</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select the environment</h3>
+                    <p class="text-sm text-gray-600">Choose the environment that matches the region your project is built in. You can also select the blank project and use it as the basis to create your own customized environment.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">5</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select the role</h3>
+                    <p class="text-sm text-gray-600">Pick the role that matches the work you do. The roles typically available are <strong>Concrete Contractor</strong>, <strong>Engineer</strong>, <strong>General Contractor</strong>, <strong>Precast Concrete Detailer</strong>, <strong>Production Planner for Concrete</strong>, <strong>Rebar Detailer</strong> and <strong>Steel Detailer</strong>.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">6</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select the configuration</h3>
+                    <p class="text-sm text-gray-600">Choose the configuration your subscription plan entitles you to &mdash; <strong>Diamond</strong>, <strong>Graphite</strong> or <strong>Carbon</strong>.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">7</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Click OK to reach the start screen</h3>
+                    <p class="text-sm text-gray-600">Click <strong>OK</strong>. The start screen opens with tabs for recent models, all models and shared models, plus the option to create a new one. You can search, sort and open models from here.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Step 2B &mdash; First Launch via Tekla Launcher</h2>
+            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">1</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open Tekla Launcher</h3>
+                    <p class="text-sm text-gray-600">Double-click the <strong>Tekla Launcher</strong> desktop icon, or select it from the Windows <strong>Start</strong> menu.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">2</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select your Tekla Structures subscription</h3>
+                    <p class="text-sm text-gray-600">On first use a dialog appears where you select your Tekla Structures subscription. The subscription with the highest feature level is selected automatically; if you have more than one, you can switch between them.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">3</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Go to the New tab</h3>
+                    <p class="text-sm text-gray-600">Open the <strong>New</strong> tab, find the <strong>New blank model template</strong>, and click <strong>Create</strong>.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">4</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Fill in the model details</h3>
+                    <p class="text-sm text-gray-600">Enter a model name and description. Select an installed Tekla Structures version, or download a different one. Then choose an environment &mdash; the list is filtered by the version you selected.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">5</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Apply optional settings</h3>
+                    <p class="text-sm text-gray-600">If you are using Custom environments, select the upgrade behavior options. You can optionally apply company settings from the <strong>Project Settings Management Console</strong>, and add a thumbnail image for the model.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">6</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the model and choose a role</h3>
+                    <p class="text-sm text-gray-600">Click <strong>Create new</strong>. In the <strong>Role</strong> dialog, select a role that is used in the model and click <strong>Select</strong>. Tekla Structures starts with the model already open.</p>
+                </li>
+            </ol>
+            <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Good to know
+                </h3>
+                <p class="mt-1 text-sm text-amber-700">To open an existing model from the Launcher, go to the <strong>Models</strong> tab, select the model and click <strong>Open</strong> (or double-click the row), then select a role and click <strong>Select</strong>. Models reopened from the <strong>Recent</strong> tab skip the role selection, so they open faster.</p>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Understanding Environment, Role and Configuration</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">These three choices are the most common source of confusion on day one. They are independent of one another and they do different jobs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">WHAT YOU BUILD WITH</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Environment</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Defines the materials, grades, profiles, drawing settings, component settings and .ini file settings used in a specific locale. Several environments can be installed at once, and new ones can be added later.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">WHAT YOU SEE</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Role</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">A user designation, independent of your subscription or license, that makes the interface and settings clearer and faster for your task. Settings and filters are tailored to the role, and irrelevant object property preloads are hidden.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">WHAT YOU OWN</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Configuration</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">A product variant determined by your subscription plan &mdash; Tekla Structures <strong>Diamond</strong>, <strong>Graphite</strong> or <strong>Carbon</strong>. Your subscription or license decides which configurations you can access.</p>
+                </div>
+            </div>
+            <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Warning / Troubleshooting
+                </h3>
+                <p class="mt-1 text-sm text-amber-700">If the only environment offered is <strong>Blank</strong>, no environment package has been installed on the machine. The Blank environment gives you parametric profiles, undefined bolt, material and rebar grades, and basic drawing layouts &mdash; usable, but it is not a substitute for your regional environment. Install the correct environment before starting production work. Role setups are normally configured during installation by Trimble personnel, and administrators can create custom roles.</p>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Step 3 &mdash; Create Your First Model</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">Create a separate model for each Tekla Structures project. Each model is stored in its own folder under the <strong>TeklaStructuresModels</strong> folder. These steps apply when you are already inside Tekla Structures &mdash; if you created the model from Tekla Launcher in Step 2B, it is already open and you can skip this section.</p>
+            <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">1</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the New model dialog</h3>
+                    <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>New</strong>.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">2</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Name the model</h3>
+                    <p class="text-sm text-gray-600">In the <strong>Name</strong> box, enter a name for the new model. The maximum length is 40 characters.</p>
+                    <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                        <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            Warning / Troubleshooting
+                        </h3>
+                        <p class="mt-1 text-sm text-amber-700">Do not use the special characters <strong>/ \ ; : |</strong> in the model name. Decide on a permanent name now: the name can be changed afterwards, but doing so involves changing several file names.</p>
+                    </div>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">3</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Define where the model is saved</h3>
+                    <p class="text-sm text-gray-600">By default the model is saved in the <strong>TeklaStructuresModels</strong> folder created during installation. Click <strong>Browse</strong> to change the folder.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">4</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose the operation mode</h3>
+                    <p class="text-sm text-gray-600">Select <strong>Single-user</strong> for a model worked on by one person at a time, or <strong>Multi-user</strong> for a server-based model that several users work on simultaneously. For a first model, single-user is the straightforward choice.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">5</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Optionally select a model template</h3>
+                    <p class="text-sm text-gray-600">You can select a model template as the starting point, and mark templates as <strong>Favorite</strong> or <strong>Hidden</strong> to keep the list tidy.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">6</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Optionally enable Trimble Connect collaboration</h3>
+                    <p class="text-sm text-gray-600">Select <strong>Start Trimble Connect collaboration</strong> if you want the model linked to a Trimble Connect project once it has been created.</p>
+                </li>
+                <li class="ml-8 relative">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                        <span class="text-white font-bold text-sm">7</span>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Click Create</h3>
+                    <p class="text-sm text-gray-600">Tekla Structures creates the model and opens the default model view. What you see in that view may differ depending on the model template you selected. At this point onboarding is complete &mdash; the modeling workflow begins here and is covered in separate guides.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Version Notes for Tekla Structures 2026</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border border-gray-200 rounded-lg">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Topic</th>
+                    <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What changed in 2026</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Terminology</td><td class="p-3 border-b border-gray-100 text-gray-600">"Organization" is now <strong>Account</strong>, and "external license user" is now <strong>Member</strong>. "Employee" now refers to a role rather than a membership status.</td></tr>
+                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Inviting new users</td><td class="p-3 border-b border-gray-100 text-gray-600">Previously new users defaulted to employee status. You must now select the employee role explicitly when inviting them. This affects access to company content in Tekla Warehouse and to model sharing.</td></tr>
+                  <tr><td class="p-3 border-b border-gray-100 font-semibold">On-premises licensing</td><td class="p-3 border-b border-gray-100 text-gray-600">Tekla Structures 2026 is not compatible with earlier versions of Tekla License Server, Tekla License Borrow Tool, or the Tekla On-Demand License Administration Tool. These must be upgraded to their 2025 versions.</td></tr>
+                  <tr><td class="p-3 border-b border-gray-100 font-semibold">Graphite configuration</td><td class="p-3 border-b border-gray-100 text-gray-600">Graphite now supports detailing components in the same way as Diamond. Administrators can control this with the <strong>XS_USE_CONCEPTUAL_COMPONENTS_FOR_GRAPHITE</strong> advanced option, which defaults to FALSE.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Warning / Troubleshooting
+                </h3>
+                <p class="mt-1 text-sm text-amber-700">If a new user cannot see company content in Tekla Warehouse or cannot use model sharing, check whether they were invited with the employee role selected. In 2026 this is no longer applied automatically.</p>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">First-Day Checklist</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 01</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Sign-in succeeded</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">You signed in with your Trimble Identity and a subscription was available to select. If no license appears, the administrator has not yet activated a subscription for your identity.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 02</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Correct environment loaded</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">The environment you selected matches the region of the project, so materials, grades, profiles and drawing settings are the ones your project actually uses.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 03</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Role matches your work</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">The role you picked reflects your discipline. The role is independent of the license, so choosing a different one does not change what you are entitled to use.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 04</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Configuration is as expected</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Diamond, Graphite or Carbon &mdash; confirm this matches the subscription plan your company purchased before you start relying on a feature.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 05</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Model name is permanent</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Maximum 40 characters, no <strong>/ \ ; : |</strong>, and a name you are willing to keep &mdash; renaming later means changing several file names.</p>
+                </div>
+                <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHECK 06</div>
+                    <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Model view is open</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">The default model view has opened. Onboarding ends here; modeling, drawings and numbering are covered in their own guides.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Official Reference</h2>
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+                <ul class="space-y-2">
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/gen_start_tekla_structures" target="_blank" class="text-trimble-blue font-bold hover:underline">Start Tekla Structures using the classic startup screen &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/gen_start_tekla_structures_with_launcher" target="_blank" class="text-trimble-blue font-bold hover:underline">Start Tekla Structures and open models using Tekla Launcher &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_configurations_environments_roles" target="_blank" class="text-trimble-blue font-bold hover:underline">Overview of environments, roles, and configurations in Tekla Structures &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_new_model" target="_blank" class="text-trimble-blue font-bold hover:underline">Create a new model &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_using_trimble_identity_with_ts" target="_blank" class="text-trimble-blue font-bold hover:underline">Using your Trimble Identity with Tekla Structures &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/ins_create_your_trimble_identity" target="_blank" class="text-trimble-blue font-bold hover:underline">Create your Trimble Identity for Tekla products &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/ins_trimble_identity_organizations" target="_blank" class="text-trimble-blue font-bold hover:underline">Account membership and Trimble Identity &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/lic_manage_licenses" target="_blank" class="text-trimble-blue font-bold hover:underline">Management of Tekla Structures subscriptions &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/article/which-licensing-option-should-i-choose-on-premises-or-online" target="_blank" class="text-trimble-blue font-bold hover:underline">Which licensing option should I choose when starting Tekla Structures? &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/admin_rel_licensing" target="_blank" class="text-trimble-blue font-bold hover:underline">Administrator's release notes: Licensing changes in Tekla Structures 2026 &rarr;</a></li>
+                    <li><a href="https://support.tekla.com/doc/tekla-structures/2026/tekla_structures_product_guides" target="_blank" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 product guides &rarr;</a></li>
+                </ul>
+                <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Steps may differ in older versions. The exact list of environments, roles and model templates depends on what has been installed on your machine and on your local reseller's environment package.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="std-footer">
+        <div class="std-container">
+            <p>&copy; 2026 Service Team Resources. Internal Use Only.</p>
+        </div>
+    </footer>
+</body>
+</html>
