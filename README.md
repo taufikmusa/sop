@@ -34,6 +34,14 @@ Every page has the same three sections, in this order:
 The Copy button copies plain text only - never HTML. Links are flattened to
 `anchor text (url)` so the URL survives the paste into the mail client.
 
+## Starting from a QnA you already wrote
+
+A .docx, an old email or pasted text can become a page directly, but the
+existing answer is treated as a draft, not as truth: every claim in it is
+re-checked against Tekla User Assistance first, corrections are recorded in
+the Detailed SOP, and the reply is rewritten to the Email Reply rules above.
+Where the old answer and the documentation disagree, the documentation wins.
+
 ## Adding a page
 
 1. Create `<folder>/<slug>/index.html`. Copy an existing page as the starting point

@@ -101,6 +101,55 @@
         "cannot open drawing",
         "upgraded model"
       ]
+    },
+    {
+      "id": "tekla-online-license-all-in-use",
+      "title": "Online License Locked on Another Device",
+      "folder": "Tekla Structures",
+      "category": "Licensing",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/online-license-all-in-use/",
+      "question": "I cannot log in and use my online license.",
+      "variants": [
+        "Tekla Structures says all licenses are in use, but nobody else is using it.",
+        "My license is still reserved on my old laptop and I cannot start Tekla Structures here.",
+        "I changed computer and now Tekla Structures will not start.",
+        "How do I release my license if I cannot get to the other machine?",
+        "How do I stop Tekla Structures from holding my license when I close it?"
+      ],
+      "summary": "Why the subscription reports as unavailable or already in use - the three-day device reservation, clearing the checkbox in the Exit dialog, releasing per version, and the advanced option that stops it recurring.",
+      "keywords": [
+        "online license",
+        "subscription license",
+        "all in use",
+        "license in use",
+        "cannot sign in",
+        "cannot log in",
+        "license not available",
+        "no license",
+        "license reserved",
+        "reserved on this device",
+        "release license",
+        "end session",
+        "reset license",
+        "exit dialog",
+        "keep this license reserved on this device",
+        "yes keep the license",
+        "stay signed in",
+        "three days",
+        "3 days",
+        "offline",
+        "work offline",
+        "XS_DEFAULT_KEEP_ONLINE_LICENSE_CHECKBOX",
+        "user.ini",
+        "teklastructures.ini",
+        "bypass.ini",
+        "different computer",
+        "new laptop",
+        "trimble identity",
+        "seat",
+        "licensing"
+      ]
     }
   ]
 }

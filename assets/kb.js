@@ -59,6 +59,18 @@
         });
     }
 
+    // "all in use" is three common words: matching them separately drags in any
+    // page that happens to contain "all" and "in" and "use". So if the query
+    // appears verbatim on any page, those pages are the answer; otherwise fall
+    // back to needing every word somewhere.
+    function visiblePages() {
+        if (!state.query) { return state.pages; }
+        var phrase = state.pages.filter(function (page) {
+            return haystack(page).indexOf(state.query) !== -1;
+        });
+        return phrase.length ? phrase : state.pages.filter(matches);
+    }
+
     function groupByFolder(pages) {
         var order = [];
         var groups = {};
@@ -105,7 +117,7 @@
         if (!els.nav) { return; }
         els.nav.innerHTML = '';
 
-        var visible = state.pages.filter(matches);
+        var visible = visiblePages();
 
         if (els.meta) {
             els.meta.textContent = state.query
@@ -139,7 +151,7 @@
         if (!els.hub) { return; }
         els.hub.innerHTML = '';
 
-        var visible = state.pages.filter(matches);
+        var visible = visiblePages();
 
         if (els.hubMeta) {
             els.hubMeta.textContent = state.query

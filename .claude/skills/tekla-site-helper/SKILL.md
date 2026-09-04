@@ -41,9 +41,28 @@ Ujian ringkas: adakah jawapannya melibatkan sekurang-kurangnya satu langkah di d
 | Soalan pantas, satu isu, "kenapa ni jadi", "macam mana nak…" | **Mod Jawapan** (markdown dalam chat) |
 | "buat SOP", "buat page", "buat guide", "HTML", "untuk team", "nak share link", "training material" | **Mod Page** (page dalam vault) |
 | Workflow 4 langkah atau lebih, atau melibatkan beberapa tool/dialog | **Mod Page** — walaupun dia tak minta |
+| Taufik paste QnA yang dia dah tulis (.docx, emel, teks) | **Mod Page** — ikut Langkah 0b |
 | Betul-betul kabur | Tanya sekali sahaja, ringkas. Jangan tanya bertalu-talu. |
 
 ---
+
+## Langkah 0b — Kalau Taufik paste QnA yang dia dah tulis
+
+Selalunya bahan tu bukan soalan mentah customer, tetapi QnA yang Taufik sendiri dah jawab — fail .docx, emel lama, atau teks yang dia paste terus. Boleh terus jadi page. Tapi **jangan salin bulat-bulat.**
+
+Jalannya begini:
+
+1. **Asingkan Q dan A** daripada bahan tu.
+2. **Jadikan soalan generic** ikut peraturan Section A di bawah.
+3. **Sahkan setiap dakwaan dalam jawapan lama terhadap TUA.** Ini bahagian yang paling penting dan paling kerap dilangkau. Jawapan yang ditulis tergesa-gesa untuk satu customer selalunya ada satu butiran yang salah, dan butiran tu akan hidup selama-lamanya kalau disalin masuk vault. Nama laluan menu, nama advanced option, dan **tempat sesuatu setting itu ditetapkan** adalah yang paling kerap tersasar.
+4. **Betulkan apa yang salah, dan catat pembetulan tu** dalam Detailed SOP sebagai warning box — supaya orang seterusnya tak ulang silap yang sama.
+5. **Tulis semula reply** ikut peraturan Section B. Jawapan lama hampir pasti melanggar peraturan tu: ada salam pembuka, perenggan panjang, pautan tersisip tengah ayat.
+6. **Kembangkan jadi Detailed SOP.** Jawapan asal biasanya cukup untuk satu customer sahaja. Section C perlu punca, langkah penuh, perbezaan versi, dan jalan escalate.
+7. **Tambah topik berkaitan** yang jawapan asal tak sentuh tetapi TUA sahkan — mesej ralat berkaitan, versi lama yang berlainan caranya, dan cara elak berulang.
+
+**Bila jawapan lama bercanggah dengan TUA, TUA menang.** Beritahu Taufik apa yang dibetulkan dan mana sumbernya. Jangan senyap-senyap tukar, dan jangan kekalkan yang salah semata-mata sebab itu yang dah dihantar kepada customer.
+
+**Kalau butiran teknikal dalam jawapan lama tak dapat disahkan langsung dalam TUA:** buang daripada Email Reply, dan dalam Detailed SOP tandakan ia belum disahkan. Jangan naikkan taraf tekaan jadi prosedur rasmi.
 
 ## Langkah 1 — Riset (WAJIB, tiada pengecualian)
 
@@ -195,6 +214,8 @@ Elak dinding teks. Kalau jawapan melebihi ~12 langkah, tawarkan untuk tukar ke M
 
 **Riset**
 - [ ] Setiap laluan menu datang daripada halaman TUA yang benar-benar dibaca, bukan ingatan
+- [ ] Kalau bahan datang daripada QnA lama: setiap dakwaan dalam jawapan tu disemak semula, bukan disalin
+- [ ] Apa-apa pembetulan dicatat dalam SOP dan diberitahu kepada Taufik
 - [ ] URL sumber sah dan boleh diklik (muncul dalam keputusan carian, bukan direka)
 - [ ] Versi dinyatakan; perbezaan antara versi ditandakan kalau ada
 - [ ] Skop Tekla Structures sahaja

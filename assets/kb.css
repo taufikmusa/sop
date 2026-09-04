@@ -76,6 +76,11 @@ header.std-header .std-container {
    stretch the whole column. Pin them to 0 so wide content scrolls in place. */
 .kb-main, .kb-main > main, .kb-main > section { min-width: 0; max-width: 100%; }
 
+/* Advanced option names (XS_DEFAULT_KEEP_ONLINE_LICENSE_CHECKBOX) are single
+   unbreakable tokens wider than a phone screen. Let them break rather than
+   push the whole column sideways. */
+.kb-main, .kb-sidebar { overflow-wrap: break-word; }
+
 /* The site is internal and may run behind a proxy that blocks the Tailwind CDN.
    These re-declare the few utilities the content depends on for its layout,
    so a blocked CDN degrades the styling instead of breaking the page. */
