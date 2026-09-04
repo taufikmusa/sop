@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-04",
+  "note": "Single source of truth for the left sidebar and the client-side search. Every new page adds exactly one entry to pages[]. url is relative to the site root.",
+  "pages": [
+    {
+      "id": "tekla-onboarding-new-customer",
+      "title": "Getting Started: First Launch to First Model",
+      "folder": "Tekla Structures",
+      "category": "Getting Started",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/onboarding-new-customer/",
+      "question": "We just bought Tekla Structures 2026 and I am the first person in the office to install it. What do I do on the first start, and how do I get my first model open?",
+      "summary": "Onboarding a new customer - Trimble Identity and subscription, the classic startup screen vs Tekla Launcher, choosing environment, role and configuration, and creating the first model.",
+      "keywords": [
+        "onboarding", "new customer", "first launch", "getting started", "install",
+        "trimble identity", "trimble id", "sign in", "subscription", "licensing",
+        "on-premises", "license server", "admin tool", "account membership",
+        "startup screen", "tekla launcher", "environment", "role", "configuration",
+        "diamond", "graphite", "carbon", "blank environment",
+        "new model", "create model", "single-user", "multi-user", "model template",
+        "trimble connect", "2-step verification", "no license available"
+      ]
+    },
+    {
+      "id": "tekla-drawing-not-updating",
+      "title": "Drawings Not Updating After Model Changes",
+      "folder": "Tekla Structures",
+      "category": "Drawings",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/drawing-not-updating/",
+      "question": "We changed parts in the model but the drawings still show the old geometry and the dimensions have not moved. We already unlocked the drawings and it did not help. Is this a bug?",
+      "summary": "Why a drawing still shows old geometry, dimensions or marks after a model revision - numbering, freeze vs lock, recreation, and the advanced options that switch automatic updating off.",
+      "keywords": [
+        "drawing not updating", "drawings out of date", "old geometry", "old dimensions",
+        "marks not updating", "numbering", "perform numbering", "compare to old",
+        "document manager", "changes column", "up to date", "status flags",
+        "freeze", "frozen", "unfreeze", "lock", "locked", "associativity",
+        "recreate the drawing", "recreation", "modify",
+        "XS_INTELLIGENT_DRAWING_ALLOWED", "XS_INTELLIGENT_DRAWING_ALLOWED_IN_GA",
+        "XS_RECREATE_UNMODIFIED_DRAWINGS", "XS_ENABLE_MODEL_EDITING_IN_GA",
+        "advanced options", "ga drawing", "general arrangement", "multidrawing",
+        "numbering history log", "cannot open drawing", "upgraded model"
+      ]
+    }
+  ]
+}
