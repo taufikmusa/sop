@@ -80,6 +80,18 @@ creating a second page: one page, many ways in.
 Nothing else needs editing. The sidebar, the hub listing and the search all read
 that one file.
 
+## Checking a page
+
+```
+python3 tools/check-pages.py
+```
+
+Validates every page against the rules: the shell is intact, the question and
+"Also asked as" list match `search-index.json` word for word, no page is
+missing from the index and no index entry points at a page that does not
+exist, and the Email Reply obeys every constraint above. Exits non-zero on
+failure, so it can gate a commit. Fix the page rather than the checker.
+
 ## Running locally
 
 `search-index.json` is fetched over HTTP, so serve the folder rather than opening
