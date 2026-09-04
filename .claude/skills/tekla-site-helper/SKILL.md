@@ -411,7 +411,7 @@ Salin bulat-bulat. Tukar hanya placeholder.
                 <div class="std-container">
                     <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
                     <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
-                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="../../license.html">License</a></p>
                 </div>
             </footer>
 

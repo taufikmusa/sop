@@ -35,7 +35,7 @@ SHELL_ANCHORS = [
     '<a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>',
     '<p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>',
     '<p class="footer-note">',
-    '<a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a>',
+    '<a href="../../license.html">License</a>',
     '<script src="../../assets/kb.js"></script>',
     '<div class="kb-section-label"><b>A</b> Customer Question</div>',
     '<div class="kb-section-label"><b>B</b> Email Reply</div>',

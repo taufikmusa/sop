@@ -244,18 +244,22 @@ header.std-header .std-container {
 }
 .std-footer p { margin: 0; }
 
+/* These two stay qualified with .std-footer. A bare .footer-note loses to
+   ".std-footer p { margin: 0 }" on specificity, which kills both the top
+   spacing and the auto margins that centre the block. */
+
 /* Line 2 is smaller and softer than line 1, but still holds 4.5:1 against
    the footer background - it carries the disclaimer, so it has to be read. */
-.footer-note {
+.std-footer .footer-note {
     font-size: 0.75rem;
     color: var(--slate-450);
     line-height: 1.6;
     max-width: 680px;
     margin: 10px auto 0;
 }
-.footer-links { margin-top: 10px; font-size: 0.8rem; }
-.footer-links a { color: var(--slate-400); text-decoration: underline; }
-.footer-links a:hover { color: #ffffff; }
+.std-footer .footer-links { margin-top: 10px; font-size: 0.8rem; }
+.std-footer .footer-links a { color: var(--slate-400); text-decoration: underline; }
+.std-footer .footer-links a:hover { color: #ffffff; }
 
 .stage-card { transition: all 0.3s ease; }
 .stage-card:hover {
