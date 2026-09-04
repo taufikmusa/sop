@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Documentation Hub | Lifecycle Guide</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; color: #252A2E; display: flex; flex-direction: column; min-height: 100vh; background-color: #ffffff; overflow-x: hidden; }
+        :root { --trimble-blue: #0063a3; --trimble-blue-dark: #004f83; --trimble-gray-dark: #252a2e; --slate-400: #94a3b8; --slate-700: #334155; --white: #ffffff; --border-color: #d1d5db; }
+        .std-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header.std-header { background-color: var(--white); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+        .std-brand { font-size: 1.2rem; font-weight: 800; color: var(--trimble-blue); }
+        .std-brand span { color: var(--trimble-gray-dark); font-weight: 400; }
+        .std-hero { background: linear-gradient(135deg, var(--trimble-blue-dark) 0%, #0077c8 100%); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px; }
+        .std-hero h1 { font-size: 2.5rem; line-height: 1.2; color: white; margin-bottom: 1rem; font-weight: 700; }
+        .std-hero p { opacity: 0.95; font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        .std-footer { background-color: var(--trimble-gray-dark); color: var(--slate-400); padding: 1.5rem 0; text-align: center; font-size: 0.875rem; border-top: 1px solid var(--slate-700); margin-top: auto; }
+        .stage-card { transition: all 0.3s ease; }
+        .stage-card:hover { transform: translateY(-5px); border-color: #0063A3; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <div class="std-brand">Trimble <span>Service Documentation</span></div>
+        </div>
+    </header>
+
+    <section class="std-hero">
+        <div class="std-container">
+            <h1>Service Documentation Hub</h1>
+            <p class="mb-8">Support guides for Tekla Structures and Tekla PowerFab, written against the official Tekla User Assistance documentation.</p>
+            <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow std-container pb-20">
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-trimble-darkBlue mb-8 border-b border-gray-200 pb-2">Tekla Structures</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="tekla/drawing-not-updating/" class="block">
+                    <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm h-full">
+                        <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DRAWINGS &middot; 2026</div>
+                        <h3 class="text-lg font-bold text-trimble-darkBlue mb-3">Drawings Not Updating After Model Changes</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Why a drawing still shows old geometry, dimensions or marks after a model revision &mdash; numbering, freeze vs lock, recreation, and the advanced options that switch automatic updating off.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="std-footer">
+        <div class="std-container">
+            <p>&copy; 2026 Service Team Resources. Internal Use Only.</p>
+        </div>
+    </footer>
+</body>
+</html>
