@@ -466,3 +466,30 @@ header.std-header .std-container {
 .kb-email-link { margin: 0 0 6px; }
 .kb-email-link:last-child { margin-bottom: 0; }
 .kb-email-body .kb-email-sign { margin-top: 20px; }
+
+/* Other ways the same question comes in. Feeds the search index, so a
+   customer who words it differently still lands on this page. */
+.kb-question-variants {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 99, 163, 0.18);
+}
+.kb-question-variants-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--trimble-blue);
+    margin: 0 0 8px;
+}
+.kb-question-variants ul {
+    margin: 0;
+    padding-left: 18px;
+}
+.kb-question-variants li {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--trimble-gray);
+    margin-bottom: 4px;
+}
+.kb-question-variants li:last-child { margin-bottom: 0; }

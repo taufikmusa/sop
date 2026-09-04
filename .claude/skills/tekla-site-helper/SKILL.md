@@ -2,16 +2,16 @@
 name: tekla-site-helper
 description: >
   Jawab soalan sokongan Tekla Structures berdasarkan dokumentasi rasmi Tekla User Assistance
-  (support.tekla.com, docs.tekla.com) sahaja, kemudian hantar sebagai jawapan support berstruktur
-  dalam chat ATAU satu page HTML dalam knowledge base "Tekla Structures FAQ Vault" dengan struktur
-  tetap A/B/C (Customer Question, Email Reply, Detailed SOP). Guna skill ini SETIAP KALI ada
-  soalan "macam mana nak buat X dalam Tekla", mesej ralat Tekla, atau permintaan SOP/guide/page
-  untuk workflow Tekla — termasuk sebutan "tekla sop", "tekla site helper", "buat page Tekla",
-  "guide Tekla", "cari dalam TUA", "FAQ Vault", "service documentation". Trigger walaupun HTML
-  atau skill tak disebut. WAJIB cari dokumentasi rasmi dahulu dan jangan reka laluan menu. Skop
-  Tekla Structures sahaja — bukan PowerFab. BERBEZA daripada tekla-model-macro,
-  tekla-drawing-macro dan tekla-visual-studio-skill (semua tu tulis kod C#) serta
-  sop-retro-brutalist-style (SOP dalaman gaya retro-brutalist).
+  (support.tekla.com, docs.tekla.com) sahaja, kemudian hantar dalam chat ATAU sebagai satu page
+  HTML dalam knowledge base "Tekla Structures FAQ Vault" (struktur A/B/C: Customer Question, Email
+  Reply, Detailed SOP). Guna skill ini SETIAP KALI ada soalan "macam mana nak buat X dalam Tekla",
+  mesej ralat Tekla, atau permintaan SOP/guide/page untuk workflow Tekla — termasuk sebutan "tekla
+  sop", "tekla site helper", "buat page Tekla", "guide Tekla", "cari dalam TUA", "FAQ Vault",
+  "service documentation". Trigger walaupun HTML atau skill tak disebut. WAJIB cari dokumentasi
+  rasmi dahulu dan jangan reka laluan menu. Subjek mesti Tekla Structures; PowerFab hanya kalau ia
+  sebelah integrasi Tekla Structures, soalan PowerFab tulen ke powerfab-training-docs. BERBEZA
+  daripada tekla-model-macro, tekla-drawing-macro, tekla-visual-studio-skill (kod C#) dan
+  sop-retro-brutalist-style (SOP dalaman retro-brutalist).
 ---
 
 # Tekla Site Helper
@@ -24,7 +24,13 @@ Tiga kerja dalam satu skill:
 
 Jangan sesekali langkau kerja 1 dan terus ke kerja 3. Page yang cantik tapi menu path salah lebih memudaratkan daripada tiada page langsung.
 
-**Skop: Tekla Structures sahaja.** Bukan PowerFab, bukan Trimble Connect, bukan produk Tekla lain. Kalau soalan tu tentang produk lain, cakap terus ia di luar skop vault ni.
+**Skop: subjeknya mesti Tekla Structures.**
+
+Produk lain boleh masuk *kalau* ia bersambung dengan Tekla Structures — contohnya export ke PowerFab, model exchange, atau apa-apa handoff antara dua produk tu. Dalam kes macam ni tulis dari sudut Tekla Structures: apa yang user buat dalam Tekla Structures, dan di mana sempadan penyerahan itu. Bahagian yang berlaku sepenuhnya dalam produk lain, rujuk keluar sahaja — jangan cuba dokumenkan di sini.
+
+Yang di luar skop ialah soalan yang **langsung tak sentuh Tekla Structures** — workflow dalaman PowerFab semata-mata, atau produk Tekla lain yang berdiri sendiri. Soalan PowerFab tulen pergi ke skill `powerfab-training-docs`, bukan vault ni.
+
+Ujian ringkas: adakah jawapannya melibatkan sekurang-kurangnya satu langkah di dalam Tekla Structures? Kalau ya, ia layak masuk.
 
 ---
 
@@ -64,12 +70,26 @@ Setiap page dalam vault ada **tiga section tetap, dalam susunan ni**. Tiada sect
 
 ### A. Customer Question
 
-Soalan asal customer, **verbatim**, dalam kotak berlorek. Ringkas.
+Bukan transkrip satu tiket. Ini **bentuk generic** soalan itu — satu ayat rujukan yang customer seterusnya, yang tanya benda lebih kurang sama, akan cam sebagai soalan dia juga.
 
-- **Kalau tiada teks tiket sebenar, JANGAN reka soalan itu.** Tanya Taufik dulu: minta teks tiket atau emel customer yang sebenar. Berhenti dan tunggu — jangan karang soalan yang munasabah dan teruskan.
-- Kalau dia memang mahu page tu disiapkan tanpa tiket, tulis `{{CUSTOMER_QUESTION}}` sebagai placeholder yang jelas dan beritahu dia section A masih kosong. Jangan buat rekaan nampak macam rekod sebenar.
-- Kekalkan perkataan customer. Betulkan typo yang mengelirukan sahaja — jangan tulis semula jadi bahasa kemas.
-- Buang nama orang, nama syarikat dan nombor projek sebelum masuk vault.
+**Bila Taufik paste soalan customer sebenar, jadikan ia generic:**
+
+1. **Buang identiti.** Nama orang, nama syarikat, nombor projek, nama model, nombor tiket, tarikh — semua keluar.
+2. **Buang butiran sekali guna.** "minggu lepas", "dua tiga batang beam", "job 4471" — tukar kepada bentuk umum, atau buang terus.
+3. **Kekalkan perkataan simptom.** Ini yang paling penting. "dimensions have not moved", "will not open", "already unlocked" — biarkan dalam perkataan customer. Perkataan simptom inilah yang buat orang jumpa page ni nanti.
+4. **Kekalkan bunyi customer.** Jangan tulis semula jadi bahasa dokumentasi. Kalau dia tanya "Is this a bug?", biarkan.
+5. **Longgarkan versi** dalam badan soalan kalau isu tu bukan khusus versi. Versi duduk dalam baris meta bawah kotak, bukan dalam soalan.
+
+Hasilnya satu soalan, dalam kotak berlorek, pendek.
+
+**Blok "Also asked as".** Bawah soalan tu, senaraikan 3–5 cara lain soalan sama masuk — termasuk cara yang lebih teknikal dan cara yang lebih kabur. Setiap baris tu **mesti** disalin ke array `variants` dalam `search-index.json`, sebab di situlah ia jadi boleh dicari. Blok pada page dan array dalam index kena sama, perkataan demi perkataan.
+
+**Bila soalan yang sama masuk lagi, dengan ayat lain:** jangan buat page baru. Tambah ayat baru tu ke dalam blok "Also asked as" dan ke dalam `variants`. Satu page, banyak pintu masuk.
+
+**Yang tak boleh:**
+- **Jangan reka soalan bila memang tiada punca.** Kalau tiada tiket, tiada emel, tiada apa-apa daripada customer sebenar — tanya Taufik dulu dan berhenti. Membuat generic daripada soalan sebenar itu satu hal; mengarang soalan daripada kosong itu hal lain.
+- Kalau dia mahu page disiapkan juga tanpa punca, tulis `{{CUSTOMER_QUESTION}}` sebagai placeholder yang jelas dan beritahu section A masih kosong. Jangan buat rekaan nampak macam rekod sebenar.
+- Baris meta bawah kotak jangan kata "verbatim". Ia berbunyi: bentuk generic soalan customer sebenar, butiran identiti dibuang, plus versi.
 
 ### B. Email Reply
 
@@ -127,7 +147,9 @@ Snippet komponen penuh ada dalam **Lampiran B** — baca sebelum menulis `{{SOP_
 
 Page yang tiada entry dalam `search-index.json` **tidak wujud** — ia tak muncul dalam sidebar, tak muncul dalam hub, tak boleh dicari. Satu page baru = satu entry baru. Format ada dalam **Lampiran C**.
 
-`question` dan `keywords` itulah yang buat page tu boleh dijumpai. Masukkan perkataan customer sendiri, nama dialog tepat, nama column, dan nama advanced option. Jangan letak keyword generic macam "tekla" atau "problem".
+`question`, `variants` dan `keywords` itulah yang buat page tu boleh dijumpai. `question` bentuk generic, `variants` cara lain orang tanya benda sama, `keywords` nama dialog tepat, nama column dan nama advanced option. Masukkan perkataan customer sendiri. Jangan letak keyword generic macam "tekla" atau "problem".
+
+Bila soalan sama masuk dengan ayat berbeza, tambah ayat tu ke `variants` — jangan buat page kedua.
 
 Sahkan JSON masih sah selepas edit:
 
@@ -178,8 +200,12 @@ Elak dinding teks. Kalau jawapan melebihi ~12 langkah, tawarkan untuk tukar ke M
 - [ ] Skop Tekla Structures sahaja
 
 **Section A**
-- [ ] Soalan datang daripada tiket sebenar — atau Taufik sudah ditanya dan sedar ia placeholder
-- [ ] Nama orang, syarikat dan nombor projek sudah dibuang
+- [ ] Soalan datang daripada punca sebenar — atau Taufik sudah ditanya dan sedar ia placeholder
+- [ ] Nama orang, syarikat, nombor projek, nombor tiket dan tarikh sudah dibuang
+- [ ] Butiran sekali guna dibuang, tetapi perkataan simptom customer dikekalkan
+- [ ] Blok "Also asked as" ada 3–5 baris
+- [ ] Blok tu sama, perkataan demi perkataan, dengan `variants` dalam `search-index.json`
+- [ ] Baris meta tidak kata "verbatim"
 
 **Section B**
 - [ ] Tiada salam pembuka, tiada nama
@@ -271,8 +297,16 @@ Salin bulat-bulat. Tukar hanya placeholder.
                 <section class="kb-block mb-16">
                     <div class="kb-section-label"><b>A</b> Customer Question</div>
                     <div class="kb-question">
-                        <p>&ldquo;{{CUSTOMER_QUESTION}}&rdquo;</p>
-                        <p class="kb-question-meta">Recorded verbatim from the ticket. {{PRODUCT_VERSION}}.</p>
+                        <p>&ldquo;{{GENERIC_CUSTOMER_QUESTION}}&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>{{VARIANT_1}}</li>
+                                <li>{{VARIANT_2}}</li>
+                                <li>{{VARIANT_3}}</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. {{PRODUCT_VERSION}}.</p>
                     </div>
                 </section>
 
@@ -486,7 +520,12 @@ Satu page = satu entry dalam `pages[]`. `url` relatif kepada root site.
   "category": "Drawings",
   "product": "Tekla Structures 2026",
   "url": "tekla/my-new-page/",
-  "question": "Soalan customer dalam satu atau dua ayat.",
+  "question": "Bentuk generic soalan customer, satu atau dua ayat.",
+  "variants": [
+    "Cara lain soalan sama masuk.",
+    "Versi yang lebih teknikal.",
+    "Versi yang lebih kabur."
+  ],
   "summary": "Satu baris keterangan yang muncul dalam hub.",
   "keywords": ["symptom", "nama dialog", "nama column", "XS_ADVANCED_OPTION"]
 }
@@ -500,6 +539,7 @@ Satu page = satu entry dalam `pages[]`. `url` relatif kepada root site.
 | `category` | Sub-label kecil bawah tajuk dalam sidebar |
 | `product` | Versi yang page tu disahkan terhadapnya |
 | `url` | Mesti berakhir dengan `/` |
-| `question` | Soalan customer — bahan carian utama |
+| `question` | Bentuk generic soalan customer — bahan carian utama |
+| `variants` | Cara lain soalan sama masuk. Mesti sama, perkataan demi perkataan, dengan blok "Also asked as" pada page. Ini yang buat soalan berbunyi lain tetap jumpa page ni |
 | `summary` | Satu ayat untuk hub |
 | `keywords` | Simptom, nama dialog, nama column, advanced option |

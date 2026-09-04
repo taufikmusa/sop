@@ -42,6 +42,7 @@
         return [
             page.title,
             page.question,
+            (page.variants || []).join(' '),
             page.summary,
             page.folder,
             page.category,
