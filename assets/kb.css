@@ -76,6 +76,11 @@ header.std-header .std-container {
    stretch the whole column. Pin them to 0 so wide content scrolls in place. */
 .kb-main, .kb-main > main, .kb-main > section { min-width: 0; max-width: 100%; }
 
+/* Advanced option names (XS_DEFAULT_KEEP_ONLINE_LICENSE_CHECKBOX) are single
+   unbreakable tokens wider than a phone screen. Let them break rather than
+   push the whole column sideways. */
+.kb-main, .kb-sidebar { overflow-wrap: break-word; }
+
 /* The site is internal and may run behind a proxy that blocks the Tailwind CDN.
    These re-declare the few utilities the content depends on for its layout,
    so a blocked CDN degrades the styling instead of breaking the page. */
@@ -466,3 +471,30 @@ header.std-header .std-container {
 .kb-email-link { margin: 0 0 6px; }
 .kb-email-link:last-child { margin-bottom: 0; }
 .kb-email-body .kb-email-sign { margin-top: 20px; }
+
+/* Other ways the same question comes in. Feeds the search index, so a
+   customer who words it differently still lands on this page. */
+.kb-question-variants {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 99, 163, 0.18);
+}
+.kb-question-variants-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--trimble-blue);
+    margin: 0 0 8px;
+}
+.kb-question-variants ul {
+    margin: 0;
+    padding-left: 18px;
+}
+.kb-question-variants li {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--trimble-gray);
+    margin-bottom: 4px;
+}
+.kb-question-variants li:last-child { margin-bottom: 0; }
