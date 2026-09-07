@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekla Structures Does Not Start | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Tekla Structures &middot; Installation &middot; 2026</div>
+                    <h1>Tekla Structures Does Not Start</h1>
+                    <p>You click the icon and nothing opens &mdash; no window, no error message. What is actually happening behind that silence, how to find the real error in Windows, and the fixes in the order worth trying.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;After I click the Tekla icon, nothing happens. It does not respond, no window opens, and there is no error message. Can you check this for me?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>I double-click the Tekla Structures shortcut and nothing happens at all.</li>
+                                <li>The splash screen shows for a second, then Tekla Structures closes by itself.</li>
+                                <li>Tekla Structures is not responding and I have to end the task every time.</li>
+                                <li>Tekla Structures will not open and there is no error message I can send you.</li>
+                                <li>The sign in window never appears when I start Tekla Structures.</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>In most cases Tekla Structures is already running in the background. Windows then ignores the new click, so nothing opens.</p>
+                            <p>Please try this first:</p>
+                            <ol>
+                                <li>Open Windows Task Manager and end every TeklaStructures.exe task.</li>
+                                <li>Restart your computer.</li>
+                                <li>Start Tekla Structures again.</li>
+                            </ol>
+                            <p>If it still does nothing, open Event Viewer in Windows.</p>
+                            <p>Go to Windows Logs, then Application, and look for the newest line marked Error.</p>
+                            <p>Send me that entry with your Tekla Structures version, and I will work through it with you.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_troubleshooting_tekla_structures" target="_blank" rel="noopener">Troubleshooting the Tekla Structures app</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/unable-to-sign-to-tekla-structures-tekla-structures-sign-in-window-is-not-appearing" target="_blank" rel="noopener">When the sign in window does not appear</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know if this helps, or reply here with the error entry.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">You start Tekla Structures from the desktop icon or the Start menu, and nothing visible happens. There is no window, no splash screen that stays, and no error message you can send to anyone.</p>
+                        <p class="text-gray-700 leading-relaxed">Silence is not the absence of an error. It usually means one of three things: a previous session is still alive in memory, the app started and closed again before it could draw a window, or it is waiting on something it cannot show you &mdash; most often the sign in window for the license. Windows records what happened even when Tekla Structures cannot tell you, so the first real job is to read that record.</p>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSION</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know your version and service pack</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Almost every fix below depends on the exact version and service pack. If you cannot open the app to check, look at the installation folder name under <strong>C:\TeklaStructures</strong> or the entry in <strong>Control Panel</strong> &gt; <strong>Programs and Features</strong>.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">RIGHTS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Administrator rights</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Reinstalling, installing redistributable packages and editing the registry all need a Windows account with administrator rights. Arrange that with your IT team before you begin, so you are not stopped halfway.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LICENSE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Which license type</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">An online subscription license and a legacy on-premises license fail in different ways. Know which one you use, because the sign in window steps only apply to the online license.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SYMPTOM</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Write down exactly what you see</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Nothing at all, a splash screen that vanishes, a frozen window, or a message box &mdash; these point to different causes. Note the wording of any message before you click it away.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">One model or every model</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">If Tekla Structures opens and only fails on one model, the app is fine and the model needs attention instead. Test with a brand new empty model to tell the two apart.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHANGES</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">What changed recently</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">A Windows update, a new antivirus policy, a new service pack, or new software installed last week. Tekla User Assistance lists recently installed software as a standard thing to check.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Likely Causes</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MOST COMMON</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">It is already running</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">A previous session never fully closed and <strong>TeklaStructures.exe</strong> is still in memory. Your click starts nothing new, because as far as Windows is concerned the app is open. This is why Tekla User Assistance says to end the task in Windows Task Manager before starting again.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LICENSE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The sign in window never appears</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">With an online license, Tekla Structures has to show a sign in window. When that window fails to appear, startup stops with no visible progress, or you are told no license is available. A wrong system clock, an outdated installation, or a stale license registry value can all do this.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SYSTEM</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Missing redistributable packages</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures needs specific Microsoft Visual C++ Redistributables and a specific .NET Framework version. When one is missing or damaged, startup fails with <strong>System.DllNotFoundException</strong> &mdash; and sometimes the message flashes past too quickly to read.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONFLICT</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Other software hooking in</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Third-party software can hook into Tekla Structures code and stop it running correctly. The usual fingerprint is an <strong>APPCRASH</strong> event naming <strong>TeklaStructures.exe</strong> and <strong>ntdll.dll</strong> in Windows Event Viewer.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SECURITY</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Antivirus blocking the executable</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Antivirus and endpoint protection can quarantine or block the executable silently, which looks exactly like nothing happening. Checking antivirus settings is on the official troubleshooting checklist.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">UPGRADE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">A service pack upgrade without signing out</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">In some older service packs, upgrading while still signed in leaves a cached online license the new build cannot read. You then get a no licenses available message instead of a working start.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MODEL</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The model, not the app</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">If the app opens but freezes on one specific model, the database may be inconsistent. Tekla User Assistance points to the <strong>Diagnose &amp; repair</strong> commands for that, not to reinstalling.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DRIVERS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Graphics drivers and Windows updates</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Outdated graphics drivers and missing Windows updates are both on the official checklist. A driver that cannot create the render window can end the session before anything is drawn.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Resolution</h3>
+                        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">End the leftover task</h4>
+                                <p class="text-sm text-gray-600">Press <strong>Ctrl</strong> + <strong>Shift</strong> + <strong>Esc</strong> to open <strong>Windows Task Manager</strong>. Look for <strong>TeklaStructures.exe</strong> under the <strong>Details</strong> tab, select it, and end the task. End every instance you find, then start Tekla Structures again.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Restart the computer</h4>
+                                <p class="text-sm text-gray-600">A full restart is the first general step in the official troubleshooting guide, and it clears locked files and half-released memory that ending a task alone can leave behind. Restart, then try once more before going further.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Read the real error in Event Viewer</h4>
+                                <p class="text-sm text-gray-600">Open the <strong>Event Viewer</strong> app in Windows and browse to <strong>Windows Logs</strong> &gt; <strong>Application</strong>. Look for an event that has <strong>Error</strong> in the Level column, around the time you tried to start. Read both the <strong>General</strong> and <strong>Details</strong> tabs.</p>
+                                <p class="text-sm text-gray-600 mt-2">To keep the evidence, select one or more lines while holding <strong>Ctrl</strong> or <strong>Shift</strong>, right-click, and choose <strong>Save selected events</strong>. That file is what support will ask for.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Install the latest service pack</h4>
+                                <p class="text-sm text-gray-600">Installing the latest service pack for your version is the third general step in the official guide, and it resolves a large share of startup problems on its own. If no newer service pack exists, uninstall and reinstall the same version.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">5</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the redistributables and .NET Framework</h4>
+                                <p class="text-sm text-gray-600">If the error mentions <strong>System.DllNotFoundException</strong>, check the hardware recommendations for your version to see which Microsoft Visual C++ Redistributables are required. Open <strong>Control Panel</strong> &gt; <strong>Programs and Features</strong> and confirm each one is installed.</p>
+                                <p class="text-sm text-gray-600 mt-2">On 64-bit Windows each redistributable should appear twice, once as x64 and once as x86. Install anything missing from Microsoft, run each installer and choose <strong>Repair</strong> where it is offered, then confirm the required .NET Framework version is present.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">6</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Rule out antivirus and recent software</h4>
+                                <p class="text-sm text-gray-600">Check that antivirus or endpoint protection is not blocking the executable, run a malware scan, and review what was installed shortly before the problem started. If Event Viewer shows an <strong>APPCRASH</strong> event naming <strong>ntdll.dll</strong>, third-party software hooking into Tekla Structures is the likely culprit.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">7</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">If the sign in window never appears</h4>
+                                <p class="text-sm text-gray-600">This branch applies to online subscription licenses only. Start with the system clock: open <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Date &amp; time</strong>, confirm the time and time zone are correct, and use <strong>Sync now</strong>.</p>
+                                <p class="text-sm text-gray-600 mt-2">Then install the latest service pack and environments into the <strong>C:\TeklaStructures</strong> folder, using a Windows account with administrator rights. Confirm you are signing in with the same Tekla Online account that holds the license rights, and that the license is not still reserved on another device.</p>
+                                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Registry changes come last, not first
+                                    </h5>
+                                    <p class="mt-1 text-sm text-amber-700">Tekla User Assistance also documents setting <strong>LicenseServerSelected</strong> to <strong>2</strong> under <strong>HKEY_CURRENT_USER\SOFTWARE\Trimble\Tekla Structures\License</strong>, and deleting the <strong>HKEY_CURRENT_USER\SOFTWARE\Trimble\Tekla Account</strong> key to clear cached account data. Editing the registry can break more than it fixes, so back up the keys first and leave these steps until the time sync and reinstall have both been ruled out. Deleting the account key signs you out, so have your Tekla Online credentials ready.</p>
+                                </div>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">8</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">If only one model fails</h4>
+                                <p class="text-sm text-gray-600">Create a new empty model. If that opens normally, the installation is healthy and the problem sits in the model database. Use the <strong>Diagnose &amp; repair</strong> commands on the affected model, and check whether another user can open the same model.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">9</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Collect a crash dump before asking for help</h4>
+                                <p class="text-sm text-gray-600">From version 2019 onwards, dumps are written automatically to <strong>%LOCALAPPDATA%\Trimble\Tekla Structures\&lt;version&gt;\Feedback</strong> when a crash happens. Paste that path into the Windows Explorer address bar and take the newest file.</p>
+                                <p class="text-sm text-gray-600 mt-2">Zip the dump and send it with the saved Event Viewer entries, your exact version and service pack, and a short description of what you see. That package saves a full round of questions.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Version Notes</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">The general troubleshooting sequence is the same across versions, but two things do differ.</p>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-sm border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Version</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What to know</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">2019 and later</td><td class="p-3 border-b border-gray-100 text-gray-600">Crash dumps are written automatically to the Feedback folder under %LOCALAPPDATA%, so there is nothing to enable before reproducing the crash.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">2020 SP9, 2019i SP10, 2019 SP12</td><td class="p-3 border-b border-gray-100 text-gray-600">Upgrading to these service packs without signing out first leaves a cached online license the new build cannot read, and startup ends with a no licenses available message.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Legacy on-premises licenses</td><td class="p-3 border-b border-gray-100 text-gray-600">Startup can be slow rather than dead, usually a license server name resolution or port delay. Those cases follow the legacy licensing articles, not the sign in window steps above.</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Reinstalling is not the first move
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">It is tempting to reinstall straight away, and it does sometimes work &mdash; but it also destroys the evidence in the process. Read Event Viewer first. A five minute look at the Application log often names the exact missing component, and turns a lost afternoon into a five minute fix. Uninstall and reinstall belongs after the latest service pack has been tried, as the official guide sequences it.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Stopping It Happening Again</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">HABIT</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Close properly, not by force</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Ending the task every time you finish is what leaves the next session in a strange state. Save and exit through the app, and let it shut down on its own terms.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">UPGRADE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Sign out before a service pack</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Before installing a new service pack, open a model, clear the stay signed in option under the user icon, and close Tekla Structures. That avoids the cached license problem entirely.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MAINTENANCE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Keep the machine current</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Latest service pack, current graphics drivers, installed Windows updates, and a supported operating system. All four appear on the official checklist, and all four are cheaper to maintain than to repair.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+                            <div class="space-y-2">
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_troubleshooting_tekla_structures" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Troubleshooting the Tekla Structures app &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/unable-to-sign-to-tekla-structures-tekla-structures-sign-in-window-is-not-appearing" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Unable to sign in to Tekla Structures: the sign in window is not appearing &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/tekla-structures-does-not-start-error-systemdllnotfoundexception" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tekla Structures does not start: error System.DllNotFoundException &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/how-to-get-tekla-structures-crash-dump-file" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How to get a Tekla Structures crash dump file &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/new-service-pack-cannot-access-online-license" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">New service pack cannot access an online license &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/slow-tekla-structures-start-up" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Slow Tekla Structures start up (legacy on-premises licensing) &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/bulletin/other-software-hooking-to-tekla-structures" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Product bulletin: other software hooking to Tekla Structures &rarr;</a></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Steps may differ in older versions. The product bulletin opens only for signed-in Tekla maintenance or subscription users. If the app still will not start after these steps, send the saved Event Viewer entries and the crash dump to your local Tekla Support.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
