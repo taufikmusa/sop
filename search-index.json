@@ -150,6 +150,40 @@
         "seat",
         "licensing"
       ]
+    },
+    {
+      "id": "tekla-does-not-start",
+      "title": "Tekla Structures Does Not Start",
+      "folder": "Tekla Structures",
+      "category": "Installation",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/does-not-start/",
+      "question": "After I click the Tekla icon, nothing happens. It does not respond, no window opens, and there is no error message. Can you check this for me?",
+      "variants": [
+        "I double-click the Tekla Structures shortcut and nothing happens at all.",
+        "The splash screen shows for a second, then Tekla Structures closes by itself.",
+        "Tekla Structures is not responding and I have to end the task every time.",
+        "Tekla Structures will not open and there is no error message I can send you.",
+        "The sign in window never appears when I start Tekla Structures."
+      ],
+      "summary": "Why clicking the icon does nothing, how to read the real error in Windows Event Viewer, and the startup fixes in the order worth trying.",
+      "keywords": [
+        "does not start",
+        "not responding",
+        "nothing happens",
+        "splash screen",
+        "TeklaStructures.exe",
+        "Task Manager",
+        "Event Viewer",
+        "APPCRASH",
+        "ntdll.dll",
+        "System.DllNotFoundException",
+        "Visual C++ Redistributable",
+        "sign in window",
+        "LicenseServerSelected",
+        "crash dump",
+        "service pack"
+      ]
     }
   ]
 }
