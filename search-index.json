@@ -223,6 +223,48 @@
         "Inquire",
         "Billing Weight Attribute"
       ]
+    },
+    {
+      "id": "tekla-add-bolt-to-catalog",
+      "title": "Adding a New Bolt, Screw or Anchor",
+      "folder": "Tekla Structures",
+      "category": "Catalogs",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/add-bolt-to-catalog/",
+      "question": "How do I create a new bolt, screw and so on? The one I need is not in the list.",
+      "variants": [
+        "I need to add an anchor bolt that is not in the bolt catalog.",
+        "How do I add a screw that has no nut and no washer?",
+        "I added a new bolt but I still cannot select it when I place bolts.",
+        "Where do I add a new bolt size so it shows up in the bolt properties?",
+        "How do I share my new bolts with the rest of the team and with other models?"
+      ],
+      "summary": "Why a new bolt needs both catalogs before it appears in the model, the full property list, screws and anchors with no nut, and how to share the result.",
+      "keywords": [
+        "bolt catalog",
+        "bolt assembly catalog",
+        "screwdb.db",
+        "assdb.db",
+        "screwdb.lis",
+        "add a bolt",
+        "bolt assembly",
+        "stud",
+        "screw",
+        "anchor bolt",
+        "calc thick",
+        "add. dist",
+        "thread len",
+        "bolt standard",
+        "short name",
+        "bolt not valid",
+        "cut length",
+        "negative cut length",
+        ".bolts",
+        ".bass",
+        "firm folder",
+        "Import Bolt Catalog",
+        "Export Bolt Catalog"
+      ]
     }
   ]
 }
