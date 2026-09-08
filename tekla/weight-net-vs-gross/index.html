@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net, Gross or Weight: Which One to Use | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Tekla Structures &middot; Reports &amp; Templates &middot; 2026</div>
+                    <h1>Net, Gross or Weight: Which One to Use</h1>
+                    <p>Tekla Structures reports three different weights for the same part, and they are meant to answer three different questions. What each one measures, why net can come out heavier than gross, and which one belongs in which report.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How is weight calculated in Tekla Structures, and which one should I use? Nett, gross or others?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>What is the difference between WEIGHT, WEIGHT_NET and WEIGHT_GROSS in a report?</li>
+                                <li>Does Tekla Structures deduct cuts and bolt holes from the part weight?</li>
+                                <li>Which weight should I use for buying material and which one for erection?</li>
+                                <li>My report weight does not match the weight our fabricator calculated by hand.</li>
+                                <li>Why is the tube weight in my report lower than the weight in the steel manual?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Every weight in Tekla Structures is volume multiplied by material density. The three attributes differ only in which volume they use.</p>
+                            <ol>
+                                <li>WEIGHT_GROSS uses the volume before cuts, so it is the material you buy.</li>
+                                <li>WEIGHT_NET uses the modelled volume after cuts, so it is the fabricated part.</li>
+                                <li>WEIGHT follows the gross value for catalog profiles.</li>
+                            </ol>
+                            <p>Use gross weight for purchasing and estimating.</p>
+                            <p>Use net weight for shipping, lifting and erection.</p>
+                            <p>Two things to expect: bolt holes are never deducted, and rolled profiles are modelled with square corners.</p>
+                            <p>That second one makes net weight read slightly high on an uncut beam.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/how-does-tekla-structures-calculate-weight" target="_blank" rel="noopener">How does Tekla Structures calculate weight</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/weight_net" target="_blank" rel="noopener">WEIGHT_NET template attribute</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know which report this is for, and I will point you to the right attribute.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">There is no single weight of a part in Tekla Structures. There is one formula &mdash; <strong>volume multiplied by the density of the material</strong> &mdash; applied to three different volumes, and the attribute you put in the report decides which volume you get.</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance defines those volumes plainly. <strong>Gross volume</strong> is the object volume and does not take cuts into account. <strong>Net volume</strong> is the object volume and does take cuts into account. Gross weight is therefore the total weight of material needed to fabricate the part, and net weight is the weight of what is left after fabrication.</p>
+                        <p class="text-gray-700 leading-relaxed">Which one is right depends entirely on the question the report is answering. Purchasing pays for the steel before it is cut. The crane lifts what is left after it is cut. Those are two different numbers, and both of them are correct.</p>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Attributes You Can Use</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BUYING</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">WEIGHT_GROSS</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The total weight of material needed to fabricate the part. For a catalog profile it comes from the part length, the cross section area in the profile catalog, and the material density. For a folded or contour plate it comes from the plate overall height, overall length and density.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SHIPPING</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">WEIGHT_NET</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The weight of the fabricated part, assembly or cast unit, calculated from the part volume with cuts taken into account. For an assembly it returns the sum of the part weights. For objects that are neither parts nor bolts it returns zero.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DEFAULT</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">WEIGHT</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The one most standard reports already use. For a part whose cross section is in the profile catalog it matches WEIGHT_GROSS. For other profiles it is the net weight from the profile volume, where fittings, cuts, weld preparations and part additions all affect the volume.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REBAR</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">WEIGHT_TOTAL</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">For reinforcement, WEIGHT gives the weight of one bar only. WEIGHT_TOTAL gives all the bars in the group. Getting these two mixed up is one of the quieter ways a rebar schedule ends up wrong.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOG</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PROFILE_WEIGHT</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The tabulated weight from the profile catalog rather than a calculation from the modelled solid. Tekla User Assistance recommends swapping WEIGHT for this one when your figures have to agree with published steel manual values.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BILLING</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">CUSTOM.BILLINGWEIGHT</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">A custom attribute from the Billing Weight Attribute extension, for contour plates and beam plates. It sits deliberately between the other two, so the order becomes gross weight, then billing weight, then net weight.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Which One to Use</h3>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-sm border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What the report is for</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Use this</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Why</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Purchasing and material take-off</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT_GROSS</td><td class="p-3 border-b border-gray-100 text-gray-600">You pay for the steel before anyone cuts it. Gross weight is defined as exactly that: the material needed to fabricate the part.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Estimating and tender pricing</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT_GROSS</td><td class="p-3 border-b border-gray-100 text-gray-600">Pricing off net weight quietly gives away the offcuts and the material inside every opening.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Shipping, loading and lifting</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT_NET</td><td class="p-3 border-b border-gray-100 text-gray-600">The truck and the crane carry the fabricated part, not the plate it was cut from.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Assembly and erection lists</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT_NET</td><td class="p-3 border-b border-gray-100 text-gray-600">For an assembly it sums the net weights of the parts in it.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Billing plates with large openings</td><td class="p-3 border-b border-gray-100 text-gray-600">CUSTOM.BILLINGWEIGHT</td><td class="p-3 border-b border-gray-100 text-gray-600">Deducts holes, notches and openings only once they pass an area threshold you set, so small holes are still paid for.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Matching published steel tables</td><td class="p-3 border-b border-gray-100 text-gray-600">PROFILE_WEIGHT</td><td class="p-3 border-b border-gray-100 text-gray-600">Returns the catalog value instead of a value calculated from the modelled solid.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">A rebar schedule</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT_TOTAL</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT returns a single bar. WEIGHT_TOTAL returns the whole group.</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">How the Number Is Actually Produced</h3>
+                        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">A volume is taken</h4>
+                                <p class="text-sm text-gray-600">For a profile with a cross section in the catalog, the gross volume is the catalog cross section area multiplied by <strong>LENGTH</strong>. The net volume is the volume of the solid as actually modelled, with cuts and fittings applied.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">A density is chosen</h4>
+                                <p class="text-sm text-gray-600">This part surprises people. If the profile has cross sections defined in the profile catalog, Tekla Structures uses the <strong>Profile density</strong> property in the material catalog. If it does not, it uses the <strong>Plate density</strong> property instead.</p>
+                                <p class="text-sm text-gray-600 mt-2">Two grades that look identical in the model can therefore report different weights if one of those two catalog fields was edited and the other was not.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">The two are multiplied</h4>
+                                <p class="text-sm text-gray-600">Weight is volume multiplied by density, and nothing else. The worked example in Tekla User Assistance uses steel at 0.00000785 kg per cubic millimetre, which is the familiar 7850 kg per cubic metre.</p>
+                                <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4 mt-4">
+                                    <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">Rolled profile, uncut, from Tekla User Assistance:
+
+  Gross volume = cross section area x LENGTH = 5 550 000 mm3
+  Gross weight = 5 550 000 x 0.00000785     = 43.56 kg
+
+  Net volume   = modelled solid             = 5 600 000 mm3
+  Net weight   = 5 600 000 x 0.00000785     = 43.96 kg
+
+Plate PL50 1200x1200, 400x400 chamfer and one 800 dia hole:
+
+  Gross weight = 1.200 x 1.200 x 0.050 x 7850.00 = 565.20 kg
+  Cuts removed                                   = 228.69 kg
+  Net weight                                     = 336.51 kg</pre>
+                                </div>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check it yourself on a real part</h4>
+                                <p class="text-sm text-gray-600">Use the <strong>Inquire</strong> command on a part, or run a report, and read the volume and weight values side by side. Doing this on one known beam and one known plate is the fastest way to settle an argument about which number the report is showing.</p>
+                            </li>
+                        </ol>
+                        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Net heavier than gross is not a mistake
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">Look at the first example above: the uncut beam reports 43.96 kg net against 43.56 kg gross. Net is the larger number, which reads like nonsense until you know why. Gross comes from the catalog cross section area, which includes the root fillets and corner roundings of the rolled section. The modelled solid is built with straight angles and no roundings, so it contains slightly more steel than the real profile does. On an uncut member that difference is all you are seeing. Add cuts and net drops below gross, as expected.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Traps Worth Knowing Before You Publish a Report</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">HOLES</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Bolt holes are never deducted</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance states it directly: bolt holes are not deducted from the weight of the part. Not from gross, and not from net. If your billing depends on hole deductions, that is what the Billing Weight Attribute extension exists for.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ROUNDINGS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Net weight is not the true fabricated weight</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The documentation is unusually blunt here. Because the cross section is built with straight angles and no corner roundings, the net weight is not the actual weight of the fabricated part unless the higher accuracy option is switched on.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">TUBES</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Hollow sections in imperial units</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">HSS weights come out around seven per cent below the values a fabricator gets from the AISC tables, because Tekla Structures multiplies the modelled volume by the profile density instead of using weight per unit length.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SURFACE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Surface treatment rides along</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">For a part that has surface treatment, WEIGHT shows the part and the treatment added together. Worth remembering before you go hunting for the missing kilograms elsewhere.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PARAMETRIC</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Parametric profiles collapse the difference</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">A profile with no cross section data in the catalog uses the modelled volume for everything. Volume, gross volume and net volume become the same figure, so all three weights report the same number and comparing them tells you nothing.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ZERO</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Zeros in a mixed report</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">WEIGHT_NET returns zero for objects that are neither parts nor bolts. A report that mixes object types can therefore total up short without showing an obvious error anywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">If You Need a Closer Net Weight</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">There are two documented routes, and the second one is the one to reach for first.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ROUTE 1</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Exact part presentation</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Setting <strong>XS_SOLID_USE_HIGHER_ACCURACY</strong> to TRUE in the <strong>options.ini</strong> file in the model folder brings part volume, area and net weight closer to real manufactured values. The default is FALSE. It is powerful and it is expensive, so read the warning below before you switch it on.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ROUTE 2</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">A correction factor in the template</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance documents correcting the net weight in the report template instead, by multiplying it by the catalog cross section area divided by the modelled cross section area. No model-wide setting, no performance cost.</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4">
+                            <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">GetValue("WEIGHT_NET") * (GetValue("PROFILE.CROSS_SECTION_AREA")
+                          / GetValue("AREA_PROJECTION_YZ_NET"))</pre>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-6">Apply that correction only where it is valid: steel parts that are not items, not polybeams, with straight segments, and either hot rolled or rectangular in shape. Outside those limits the factor does not hold.</p>
+                        <div class="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                What the higher accuracy option costs you
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">Tekla User Assistance warns against activating XS_SOLID_USE_HIGHER_ACCURACY when you create NC or DSTV files, because it can lead to inaccuracies in the exported data. It also warns against it when you create single part or assembly drawings, because it can lead to unnecessary dimension lines. On top of that it increases the number of faces in solid objects, which slows Tekla Structures down. A more accurate weight column is rarely worth a compromised NC file, so treat this as a deliberate decision for the whole model rather than a quick fix for one report.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">When the Fabricator Disagrees With Your Report</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">This comes up most often with hollow sections in an imperial environment. Tekla Structures multiplies the modelled volume by the profile density from the material catalog. The fabricator multiplies the AISC weight per unit length by the member length. The second method gives the higher figure, and the gap runs at roughly seven per cent.</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">Neither side is doing arithmetic wrong. They are answering with different source data, and Tekla User Assistance offers two documented ways to line them up.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">TEMPLATE FIX</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Swap the attribute</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">In the report template, replace <strong>GetValue("WEIGHT")</strong> with <strong>GetValue("PROFILE_WEIGHT")</strong> so the report returns the tabulated catalog value.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOG FIX</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Adjust the profile density</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">For rectangular tube materials, change the Profile density from 490.06 lbf per cubic foot to 526.10 lbf per cubic foot in the material catalog, which brings the calculation into line with the tabulated values.</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Change the template before you change the catalog
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">Both fixes are documented, but they are not equal in blast radius. Editing the profile density in the material catalog changes every weight for that material everywhere in the model, including reports and drawings you were happy with. Swapping the attribute in one report template changes exactly one report. Start there, agree the numbers, and only move to the catalog if the whole company needs the change and the change is applied to a shared catalog on purpose.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Version Notes</h3>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-sm border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Version</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What to know</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">2022 to 2026</td><td class="p-3 border-b border-gray-100 text-gray-600">WEIGHT, WEIGHT_NET and WEIGHT_GROSS are documented with the same definitions across these versions, so a template written for one works in the others.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Any version</td><td class="p-3 border-b border-gray-100 text-gray-600">XS_SOLID_USE_HIGHER_ACCURACY is set in options.ini in the model folder, so it travels with the model rather than with the workstation. A model that reports different weights on two machines is worth checking here first.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Any version</td><td class="p-3 border-b border-gray-100 text-gray-600">The Billing Weight Attribute is an extension rather than a built-in attribute, with its thresholds held in BillingWeightCalculations.config in the extensions folder. Everyone producing that report needs the same configuration file.</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+                            <div class="space-y-2">
+                                <div><a href="https://support.tekla.com/article/how-does-tekla-structures-calculate-weight" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How does Tekla Structures calculate weight? &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/weight" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">WEIGHT template attribute &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/weight_net" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">WEIGHT_NET template attribute &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/weight_gross" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">WEIGHT_GROSS template attribute &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/how-does-ts-calculate-the-weight-for-plate" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How does Tekla Structures calculate the weight for a plate? &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/hss-profile-weights-in-us-imperial-environment" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">HSS profile weights in the US imperial environment &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/how-to-get-a-more-accurate-net-weight-without-using-the-exact-part-presentation" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How to get a more accurate net weight without using the exact part presentation &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/xs_solid_use_higher_accuracy" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">XS_SOLID_USE_HIGHER_ACCURACY advanced option &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/ext_billing_weight_attribute" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Billing Weight Attribute extension &rarr;</a></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026, with the attribute definitions cross-checked back to 2022. Steps may differ in older versions. If your figures still will not reconcile after this, your local Tekla Support can look at the specific profile and material catalog entries involved.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
