@@ -184,6 +184,45 @@
         "crash dump",
         "service pack"
       ]
+    },
+    {
+      "id": "tekla-weight-net-vs-gross",
+      "title": "Net, Gross or Weight: Which One to Use",
+      "folder": "Tekla Structures",
+      "category": "Reports & Templates",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/weight-net-vs-gross/",
+      "question": "How is weight calculated in Tekla Structures, and which one should I use? Nett, gross or others?",
+      "variants": [
+        "What is the difference between WEIGHT, WEIGHT_NET and WEIGHT_GROSS in a report?",
+        "Does Tekla Structures deduct cuts and bolt holes from the part weight?",
+        "Which weight should I use for buying material and which one for erection?",
+        "My report weight does not match the weight our fabricator calculated by hand.",
+        "Why is the tube weight in my report lower than the weight in the steel manual?"
+      ],
+      "summary": "What each weight attribute measures, why net can come out heavier than gross, and which one belongs in a purchasing, shipping or billing report.",
+      "keywords": [
+        "WEIGHT",
+        "WEIGHT_NET",
+        "WEIGHT_GROSS",
+        "WEIGHT_TOTAL",
+        "PROFILE_WEIGHT",
+        "CUSTOM.BILLINGWEIGHT",
+        "net weight",
+        "gross weight",
+        "gross volume",
+        "net volume",
+        "profile density",
+        "plate density",
+        "material catalog",
+        "bolt holes not deducted",
+        "XS_SOLID_USE_HIGHER_ACCURACY",
+        "AREA_PROJECTION_YZ_NET",
+        "HSS",
+        "AISC",
+        "Inquire",
+        "Billing Weight Attribute"
+      ]
     }
   ]
 }
