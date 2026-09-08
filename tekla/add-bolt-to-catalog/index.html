@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding a New Bolt, Screw or Anchor | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Tekla Structures &middot; Catalogs &middot; 2026</div>
+                    <h1>Adding a New Bolt, Screw or Anchor</h1>
+                    <p>It takes two catalogs, not one, and that is why a new bolt so often refuses to appear in the model. The full route from an empty list to a working fastener, including screws and anchors that have no nut at all.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I create a new bolt, screw and so on? The one I need is not in the list.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>I need to add an anchor bolt that is not in the bolt catalog.</li>
+                                <li>How do I add a screw that has no nut and no washer?</li>
+                                <li>I added a new bolt but I still cannot select it when I place bolts.</li>
+                                <li>Where do I add a new bolt size so it shows up in the bolt properties?</li>
+                                <li>How do I share my new bolts with the rest of the team and with other models?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>There are two catalogs involved, and that is what usually trips people up. A bolt cannot be used until it belongs to a bolt assembly.</p>
+                            <ol>
+                                <li>Open File, then Catalogs, then Bolt catalog.</li>
+                                <li>Select a similar bolt as your starting point.</li>
+                                <li>Type a unique name, then set Type and Standard.</li>
+                                <li>Click Add, click OK, and save changes to the model folder.</li>
+                                <li>Open File, then Catalogs, then Bolt assembly catalog.</li>
+                                <li>Name the assembly, pick the nut and washer types, then Add and OK.</li>
+                            </ol>
+                            <p>For a screw or anchor with no nut, leave the nut and washer as they are.</p>
+                            <p>Those need a negative value in the cut length field to force the length.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_managing_bolt_assemblies" target="_blank" rel="noopener">Manage bolts and bolt assemblies</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/adding-screws-to-the-bolt-catalog" target="_blank" rel="noopener">Adding screws to the bolt catalog</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know which fastener you are adding, and I will check the properties with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures keeps fasteners in two separate catalogs, and understanding the split solves most of the trouble before it starts.</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">The <strong>bolt catalog</strong> holds the individual elements: bolts, nuts, washers and studs, each in its own sizes and lengths. The <strong>bolt assembly catalog</strong> holds the combinations you actually place in a model, each one built from those elements. Tekla User Assistance puts the rule plainly: you cannot use a bolt if it does not belong to a bolt assembly.</p>
+                        <p class="text-gray-700 leading-relaxed">That single sentence explains the most common complaint on this subject. Someone adds a bolt, saves, goes to place it, and it is nowhere in the bolt properties. Nothing failed. The bolt exists as an element, and elements are raw material. Only assemblies appear in the list you pick from.</p>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ELEMENTS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know which elements you need</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The <strong>Type</strong> list offers Bolt, Nut, Washer and Stud. Before you begin, work out which of those your fastener actually needs. An anchor or a self-drilling screw may need only one element and no matching nut at all.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STARTING POINT</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Find something similar first</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Selecting an existing bolt before you start fills the fields with sensible values, and you edit from there. Building one from a blank row means typing every dimension yourself and finding out later which one you left wrong.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NAMING</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide the standard name up front</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The <strong>Standard</strong> is what ties an element to an assembly, so a new type of fastener needs its own new standard. Pick the name before you start clicking, because renaming it afterwards means revisiting the assembly too.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LIMITS</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Watch the character limits</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">A bolt name takes up to 40 characters and its standard up to 25. In the bolt assembly catalog the standard takes up to 30 characters, with 25 for the other text boxes. Long descriptive names get cut, so keep them tight.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">This saves to one model only</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Your additions land in the current model folder, in <strong>screwdb.db</strong> and <strong>assdb.db</strong>. Nobody else gets them automatically. Plan how the rest of the team will receive them before you build fifty entries.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DATA</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Have the real dimensions ready</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Diameter, length, weight, head thickness, thread length. Get them from the manufacturer sheet rather than guessing, because these numbers drive bolt length selection and the weight in your reports.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+                        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the bolt catalog</h4>
+                                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Catalogs</strong> &gt; <strong>Bolt catalog</strong> to open the <strong>Bolt Catalog</strong> dialog. This is the list of individual elements, not the list you pick from when placing bolts.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Base the new element on an existing one</h4>
+                                <p class="text-sm text-gray-600">Select a bolt from the <strong>Bolts</strong> list that is close to what you need. Its properties fill the boxes on the right, and you edit from a working starting point rather than an empty one.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Name it and set the type</h4>
+                                <p class="text-sm text-gray-600">Type a unique name in the box below the <strong>Bolts</strong> list, up to 40 characters. From the <strong>Type</strong> list, select the option that defines the bolt element type: bolt, nut, washer or stud.</p>
+                                <p class="text-sm text-gray-600 mt-2">Put the size in the name. Six months from now the name is all anyone has to go on.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Fill in the properties</h4>
+                                <p class="text-sm text-gray-600">Set the <strong>Standard</strong> and the dimensional values. A new type of fastener needs a new standard name of its own, so it does not inherit behaviour from the family you copied. The full property list is in the table below.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">5</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add, confirm and save</h4>
+                                <p class="text-sm text-gray-600">Click <strong>Add</strong>, then <strong>OK</strong>. In the confirmation dialog, select <strong>Save changes to model folder</strong>. A new <strong>screwdb.db</strong> file containing your new parts is created in the current model folder.</p>
+                                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Add creates, Update edits
+                                    </h5>
+                                    <p class="mt-1 text-sm text-amber-700">These two buttons catch everyone once. <strong>Add</strong> creates a new entry from what is currently in the boxes. <strong>Update</strong> writes those values onto the entry that is selected in the list. Edit an existing bolt, type a new name, then click Update instead of Add, and you have quietly renamed a standard bolt that other people in the model are already using. Add first, confirm the new row appears in the list, then adjust it with Update.</p>
+                                </div>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">6</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the matching nuts and washers</h4>
+                                <p class="text-sm text-gray-600">Repeat steps 2 to 5 for every element the fastener needs, with <strong>Type</strong> set to nut or washer. Skip this only where the fastener genuinely has none, such as a screw or an expansion anchor.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">7</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the bolt assembly catalog</h4>
+                                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Catalogs</strong> &gt; <strong>Bolt assembly catalog</strong> to open the <strong>Bolt Assembly Catalog</strong> dialog. This is the list that appears as <strong>Bolt standard</strong> when you place bolts in the model.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">8</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Build the assembly</h4>
+                                <p class="text-sm text-gray-600">Type a unique name in the box below the <strong>Bolt assemblies</strong> list. Set the <strong>Short name</strong>, which is what appears in drawings and reports, and the <strong>Standard</strong>, which is the full name shown in the catalog and in the bolt properties.</p>
+                                <p class="text-sm text-gray-600 mt-2">Then set <strong>Material</strong>, <strong>Finish</strong> and <strong>Grade</strong>, and select the washer and nut types that belong to this assembly. <strong>Tolerance</strong> is there for information only and cannot be reported.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">9</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add, confirm and save again</h4>
+                                <p class="text-sm text-gray-600">Click <strong>Add</strong>, then <strong>OK</strong>, then <strong>Save changes to model folder</strong>. A new <strong>assdb.db</strong> file is created in the current model folder. Your fastener is now selectable in the model.</p>
+                            </li>
+                            <li class="ml-8 relative">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                                    <span class="text-white font-bold text-sm">10</span>
+                                </span>
+                                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Test it on a real connection</h4>
+                                <p class="text-sm text-gray-600">Place the new assembly through a plate thickness you actually use, and inquire the bolt. Check that the length Tekla Structures picked is the length you expect. This is the step that catches a wrong <strong>calc thick</strong> or <strong>add. dist</strong> before a drawing goes out.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Bolt Catalog Properties</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">Some of these are pure information, and some of them change how Tekla Structures picks a bolt length. The ones that do the work are marked.</p>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-sm border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Property</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Type</td><td class="p-3 border-b border-gray-100 text-gray-600">The type of the bolt element: bolt, nut, washer or stud.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Standard</td><td class="p-3 border-b border-gray-100 text-gray-600">The name of the bolt element standard, used when you define bolt assemblies. This is the link between the two catalogs.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Diameter</td><td class="p-3 border-b border-gray-100 text-gray-600">The diameter of the bolt element.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Length</td><td class="p-3 border-b border-gray-100 text-gray-600">The length of the bolt element.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Weight</td><td class="p-3 border-b border-gray-100 text-gray-600">The weight of the bolt element. This is what ends up in your reports, so it is worth getting right.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">add. dist <span class="text-trimble-blue">&middot; affects length</span></td><td class="p-3 border-b border-gray-100 text-gray-600">The length of the part of the bolt that protrudes from the nut. Used in bolt length calculations.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">top thick</td><td class="p-3 border-b border-gray-100 text-gray-600">The thickness of the bolt head.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">thread len <span class="text-trimble-blue">&middot; affects length</span></td><td class="p-3 border-b border-gray-100 text-gray-600">The length of the threaded part of the bolt shaft. Not used when the bolt is fully threaded.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">washer tol</td><td class="p-3 border-b border-gray-100 text-gray-600">The tolerance between the washer inner diameter and the bolt diameter.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">span size</td><td class="p-3 border-b border-gray-100 text-gray-600">The size of the wrench needed.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">calc thick <span class="text-trimble-blue">&middot; affects length</span></td><td class="p-3 border-b border-gray-100 text-gray-600">The calculation thickness of a nut or a washer. Used in length calculations.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">real thick</td><td class="p-3 border-b border-gray-100 text-gray-600">The true thickness of a nut or a washer. For information only.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">inner diam</td><td class="p-3 border-b border-gray-100 text-gray-600">The inner diameter of a nut or a washer. For information only.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">outer diam</td><td class="p-3 border-b border-gray-100 text-gray-600">The outer diameter of a nut or a washer. For information only.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">top diam</td><td class="p-3 border-b border-gray-100 text-gray-600">The diameter of the hexagon. For information only.</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                calc thick and real thick are not the same field twice
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">It looks like duplication and it is not. <strong>real thick</strong> is the true thickness and is carried for information. <strong>calc thick</strong> is the value Tekla Structures actually uses when it works out how long a bolt has to be. Copy a nut, change real thick to match the new one, leave calc thick on the old value, and every bolt through that nut comes out the wrong length &mdash; with no error anywhere to tell you.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Screws and Anchors With No Nut</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Self-drilling screws, expansion anchors and Hilti-type fixings all share a problem: there is nothing on the far side. No nut, no washer, nothing for Tekla Structures to measure to.</p>
+                        <p class="text-gray-700 leading-relaxed mb-6">The documented approach is to build them the same way as any other fastener, with two differences at the end.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">IN THE CATALOG</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Leave the nut and washer alone</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Give the screw its own unique standard and its dimensional properties in the bolt catalog. Then, when you build the assembly, since nuts and washers are not used, leave those entries as they are.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">IN THE MODEL</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Force the length, and clear the checkboxes</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Because there is no far side nut or washer, Tekla Structures cannot work out the length by its normal route. Enter a negative value in the cut length field that matches the length in the catalog, and leave the washer and nut checkboxes cleared.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-6">For a stud, the shape is different again. Enter the name, pick the stud icon from the <strong>Type</strong> list, and set the standard, diameter, length, weight, <strong>top thick</strong> for the head thickness and <strong>top diam</strong> for the head diameter. Then create a bolt assembly that uses the stud standard, with every other element set to none.</p>
+                        <div class="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                The negative number is deliberate, not a typo
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">A negative value in the cut length field is how you tell Tekla Structures to stop calculating and use the length you name. It looks wrong on screen and it is documented behaviour. Make sure the number matches the length you entered in the bolt catalog, or the model and the catalog will disagree about the same screw.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Why a New Bolt Can Show as Not Valid</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Adding the bolt is one thing. Getting Tekla Structures to choose it is another, and the logic is worth knowing before you go hunting for a bug that is not there.</p>
+                        <p class="text-gray-700 leading-relaxed mb-6">Tekla Structures first works out a minimum required length: first washer thickness, plus material thickness, plus second washer thickness, plus any additional washer thickness, plus the first and second nut thicknesses, plus the extra length. It then searches the bolt catalog for the closest match, and checks that candidate against conditions on grip length, thread position and shaft length. If no bolt in the catalog meets the requirements, the model shows that the bolt is not valid.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 1</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">No long enough length exists</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">You added one length of a new bolt and the connection needs more. The catalog needs the whole range of lengths you intend to use, not just the first one.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 2</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The thread length blocks it</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Grip length and thread position are both checked. A thread len value copied from a different bolt family can rule out every candidate while the lengths themselves look perfectly reasonable.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAUSE 3</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The assembly points elsewhere</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">The assembly refers to elements by their standard. A typo in the standard name means the assembly is looking for a nut or washer that does not exist under that name.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Getting It Out of One Model</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">Everything so far lives in one model folder. There are three documented ways to move it, and they suit different situations.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">A FEW ENTRIES</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Export and import selected items</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Select the entries with Shift and Ctrl, right-click, and choose <strong>Export</strong>. Bolts go to a <strong>.bolts</strong> file and assemblies to a <strong>.bass</strong> file. Importing is the same route with <strong>Import</strong>. Exported assemblies bring their bolts, studs, screws, nuts and washers along with them.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">THE WHOLE CATALOG</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Export the catalog as a list file</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Run the <strong>Export Bolt Catalog</strong> command from Quick Launch and the catalog is written as <strong>screwdb.lis</strong> in the model folder. To bring it in elsewhere, copy that file to the other model folder and run <strong>Import Bolt Catalog</strong>.</p>
+                            </div>
+                            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EVERY NEW MODEL</div>
+                                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Copy the file to the firm folder</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">Copy <strong>screwdb.db</strong> and <strong>assdb.db</strong> to the firm folder or to a model template, and new projects pick them up from there. This is the option to choose when the fastener is a company standard rather than a one-off.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Importing does not overwrite what is already there
+                            </h5>
+                            <p class="mt-1 text-sm text-amber-700">When you import a bolt catalog, Tekla Structures does not replace entries that have the same names as the entries in the import file. So a corrected version of a bolt you already have will be silently ignored, and you will spend an afternoon wondering why the fix did not arrive. Importing bolt assemblies is different: where names clash, a <strong>Review import items</strong> dialog appears and you choose <strong>Leave</strong> or <strong>Replace</strong> for each one. When you are correcting an existing entry rather than adding a new one, edit it in the target model or delete it first.</p>
+                        </div>
+                    </div>
+
+                    <div class="kb-sub mb-14">
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Version Notes</h3>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-sm border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Version</th>
+                                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What to know</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">2026</td><td class="p-3 border-b border-gray-100 text-gray-600">Both catalogs open from <strong>File</strong> &gt; <strong>Catalogs</strong>. The property lists and the two database file names are unchanged.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Older versions and some environments</td><td class="p-3 border-b border-gray-100 text-gray-600">Support articles written for earlier releases reach the same dialogs through a Detailing menu instead. If the File menu route is not there, look for the bolt catalog under your detailing tools; the dialogs themselves are the same.</td></tr>
+                              <tr><td class="p-3 border-b border-gray-100 font-semibold">Any version</td><td class="p-3 border-b border-gray-100 text-gray-600">screwdb.db and assdb.db live in the model folder, so a colleague opening the same model from their own workstation gets your additions, while the same person starting a fresh model does not.</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+                            <div class="space-y-2">
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_managing_bolt_assemblies" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Manage bolts and bolt assemblies &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_catalogs_bolt_and_bolt_assembly_catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Customize the bolt catalog &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_bolt_catalog_properties" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Bolt catalog properties &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_bolt_assembly_catalog_properties" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Bolt assembly catalog properties &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_bolt_length_calculation" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">How bolt and bolt assembly catalogs affect length calculation &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_importing_and_exporting_bolts" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Import and export bolts and bolt assemblies &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/adding-screws-to-the-bolt-catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Adding screws to the bolt catalog and modeling screws &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/adding-specialty-bolts-to-the-bolt-catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Adding specialty bolts to the bolt catalog &rarr;</a></div>
+                                <div><a href="https://support.tekla.com/article/basic-firm-and-project-folders" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Basic firm and project folders &rarr;</a></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Steps may differ in older versions and in some environments. If a new fastener still shows as not valid after this, your local Tekla Support can look at the specific catalog entries and the connection it is used in.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
