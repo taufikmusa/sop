@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site title</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0063A3; --blue-14:#003054; --grey-10:#252A2E; --grey-8:#464B52;
+    --grey-6:#6A6E79; --stroke:#CBCDD6; --amber:#FBAD26; --bg:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--grey-10);
+       font:400 16px/1.6 'Open Sans','Segoe UI',system-ui,Arial,sans-serif}
+  header{background:var(--blue-14);color:#fff;padding:56px 24px}
+  .wrap{max-width:880px;margin:0 auto}
+  header h1{margin:0 0 8px;font-size:clamp(28px,5vw,40px);font-weight:700}
+  header p{margin:0;color:#CBD8E4;font-size:18px}
+  main{padding:40px 24px 72px}
+  h2{font-size:22px;font-weight:700;margin:36px 0 12px}
+  h2:first-child{margin-top:0}
+  a{color:var(--blue)}
+  .card{border:1px solid var(--stroke);border-radius:6px;padding:20px 22px;margin:16px 0}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--grey-8)}
+  .note{border-left:4px solid var(--blue);background:#F2F7FB;padding:14px 18px;border-radius:0 4px 4px 0}
+  .warn{border-left:4px solid var(--amber);background:#FEF7EA;padding:14px 18px;border-radius:0 4px 4px 0}
+  footer{border-top:1px solid var(--stroke);padding:24px;color:var(--grey-6);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Site title</h1>
+    <p>One line saying what this page is for.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Section heading</h2>
+  <p>Body copy. Keep every internal link relative — <code>assets/style.css</code>, never
+     <code>/assets/style.css</code> — or nothing loads once this is served under a repo path.</p>
+
+  <div class="card">
+    <h3>Card title</h3>
+    <p>Short supporting line.</p>
+  </div>
+
+  <div class="note"><strong>Note.</strong> Trimble Blue #0063A3, Open Sans, Grey 10 text.</div>
+  <div class="warn"><strong>Careful.</strong> This page is public the moment it is pushed.</div>
+</main>
+
+<footer class="wrap">Built with the trimble-github-pages skill.</footer>
+</body>
+</html>
