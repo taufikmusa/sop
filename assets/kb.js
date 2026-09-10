@@ -119,17 +119,6 @@
         return group.pages.some(isActive);
     }
 
-    function groupByFolder(pages) {
-        var order = [];
-        var groups = {};
-        pages.forEach(function (page) {
-            var key = page.folder || 'Other';
-            if (!groups[key]) { groups[key] = []; order.push(key); }
-            groups[key].push(page);
-        });
-        return order.map(function (key) { return { folder: key, pages: groups[key] }; });
-    }
-
     /* ---------- sidebar ---------- */
 
     function buildSidebar() {
@@ -240,30 +229,20 @@
             return;
         }
 
-        groupByFolder(visible).forEach(function (group) {
-            var section = el('section', 'kb-hub-group');
-            section.appendChild(el('h2', 'kb-hub-group-title', group.folder));
-
-            var list = el('div', 'kb-hub-list');
+        var list = el('div', 'kb-hub-list');
+        groupByCategory(visible).forEach(function (group) {
             group.pages.forEach(function (page) {
                 var row = el('a', 'kb-hub-row');
                 row.href = ROOT + page.url;
-
-                row.appendChild(el('div', 'kb-hub-eyebrow',
-                    [page.category, page.product].filter(Boolean).join(' · ')));
+                row.appendChild(el('div', 'kb-hub-eyebrow', group.category));
                 row.appendChild(el('h3', 'kb-hub-title', page.title));
                 if (page.question) {
-                    row.appendChild(el('p', 'kb-hub-question', '“' + page.question + '”'));
-                }
-                if (page.summary) {
-                    row.appendChild(el('p', 'kb-hub-summary', page.summary));
+                    row.appendChild(el('p', 'kb-hub-question', page.question));
                 }
                 list.appendChild(row);
             });
-
-            section.appendChild(list);
-            els.hub.appendChild(section);
         });
+        els.hub.appendChild(list);
     }
 
     /* ---------- search wiring ---------- */
