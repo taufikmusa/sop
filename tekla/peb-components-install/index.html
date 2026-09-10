@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing PEB Components | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Modelling</div>
+                    <h1>Installing PEB Components</h1>
+                    <p>Pre-Engineered Building tools are a Tekla Warehouse extension, not part of the installation. Here is the import route, the office-wide route, and how to check version support honestly.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I install PEB components in Tekla Structures 2026? I cannot find them anywhere in the component catalog.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where are the Pre-Engineered Building tools in Tekla Structures?</li>
+                                <li>How do I install a .tsep extension from Tekla Warehouse?</li>
+                                <li>I imported an extension but it still does not appear in the catalog.</li>
+                                <li>How do I install the same extension for everyone in the office at once?</li>
+                                <li>Is the PEB toolbar available for my version of Tekla Structures?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>PEB tools are not part of the installation. They come from Tekla Warehouse as an extension.</p>
+                            <p>Sign in to Tekla Warehouse first, and check the version filter before you download anything.</p>
+                            <ol>
+                                <li>Search Tekla Warehouse for Pre-Engineered Building Tools.</li>
+                                <li>Pick a version listed as compatible with your Tekla Structures.</li>
+                                <li>Download the file, which is normally a .tsep package.</li>
+                                <li>Click Applications &amp; components, then Manage extensions, then Extension manager.</li>
+                                <li>Click Import, browse to the .tsep file, and select your versions.</li>
+                                <li>Restart Tekla Structures.</li>
+                            </ol>
+                            <p>After the restart the tools sit under Ungrouped items in the catalog.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_installing_tsep_packages" target="_blank" rel="noopener">Install and manage .tsep extensions</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/twh_download_content" target="_blank" rel="noopener">Download and install content from Tekla Warehouse</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with your version and environment and I will check the compatibility with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Pre-Engineered Building tools do not ship inside Tekla Structures. They are a separate collection of extensions published on Tekla Warehouse, and until you install them the commands simply are not there to find.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is the whole answer to &ldquo;where is PEB in 2026&rdquo;. Nothing is hidden behind a role or a licence tier. The catalog is empty of these tools because nobody has imported them into this installation yet.</p>        <p class="text-gray-700 leading-relaxed mb-4">The install itself is short. The part worth slowing down for is compatibility: an extension built for one Tekla Structures version is not automatically valid for the next one, and Tekla Warehouse is the only place that tells you the truth about which versions a package supports.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What Is Actually in the Collection</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MEMBERS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PEB Member</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Creates built-up members with multiple depths, up to six, and multiple webs, up to five, plus flanges. This is the tapered rafter and column tool that most PEB work starts from.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MEMBERS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PEB Builtup</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The other built-up member tool listed alongside PEB Member in the same collection of Pre-Engineered Building Tools.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONNECTIONS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PEB Connections</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Connection components shaped around common pre-engineered building practice, rather than the general-purpose steel connections in the standard catalog.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COMPONENTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PEB Components</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The wider set of PEB modelling components published in the same collection on Tekla Warehouse.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MAINTENANCE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">PEB Member Updater</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A companion tool for updating PEB members after changes, documented on Tekla User Assistance in its own article.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ENVIRONMENTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Supported environments</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The documentation for PEB Member lists Default, India, United States (Imperial) and United States (Metric). If your office runs a different environment, test before you commit a project to these tools.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCOUNT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">You must be signed in</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Warehouse requires a sign-in before it will let you download. Use the same Trimble Identity you sign in to Tekla Structures with.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Check compatibility on the page, not from memory</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance states the installers are for Tekla Structures version 21.0 and above, with older installers held separately. Whether a given package is published for 2026 is shown by the version filter on the Warehouse item itself, so read it there before downloading.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">RIGHTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Windows permissions</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Extensions install into the Tekla Structures data folders. On a locked-down office machine you may need your IT administrator to run the import.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CLOSE FIRST</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plan for a restart</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">An imported extension is not live until Tekla Structures restarts. Finish and save what you are doing before you start the import.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ROLLOUT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide single machine or whole office</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Installing one machine at a time is fine for a trial. For a team, the shared folder and central installation routes below save you repeating the same clicks on every desk.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MODEL</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Test in a scratch model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Try the tools in a throwaway model before using them on live work, so you learn how the members behave without putting a live job at risk.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Find the tools on Tekla Warehouse</h4>
+                <p class="text-sm text-gray-600">Sign in to Tekla Warehouse and search for the Pre-Engineered Building Tools collection. Read the item description and the supported version list before you go any further.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select a compatible version and download</h4>
+                <p class="text-sm text-gray-600">Select a version that matches your Tekla Structures version, then click <strong>Download</strong>. Tekla User Assistance is explicit about this point: ensure that you download a version that is compatible with your software version.</p>
+                <p class="text-sm text-gray-600 mt-2">What you get back depends on how the publisher packaged it. A <strong>.tsep</strong> file is imported through the Extension manager. An <strong>.msi</strong> or <strong>.exe</strong> file is run like any Windows installer. A <strong>.zip</strong> file is extracted first, then the installer inside it is run.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the Extension manager</h4>
+                <p class="text-sm text-gray-600">Click the <strong>Applications &amp; components</strong> button in the side pane to open the <strong>Applications &amp; components</strong> catalog. Click <strong>Manage extensions</strong> &gt; <strong>Extension manager</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Import the package</h4>
+                <p class="text-sm text-gray-600">Click <strong>Import</strong> and browse to the location where you saved the <strong>.tsep</strong> file. Tekla Structures opens a dialog listing the installed Tekla Structures versions that are compatible with the extension.</p>
+                <p class="text-sm text-gray-600 mt-2">Select the versions you want the extension imported to, then click <strong>Import</strong>. If a version you expected is not offered, the package does not support it, and no amount of retrying will change that.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Restart Tekla Structures</h4>
+                <p class="text-sm text-gray-600">Restart to complete the installation. The extension is shown in the <strong>Ungrouped items</strong> group in the <strong>Applications &amp; components</strong> catalog.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Tidy the catalog</h4>
+                <p class="text-sm text-gray-600">Move the extension into a more suitable group, or create a new group for it, so the PEB tools sit together instead of scattered among ungrouped items.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Installing for a Whole Office Instead of One Machine</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Clicking through the Extension manager on twenty machines is a poor use of an afternoon. Tekla User Assistance documents two better routes.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Shared folder, per user:</strong> set the advanced option <strong>XS_TSEP_TO_BE_INSTALLED_ORG_DIR</strong> in <strong>user.ini</strong> to a shared folder path. Extensions dropped in that folder install automatically the next time each user restarts.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Central installation, all users:</strong> copy the .tsep files to the folder below. Tekla User Assistance recommends <strong>ROBOCOPY</strong> for copying these in bulk.</p>        <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4">
+            <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">%XSDATADIR%\Extensions\To be installed</pre>
+        </div>        <p class="text-gray-700 leading-relaxed mb-4">Either way, the extension installs itself on the next start rather than waiting for someone to click Import.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where the Files Land, and How to Remove Them</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Folder</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What is in it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">%XSDATADIR%\Extensions\Installed</td><td class="p-3 border-b border-gray-100 text-gray-600">Extensions that are active and working.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">%XSDATADIR%\Extensions\To be installed</td><td class="p-3 border-b border-gray-100 text-gray-600">Packages staged for installation on the next start.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">%XSDATADIR%\Extensions\Invalid installations</td><td class="p-3 border-b border-gray-100 text-gray-600">Packages that failed. Look here first when an extension never appears.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">%XSDATADIR%\Extensions\Cancelled installations</td><td class="p-3 border-b border-gray-100 text-gray-600">Installations that were cancelled part way through.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">To uninstall, open the <strong>Extension manager</strong> from <strong>Applications &amp; components</strong> &gt; <strong>Manage extensions</strong>, select the extensions with Ctrl or Shift, click <strong>Remove</strong>, and restart Tekla Structures.</p>        <p class="text-gray-700 leading-relaxed mb-4">There is also a central route: create an empty file named <strong>RemoveExtensionOnStartup</strong> and copy it into each installed extension folder. Those extensions remove themselves on the next start.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                An extension that never shows up is usually in Invalid installations
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">If the tools are still missing after a restart, look in the Invalid installations folder before reinstalling. A package that failed its compatibility check lands there quietly, without an error on screen.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Being Honest About Version 2026</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance documents the PEB Member tool itself, and documents how any .tsep extension is installed into any supported version. What it does not do is publish a fixed statement that a 2026 build of the PEB collection exists.</p>        <p class="text-gray-700 leading-relaxed mb-4">That information lives on the Tekla Warehouse item page, where the publisher sets the supported versions, and it can change when a new build is released. Read the version list there. If 2026 is not offered, the honest answer is that the package has not been published for 2026 yet, and your local Tekla Support can tell you what is planned.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Do not force an older package into a newer version
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">The Extension manager only offers the versions a package declares. Working around that by copying files by hand produces tools that half work, and problems that are very hard to diagnose later.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_installing_tsep_packages" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Install and manage .tsep extensions &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/twh_download_content" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Download and install content from Tekla Warehouse &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/peb_member" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">PEB Member &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/peb_member_updater" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">PEB Member Updater &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/an-alternative-way-to-installing-tseps" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">An alternative way to installing Tseps &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026 for the extension install steps. The PEB tool documentation is published as not version specific, and the supported versions for any given build are the ones listed on its Tekla Warehouse page.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

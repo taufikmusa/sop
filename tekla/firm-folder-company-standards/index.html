@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Firm Folder for Company Standards | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Modelling</div>
+                    <h1>A Firm Folder for Company Standards</h1>
+                    <p>One shared folder, set once, so every model opens with your templates, components, catalogs and title blocks already in place.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do we set up our company standards so that every model has them, whether we open a new model or an old one? Library components, drawing templates and so on.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where do I put our company templates so that every model picks them up?</li>
+                                <li>How do I set XS_FIRM, and what goes inside the folder?</li>
+                                <li>Our drawing settings do not follow when someone else opens the model.</li>
+                                <li>What is the difference between the firm folder and the project folder?</li>
+                                <li>In what order does Tekla Structures look for settings files?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Company standards belong in a firm folder on a shared drive, not inside each model.</p>
+                            <p>Tekla Structures reads that folder at every start, so new and existing models both pick it up.</p>
+                            <ol>
+                                <li>Create an empty folder in a shared location everyone can reach.</li>
+                                <li>On the File menu, click Settings, then Advanced options.</li>
+                                <li>In the File locations category, set XS_FIRM to that path.</li>
+                                <li>Restart Tekla Structures.</li>
+                                <li>Copy your templates, symbols and catalogs into the matching subfolders.</li>
+                            </ol>
+                            <p>Files for one job go in XS_PROJECT, which takes priority over the firm folder.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/sys_project_and_firm_folders" target="_blank" rel="noopener">Project and firm folders</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2025/ts_start_settings_for_administrators" target="_blank" rel="noopener">Hierarchy of Tekla Structures settings</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the files you want standardised and I will help you place them.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Every office reaches this question in the same way. Someone builds a good drawing template, a set of custom components and a report that finally looks right, and all of it lives in one model folder. The next model starts empty, and the work is redone or copied by hand.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures already has the answer built in. Settings are read from a stack of folders, and two of those layers exist specifically for you to fill: the <strong>firm folder</strong>, defined by the advanced option <strong>XS_FIRM</strong>, and the <strong>project folder</strong>, defined by <strong>XS_PROJECT</strong>.</p>        <p class="text-gray-700 leading-relaxed mb-4">The firm folder is the main container of files for the company. Its settings and files are meant to be used in all projects within the company. Put your standards there once, and every model on every machine that points at it starts with them.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">How Tekla Structures Finds a Setting</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Settings are managed in layers. The highest layer is hard-coded defaults you cannot edit, and each layer below it can override the one above. Knowing the order is what stops a mysterious &ldquo;my template is not being used&rdquo; problem.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Layer</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it holds</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Hard-coded defaults</td><td class="p-3 border-b border-gray-100 text-gray-600">Preset values included in the installation. The common environment is always included.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Common environment</td><td class="p-3 border-b border-gray-100 text-gray-600">Preset values in the installation directory.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Regional environment</td><td class="p-3 border-b border-gray-100 text-gray-600">Preset values suited for specific regional areas, such as your country environment.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">XS_FIRM</td><td class="p-3 border-b border-gray-100 text-gray-600">A folder, typically on a network drive, that loads settings for all users within your company.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">XS_PROJECT</td><td class="p-3 border-b border-gray-100 text-gray-600">A folder, typically on a network drive, that loads important settings for all users within a specific project.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Model template</td><td class="p-3 border-b border-gray-100 text-gray-600">Loaded once, when you create a new model, from the environment or from the network folders.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Model folder</td><td class="p-3 border-b border-gray-100 text-gray-600">Saved locally when you add or edit settings while working.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Windows AppData</td><td class="p-3 border-b border-gray-100 text-gray-600">User-specific settings related to the Tekla Structures user interface.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Read that as a search order: the more specific layer wins. A file in the model folder beats the project folder, which beats the firm folder, which beats the environment. That is the behaviour you want, because it lets one job deviate without anyone editing the company standard.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LOCATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Somewhere everyone can actually reach</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The firm and project folders are usually on a network folder or a shared file server that all users at the company can access. A path on one modeller machine is not a firm folder.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCESS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Read for everyone, write for a few</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Give the whole team read access and keep write access with whoever owns the standards. A folder everyone can edit stops being a standard within a month.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OFFLINE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Think about laptops</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">If people work away from the office network, decide how they get these files. A firm folder on a path nobody can reach silently falls back to the environment defaults.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Firm is forever, project is for one job</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Company title blocks, report templates and component libraries go in the firm folder. A client-specific title block for one job belongs in the project folder instead.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSIONS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Watch the version boundary</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Files created in a newer Tekla Structures version are not always readable by an older one. If your office runs two versions side by side, plan for that before you consolidate everything.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BACKUP</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Back it up like production data</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Once this folder works, it is the office standard. It deserves the same backup treatment as your models, not the treatment a scratch folder gets.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the empty folder</h4>
+                <p class="text-sm text-gray-600">Create an empty firm folder in a shared location. Something like a dedicated share, with a clear name, that will not be reorganised in six months.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Point Tekla Structures at it</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, select <strong>Settings</strong> &gt; <strong>Advanced options</strong>. In the <strong>File locations</strong> category, define the path to the firm folder as the value of <strong>XS_FIRM</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">Do the same for <strong>XS_PROJECT</strong> if you want a project layer as well. The two are independent and you can use one without the other.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Restart</h4>
+                <p class="text-sm text-gray-600">Restart Tekla Structures for the change to take effect. This is not optional and it is the single most common reason a correctly configured firm folder appears to do nothing.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the subfolders you need</h4>
+                <p class="text-sm text-gray-600">The subfolder names below are fixed. Tekla Structures looks for specific names in specific places, so a template dropped loose in the root of the firm folder will not be found.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Move your standards in</h4>
+                <p class="text-sm text-gray-600">Copy your existing files from the model folders where they were created into the matching subfolders. Work through one category at a time and test each before moving on.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Test with a new model and an old one</h4>
+                <p class="text-sm text-gray-600">Create a fresh model and confirm the standards are there. Then open an existing model and confirm the same. Those are two different code paths and both need to work before you tell the team it is ready.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Which Subfolder Takes What</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">These subfolder names sit inside <strong>XS_FIRM</strong> or <strong>XS_PROJECT</strong> and are read automatically.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Subfolder</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What belongs there</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\template\settings</td><td class="p-3 border-b border-gray-100 text-gray-600">Template and report settings.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\template\mark</td><td class="p-3 border-b border-gray-100 text-gray-600">Mark templates used in drawings.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\Symbols</td><td class="p-3 border-b border-gray-100 text-gray-600">Symbol files and .dwg symbols used in drawings and templates.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\Drawing Details</td><td class="p-3 border-b border-gray-100 text-gray-600">Drawing details saved as .ddf files.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\CustomInquiry</td><td class="p-3 border-b border-gray-100 text-gray-600">Report templates used by custom inquiry.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\AdditionalPSets</td><td class="p-3 border-b border-gray-100 text-gray-600">Additional IFC property sets.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\profil\Shapes and \profil\ShapeGeometries</td><td class="p-3 border-b border-gray-100 text-gray-600">Shape catalog content.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\macros\Modeling and \macros\Drawings</td><td class="p-3 border-b border-gray-100 text-gray-600">Macros for the modelling side and the drawing side.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\ProjectOrganizerData</td><td class="p-3 border-b border-gray-100 text-gray-600">Organizer categories and templates.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">\PropertyRepository\Templates</td><td class="p-3 border-b border-gray-100 text-gray-600">Property repository templates.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Property files need to be copied deliberately
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Property files are saved in the \attributes folder under the model folder while you work. They do not travel on their own. Copy the ones you want to standardise from there into the project or firm folder so they are reused instead of recreated.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Files Most Offices Standardise First</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DRAWINGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Drawing layouts and title blocks</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Layout files live in the \attributes subfolder in the model folder, and you can copy layout files to project or firm folders defined by the XS_FIRM and XS_PROJECT advanced options. This is how one title block reaches every job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LOGOS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The company logo image</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A logo used in templates needs its folder registered as well, through the advanced option DXK_SYMBOLPATH in Tekla Structures and the matching folder in the Template Editor preferences. Otherwise the image shows in the editor and not in the drawing.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COMPONENTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The custom component library</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Export your components as a .uel file and put it in the firm folder so every model has the same library, instead of passing files around by hand.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Profile, material and bolt catalogs</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Company additions to the bolt and profile catalogs belong here too, so a bolt someone added last year is still there on next year job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REPORTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Report templates</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The material, bolt and shipping lists your office actually issues, kept in one place so the version everyone runs is the current one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORGANIZER</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Organizer categories</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The category structure your team sorts models by, so every job is organised the same way from day one.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">When It Still Does Not Work</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Almost every failure here is one of four things, and they are quick to check in order.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>No restart.</strong> The advanced option was set and Tekla Structures was never restarted. Nothing is loaded until it is.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Wrong subfolder name.</strong> The file is in the firm folder but not in the subfolder Tekla Structures searches for that file type. The names in the table above are exact.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Something more specific is winning.</strong> An older copy of the same file is sitting in the model folder or the project folder and overriding the firm copy, exactly as the hierarchy says it should. Delete the local copy and test again.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>The path is unreachable.</strong> A mapped drive that exists on one machine and not another produces standards that work for some people and not others, with no error message to explain why.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/sys_project_and_firm_folders" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Project and firm folders &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2025/ts_start_settings_for_administrators" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Hierarchy of Tekla Structures settings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/firm-folder" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Project and firm folders (support article) &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/basic-firm-and-project-folders" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Basic firm and project folders &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/model-sharing-and-firm-folder" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Model sharing and firm folder &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_layout_editor" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Define drawing layout &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026 for the firm and project folder article, and against the 2025 documentation for the settings hierarchy, which is the most recent published version of that article. XS_FIRM and XS_PROJECT have behaved the same way for many releases.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

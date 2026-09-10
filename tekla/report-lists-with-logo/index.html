@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material, Bolt and Shipping Lists With a Logo | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Reports</div>
+                    <h1>Material, Bolt and Shipping Lists With a Logo</h1>
+                    <p>Running the lists takes a minute. Getting the company logo onto them depends on one distinction: textual templates hold text, graphical templates hold pictures.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do we generate a material list, a bolt list and a shipping list with our company logo on them?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I create a bolt list or a material list in Tekla Structures?</li>
+                                <li>How do I put our company logo on a report?</li>
+                                <li>My logo will not appear in the report I edited.</li>
+                                <li>Where are the report files saved after I create them?</li>
+                                <li>Is there a standard shipping list template, and what if there is not?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>A logo needs a graphical template. A plain text report cannot carry an image.</p>
+                            <p>The lists themselves come from the standard templates on the Drawings and reports tab.</p>
+                            <ol>
+                                <li>On the Drawings &amp; reports tab, click Reports.</li>
+                                <li>Pick a material, bolt or assembly template from the list.</li>
+                                <li>Click Create from all, or Create from selected.</li>
+                                <li>For a logo, open Template Editor and click File, then New.</li>
+                                <li>Choose Graphical template, then click Insert, then Picture.</li>
+                                <li>Save it with the .pdf.rpt extension in your template folder.</li>
+                            </ol>
+                            <p>Reports are saved in the Reports folder under the model folder by default.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener">Create a report</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_create_a_pdf_report" target="_blank" rel="noopener">Create a .pdf report template</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the three lists you issue and I will help shape the templates.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">There are two questions hiding inside this one, and they have different answers. Producing a material list, a bolt list or a shipping list is easy and takes about a minute. Getting your company logo onto them is a template question, and the answer depends on a distinction that is easy to miss.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures has two kinds of template. <strong>Textual templates</strong>, with the file extension <strong>.rpt</strong>, contain text only. <strong>Graphical templates</strong>, with the extension <strong>.tpl</strong>, may contain text, graphics and bitmaps.</p>        <p class="text-gray-700 leading-relaxed mb-4">That single sentence settles the logo question. The standard reports most offices run are textual templates, and no amount of editing will put a picture into one. A report with a logo has to be built as a graphical template, which in report form means a PDF report template.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The same rule catches font choices too
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">You can use various font types in textual templates, but they do not appear in the output. If you want specific fonts in the output, you have to use a graphical template even if the template contains only text. A report that has to look like company stationery is a graphical template, always.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Three Lists You Asked About</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MATERIAL</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Material list</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">One of the standard uses named in the documentation: material lists of construction assemblies. Run it from the Reports dialog against the whole model, or against a selection when you only want one area or one phase.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BOLTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Bolt list</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Also standard. Tekla Structures creates reports directly from the model database, so the bolt list reflects the bolt assemblies actually placed, not a separate schedule someone maintains by hand.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SHIPPING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Shipping list</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures ships a large number of standard report templates, and which ones you have depends on your environment. Open the Reports dialog and read the list before assuming you need to build one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">IF MISSING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Building a shipping list yourself</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">If your environment has no shipping template, the usual approach is to start from an assembly report and group it by whatever your office uses for delivery: phase, lot, or an Organizer category. Copy an existing template rather than starting from a blank page.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">All objects or selected objects</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The Reports dialog offers Create from all and Create from selected. A shipping list is nearly always a Create from selected job, because a delivery is a subset of the model.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCURACY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Number before you report</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Reports read the model database, marks included. An unnumbered or half-numbered model produces a list that looks complete and is not.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Creating a Report</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the Reports dialog</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Reports</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose the template</h4>
+                <p class="text-sm text-gray-600">Select the report template you want from the list. For an assembly report, you can produce a list of assemblies, or a report of the parts included in the assemblies.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Decide the scope</h4>
+                <p class="text-sm text-gray-600">Click <strong>Create from all</strong> to report on every object in the model, or select objects in the model first and click <strong>Create from selected</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose how it is shown</h4>
+                <p class="text-sm text-gray-600">Use <strong>Show report</strong> to display the result, and <strong>Print</strong> to send it to a printer. Reports can be shown <strong>On dialog</strong>, in a new window inside Tekla Structures, or <strong>With associated viewer</strong>, which opens an HTML report in a browser, for example.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Know where the file went</h4>
+                <p class="text-sm text-gray-600">By default, reports are saved in the <strong>\Reports</strong> folder under the model folder. Reports can be created in <strong>.xsr</strong>, <strong>.html</strong>, <strong>.csv</strong> and PDF formats.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Reopen an old one</h4>
+                <p class="text-sm text-gray-600">Open the <strong>Reports</strong> dialog and click <strong>Show</strong> to display a report you created earlier, or browse to the Reports folder directly.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Reports do not refresh themselves
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">A report is a snapshot taken when you ran it. Change the model and the report on disk still shows yesterday numbers. Recreate it after every change that matters, and put the date in the file name so nobody works from a stale one.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Putting the Logo On</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">The logo lives in a graphical template. For a report, that means creating a PDF report template.</p>        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open Template Editor</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Editors</strong> &gt; <strong>Template editor</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Start a graphical template</h4>
+                <p class="text-sm text-gray-600">Click <strong>File</strong> &gt; <strong>New</strong> and select <strong>Graphical template</strong>. Starting from a copy of a template that already produces the list you want is faster than building the data rows from nothing.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the page size</h4>
+                <p class="text-sm text-gray-600">Click <strong>Edit</strong> &gt; <strong>Properties</strong> and set the page size, such as A4, to match the output size you want. The size has to correspond to the sizes defined in the <strong>PaperSizesForDrawings.dat</strong> configuration file.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Register the image folder</h4>
+                <p class="text-sm text-gray-600">Click <strong>Options</strong> &gt; <strong>Preferences</strong>, go to the <strong>File Locations</strong> tab, and on the <strong>Symbols, pictures</strong> row add the folder holding your logo, separated by a semicolon.</p>
+                <p class="text-sm text-gray-600 mt-2">Tekla Structures looks in the model folder first, then in the symbols folder in the current environment. A logo anywhere else has to be registered here.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Insert the logo</h4>
+                <p class="text-sm text-gray-600">Click <strong>Insert</strong> &gt; <strong>Picture</strong>, select the file in the <strong>Select Picture File</strong> dialog, and click <strong>OK</strong>. Define the insertion point by clicking twice for opposing corners, or by dragging and releasing.</p>
+                <p class="text-sm text-gray-600 mt-2">Supported formats include BMP, GIF, JPG, PNG, TIFF and others. Keep the file small, because very large images update very slowly.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the data rows</h4>
+                <p class="text-sm text-gray-600">Add rows with <strong>Insert</strong> &gt; <strong>Component</strong> &gt; <strong>Row</strong>, then place value fields with <strong>Insert</strong> &gt; <strong>Value Field</strong> and pick the attribute from the <strong>Select Attribute</strong> dialog. This is where the material, bolt or assembly information comes from.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Save it as a report template</h4>
+                <p class="text-sm text-gray-600">Click <strong>File</strong> &gt; <strong>Save as</strong> and save with the file name extension <strong>.pdf.rpt</strong>, then copy the template to your template folder. It then appears alongside the other templates in the <strong>Reports</strong> dialog.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Making It the Company Standard</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A template that lives in one model folder is a template you will rebuild. Textual and graphical templates, except mark templates, can also be read from the <strong>XS_FIRM</strong> or <strong>XS_PROJECT</strong> folders, so put the finished ones there.</p>        <p class="text-gray-700 leading-relaxed mb-4">The ready-made templates that came with your installation sit in the environment folders, under the system folders defined by the advanced option <strong>XS_SYSTEM</strong>. Copy one before you edit it, and give the copy your own name. Editing the shipped template directly means losing your work at the next upgrade.</p>        <p class="text-gray-700 leading-relaxed mb-4">Put the logo image itself somewhere shared as well, and register that folder with the advanced option <strong>DXK_SYMBOLPATH</strong> in Tekla Structures so it resolves on every machine, not just the one the template was built on.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Test on another machine before you announce it
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">A template with a logo works perfectly for the person who made it, because the image happens to be on their disk. Open the report on a colleague machine before you tell the office it is ready.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">If Excel Is Where the List Really Ends Up</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Many offices take the list into Excel and format it there, logo included. That route avoids the graphical template work entirely, and Tekla Structures supports it directly.</p>        <p class="text-gray-700 leading-relaxed mb-4">Excel reports are created using <strong>.xlsx.rpt</strong> templates together with Microsoft Excel <strong>.xltx</strong> templates. The letterhead then lives in the Excel template, where whoever maintains your paperwork can edit it without opening Template Editor.</p>        <p class="text-gray-700 leading-relaxed mb-4">Two practical tips from the documentation are worth knowing when the columns come out wrong. If the report does not divide into cells properly, add <strong>\t</strong> between the text and value fields. For a <strong>.csv.rpt</strong> report, add the text <strong>sep=;</strong> on the page header row so Excel recognises the semicolon as the cell separator.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a report &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_reports" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Reports &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_templates" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Templates &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_create_a_pdf_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a .pdf report template &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_adding_images_in_graphical_template" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Add images in a template &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/tpled_adding_logos_to_template" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Adding a logo to a template in Template Editor &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_tips_for_templates_and_reports" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tips for reports and report templates &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Which standard report templates you see depends on the environment your installation uses, so the exact template names in the Reports dialog vary between offices and regions.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

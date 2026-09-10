@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing Only Certain Views for Checking | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Others</div>
+                    <h1>Showing Only Certain Views for Checking</h1>
+                    <p>Named views, view filters, selection filters, hide, and view depth are five different answers to one request. Here is which to reach for.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I look at only certain views or certain parts when I check the model, instead of the whole thing at once?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I create and save a view for one gridline or one floor?</li>
+                                <li>How do I show only the steel and hide everything else in a view?</li>
+                                <li>Where is the list of views in the model?</li>
+                                <li>How do I stop selecting the reference model every time I click in the view?</li>
+                                <li>My saved views disappeared after I closed the model.</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Three separate tools do this, and picking the right one saves a lot of clicking.</p>
+                            <p>Named views control where you look, and view filters control what is drawn.</p>
+                            <p>Selection filters control what you can pick. Use all three together.</p>
+                            <ol>
+                                <li>On the View tab, click New view, then Basic view.</li>
+                                <li>Choose the plane, enter the level, then click Create.</li>
+                                <li>Name the view so it survives the session.</li>
+                                <li>Double-click the view background to open View properties.</li>
+                                <li>Choose a filter in the Visible object group list, then click Modify.</li>
+                                <li>Pick a selection filter from the list on the Selecting toolbar.</li>
+                            </ol>
+                            <p>Only nine views can be open at once. Manage the rest in the side pane.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_view" target="_blank" rel="noopener">Create model views</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_filtering_objects" target="_blank" rel="noopener">Filter objects</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know what you are checking and I will suggest a view setup.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">&ldquo;Show me only what I want to check&rdquo; sounds like one request. In Tekla Structures it is answered by several different mechanisms, and using the wrong one is why people end up scrolling through a whole model to inspect one connection.</p>        <p class="text-gray-700 leading-relaxed mb-4">Sorting out which does what takes a few minutes and pays for itself every day afterwards. The five below cover almost every case.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Mechanism</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it controls</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Lasts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Named views</td><td class="p-3 border-b border-gray-100 text-gray-600">Where you are looking from, and at what.</td><td class="p-3 border-b border-gray-100 text-gray-600">Permanent, once the view is named and the model is exited properly.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">View filter</td><td class="p-3 border-b border-gray-100 text-gray-600">Which objects are drawn in a view at all.</td><td class="p-3 border-b border-gray-100 text-gray-600">Stays with the view until you change it.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Selection filter</td><td class="p-3 border-b border-gray-100 text-gray-600">Which objects you can pick, regardless of what is drawn.</td><td class="p-3 border-b border-gray-100 text-gray-600">Stays until you switch the filter back.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Hide and Show only selected</td><td class="p-3 border-b border-gray-100 text-gray-600">A quick, throwaway change to what is visible.</td><td class="p-3 border-b border-gray-100 text-gray-600">Until the next redraw.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Work area and view depth</td><td class="p-3 border-b border-gray-100 text-gray-600">The slice of the model a view shows at all.</td><td class="p-3 border-b border-gray-100 text-gray-600">Stays with the view.</td></tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Creating the Views You Need</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Pick the kind of view</h4>
+                <p class="text-sm text-gray-600">On the <strong>View</strong> tab, click <strong>New view</strong>. The options include <strong>Basic view</strong>, <strong>Using two points</strong>, <strong>Using three points</strong>, <strong>On work plane</strong>, <strong>Along grid lines</strong>, <strong>On selected building storeys</strong>, <strong>On plane</strong>, <strong>3D view of part</strong>, <strong>Default part views</strong> and several more.</p>
+                <p class="text-sm text-gray-600 mt-2">For checking work, <strong>Along grid lines</strong> and <strong>On selected building storeys</strong> are usually the two that pay off fastest, because they create a set of views matching how the job is actually organised.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create a basic view</h4>
+                <p class="text-sm text-gray-600">Click <strong>New view</strong> &gt; <strong>Basic view</strong>, select a view plane from the <strong>Plane</strong> list, enter the view level in the <strong>Coordinate</strong> box to set the distance from the global origin, and click <strong>Create</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Name it straight away</h4>
+                <p class="text-sm text-gray-600">A view with a default name in parentheses is a temporary view. Rename it to make it permanent.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Views are only written out when you exit
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Tekla Structures only saves the named views when you exit the model. Name the views you want to keep before closing, and close the model properly rather than ending the process, or the work is gone.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the view depth</h4>
+                <p class="text-sm text-gray-600">Double-click the view background to open <strong>View properties</strong>. The view depth is the thickness of the displayed slice of model, and you can define the depth separately upwards and downwards from the view plane.</p>
+                <p class="text-sm text-gray-600 mt-2">A shallow depth on a plan view is the difference between checking one floor and squinting at the whole building.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Keep them organised</h4>
+                <p class="text-sm text-gray-600">Click the model views button in the side pane to open the <strong>Model views</strong> window, which lists every view in the model. Right-click a view for <strong>Open view</strong>, <strong>Close view</strong>, <strong>Rename</strong>, <strong>Delete</strong> or <strong>Bring to front</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">Create folders and drag views into them, and use the search box when the list grows. There is a nine view limit on how many can be open at the same time, so the side pane is how you live with more than nine.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Showing Only Certain Objects in a View</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A view filter decides what is drawn. Everything else is simply not there, which makes a crowded model readable.</p>        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the view properties</h4>
+                <p class="text-sm text-gray-600">Double-click the view to open the <strong>View properties</strong> dialog.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose a filter</h4>
+                <p class="text-sm text-gray-600">Select a filter from the <strong>Visible object group</strong> list and click <strong>Modify</strong>. Tekla Structures comes with standard filters, and your environment may add more.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Build your own if the standard ones do not fit</h4>
+                <p class="text-sm text-gray-600">In <strong>View properties</strong>, click <strong>Object group</strong> to open the <strong>Object group - View filter</strong> dialog, which shows the currently active filter. Click <strong>New filter</strong> to start from scratch, then <strong>Add row</strong> to add a filter rule.</p>
+                <p class="text-sm text-gray-600 mt-2">Save the filters your team uses repeatedly and put them in the firm folder, so everyone checks the model through the same lens.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Switch it off again</h4>
+                <p class="text-sm text-gray-600">Return to <strong>View properties</strong>, select the standard filter, and click <strong>Modify</strong>. A filter left on and forgotten is a common reason for &ldquo;my parts have disappeared&rdquo;.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Controlling What You Can Pick</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A view filter changes what you see. A selection filter changes what you can grab, which is the more useful one when you are picking objects out of a busy area.</p>        <p class="text-gray-700 leading-relaxed mb-4">The filter list sits on the <strong>Selecting</strong> toolbar, normally at the bottom of the main window. Choose a filter there, then click in the model, and only objects matching that filter are selected. The rest are not affected even if you drag a box across them.</p>        <p class="text-gray-700 leading-relaxed mb-4">To clear it, select the standard filter from the same list. Remember that objects have to be visible in the view to be selectable, so a view filter and a selection filter can fight each other.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The reference model needs its own switches
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Clicking into an IFC or DWG reference is controlled by the selection switches, not by filters. Activate Select reference models together with Select components for the whole model, or with Select objects in components to reach a single object inside it.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Quick, Temporary Version</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Sometimes you do not want a saved view or a filter. You want two beams out of the way for the next thirty seconds.</p>        <p class="text-gray-700 leading-relaxed mb-4">Select the parts, right-click and select <strong>Hide</strong>. The hidden parts are shown as reference lines. Hold <strong>Shift</strong> while giving the command to hide them completely instead.</p>        <p class="text-gray-700 leading-relaxed mb-4">The opposite is <strong>Show only selected</strong>. Select the parts you want to keep, right-click and choose it, and everything else appears almost transparent. Hold <strong>Shift</strong> to hide the rest entirely, or <strong>Ctrl</strong> to show them as reference lines.</p>        <p class="text-gray-700 leading-relaxed mb-4">To put everything back, click the refresh icon on the <strong>View</strong> tab, or right-click in the view and select <strong>Redraw view</strong>. That also restores the display settings after commands such as <strong>Show assembly</strong> or <strong>Show component content</strong>.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Temporary means temporary
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Anything hidden this way comes back at the next redraw. Do not use it to prepare something you intend to look at again tomorrow, and do not rely on it to prove a part is not there.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">A Setup That Works for Checking</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A pattern worth stealing: keep a 3D view for orientation, a plan view for the floor you are working on, and an elevation for verification. Tekla User Assistance suggests exactly this combination, and <strong>Ctrl+P</strong> switches between a 3D view and a plane view.</p>        <p class="text-gray-700 leading-relaxed mb-4">Add a view filter that hides the trades you are not responsible for, a selection filter matching what you are picking, and a shallow view depth on the plan. At that point the model shows the thing you are checking and very little else, which is the whole point of the exercise.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_view" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create model views &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_views" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Model views in Tekla Structures &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_manage_model_views" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Manage model views &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_view_properties" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Model view properties &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_filtering_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Filter objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/gen_filter_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create new filters &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2025/gen_use_filters" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Use existing filters &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_hiding_a_part" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Temporarily hide model objects or show only selected model objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/gen_select_reference_models" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Select reference models, reference model objects and assemblies &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026, with the filter usage steps taken from the 2025 documentation, which is the most recent published version of that article. The Model views side pane replaced the older view list dialog, so versions before 2021 manage views differently.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up a Custom Component | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Modelling</div>
+                    <h1>Setting Up a Custom Component</h1>
+                    <p>Model the detail by hand first, then let the wizard turn it into a catalog item you can reuse, share and make adaptive.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I set up custom components? We want our own standard connections instead of hunting through the system components every time.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I turn a connection I modelled by hand into a reusable component?</li>
+                                <li>Where is the Define custom component command in Tekla Structures?</li>
+                                <li>My custom component does not adapt when the profile size changes.</li>
+                                <li>How do I share custom components with the rest of the team and with other models?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Custom components are how you turn a connection you have already modelled into a reusable tool.</p>
+                            <p>Model it once by hand, exactly the way you want it. Then wrap it with the wizard.</p>
+                            <ol>
+                                <li>Click Applications &amp; components in the side pane.</li>
+                                <li>Click Access advanced features, then Define custom component.</li>
+                                <li>In the Type list, choose connection, detail, seam or part.</li>
+                                <li>Give it a short unique name, then click Next.</li>
+                                <li>Select the objects, then the main part, then the secondary parts.</li>
+                                <li>Click Finish to save it into the catalog.</li>
+                            </ol>
+                            <p>The order you pick secondary parts in matters. Keep your first version simple.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/det_create_custom_component" target="_blank" rel="noopener">Define custom components</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_cc_tips_creating_custom_components" target="_blank" rel="noopener">Tips for creating custom components</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know which connection you want to turn into a component, and I will look at it with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A custom component is a connection, detail, seam or part that you model by hand once, and then save so it can be dropped in again anywhere else. It is the answer when no system component in the catalog does what your standard detail needs.</p>        <p class="text-gray-700 leading-relaxed mb-4">The important thing to understand up front is the order of work. You do not open a blank wizard and build a connection inside it. You model the real thing first, in the model, using ordinary parts, bolts and welds. Only then do you run the wizard, which records what you built and turns it into a catalog item.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is why most first attempts feel awkward. People expect a form to fill in. What Tekla Structures actually wants is a finished example to copy.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MODEL FIRST</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Build the real detail by hand</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Create the parts, bolts, welds and cuts in the model exactly as the finished connection should look. The wizard captures what already exists, so anything missing at this point will be missing from the component too.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">One situation per component</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance is direct about this: <strong>create simple components for specific situations</strong>. They are easier to model, faster to create and simpler to use than one component trying to cover every case.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GEOMETRY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Use the simplest parts you can</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Fewer handles means fewer bindings and a component that reacts faster. A rectangular plate is a better building block than a contour plate when both would do the job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SANDBOX</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Consider a separate component model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Building and testing components in their own small model keeps a live project clean while you experiment, and gives you somewhere safe to break things.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NAMING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Short, logical names</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Enter short, logical names, and put the explanation in the description field instead. The name is what everyone else in the team has to recognise in the catalog six months from now.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MAIN PART</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know which part is the main part</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The wizard asks you to designate a main part and then up to 30 secondary parts. Decide before you start which member the connection belongs to, because that choice drives how the component positions itself.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the detail by hand</h4>
+                <p class="text-sm text-gray-600">In the model, build the connection exactly as it should be: parts, bolts, welds, cuts and fittings. Work on a real pair of members, for example the beam and the column the detail will normally sit between.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the wizard</h4>
+                <p class="text-sm text-gray-600">Click the <strong>Applications &amp; components</strong> button in the side pane to open the <strong>Applications &amp; components</strong> catalog. Click the <strong>Access advanced features</strong> button and select <strong>Define custom component...</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the type and name</h4>
+                <p class="text-sm text-gray-600">On the <strong>Type/Notes</strong> tab, select the component type from the <strong>Type</strong> list: connection, detail, seam or part. Enter a unique name in the <strong>Name</strong> box, then adjust the <strong>Position</strong> and <strong>Advanced</strong> tabs if you need to. Click <strong>Next &gt;</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">The <strong>Position</strong> tab holds the up direction and the position type, such as Middle, Box plane, Collision plane, End plane or Gusset plane. The <strong>Advanced</strong> tab is where you find the detail type, the definition point options and the <strong>Allow multiple instances</strong> checkbox.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select the objects that belong to the component</h4>
+                <p class="text-sm text-gray-600">In the model, select the objects you want to include. Area selection works and is usually quicker. Main parts, secondary parts and grids are ignored during this selection, so you are picking the plates, bolts, welds and cuts.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Pick the main part</h4>
+                <p class="text-sm text-gray-600">Click <strong>Next &gt;</strong> and select the main part of the component. For a beam-to-column connection this is normally the column.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Pick the secondary parts</h4>
+                <p class="text-sm text-gray-600">Click <strong>Next &gt;</strong> and select the secondary parts, holding <strong>Shift</strong> for more than one. A maximum of 30 secondary parts is allowed.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Selection order is not cosmetic
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Pay attention to the order in which you select secondary parts. That order is stored in the component and decides which member is treated as the first secondary part when the component is used again.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Finish</h4>
+                <p class="text-sm text-gray-600">Click <strong>Finish</strong>. The component is created and appears in the <strong>Applications &amp; components</strong> catalog, ready to use anywhere in the model. You can add a thumbnail image to it afterwards so it is easy to spot in the catalog.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Making It Adapt Instead of Staying Fixed</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A component created this way is a faithful copy of the example you built. Drop it onto members of a different size and the plates will not always follow. That is expected behaviour, not a fault, and the fix is variables.</p>        <p class="text-gray-700 leading-relaxed mb-4">Open the component in the custom component editor and you can expose distances, profiles and materials as variables. A variable turns a hard number into something the component works out for itself, or something the user sets in the component dialog. This is also where you build the dialog that your team will see when they use the component.</p>        <p class="text-gray-700 leading-relaxed mb-4">This is the step most people skip on day one, and it is fine to skip it at first. A fixed component that saves you ten minutes is still worth having. Add variables once the component has proved itself.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Test on the odd cases, not the easy one
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Before you release a component to the team, try it on the smallest and the largest member you expect it to meet, and on a skewed connection if your work has any. Components almost always behave on the case they were built from.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Sharing Components Across Models and With the Team</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Custom components live in the model where they were created. Getting them into the next model is a deliberate step.</p>        <p class="text-gray-700 leading-relaxed mb-4">To export, click <strong>Applications &amp; components</strong> in the side pane, select the components you want, right-click the selection and select <strong>Publish</strong>. Browse to a folder, enter a file name, and the components are saved as a <strong>.uel</strong> file.</p>        <p class="text-gray-700 leading-relaxed mb-4">To import, click the <strong>Access advanced features</strong> button and select <strong>Import</strong>, browse to the export file, select it, and click <strong>Open</strong>.</p>        <p class="text-gray-700 leading-relaxed mb-4">Any data files the component uses have to sit in the model folder or in the <strong>CustomComponentDialogFiles</strong> subfolder to be included in the exported file.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                For a company standard, do not pass .uel files around by hand
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">If these components are meant to be a company standard, put them in the firm folder instead, so every new model picks them up on its own. Tekla Warehouse is the other route when you want to store and share components across sites.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_create_custom_component" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Define custom components &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_what_is_custom_component" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Custom components (overview) &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_cc_tips_creating_custom_components" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tips for creating custom components &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_cc_about_variables" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Variable properties in custom components &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_cc_custom_component_browser" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Edit custom components &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_import_export_custom_components" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Transfer custom components between models &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_create_nested_custom_component" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Custom component example: define a nested custom component &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. The wizard and the Applications &amp; components catalog work the same way in 2023 to 2025, so the steps carry back to those versions.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

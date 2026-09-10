@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating Assembly and Part DWG Files | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Drawing Setup</div>
+                    <h1>Generating Assembly and Part DWG Files</h1>
+                    <p>Create the drawings in the model first, then export them. Two operations, two sets of settings, and one layer rules tab that decides whether the fabricator can use the result.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do we generate assembly DWG and part DWG files to send to the fabricator?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I create assembly drawings and single-part drawings for the whole model?</li>
+                                <li>How do I export drawings from Tekla Structures to DWG?</li>
+                                <li>Where do the exported DWG files go, and how are they named?</li>
+                                <li>How do I control which layers the parts and dimensions land on in the DWG?</li>
+                                <li>Some parts did not get a drawing when I ran the creation command.</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>This is two jobs. Create the drawings in the model, then export them as DWG.</p>
+                            <p>Number the model first. A part with no mark cannot get a drawing.</p>
+                            <ol>
+                                <li>Activate the Select parts switch and select the parts.</li>
+                                <li>In Quick Launch, run Create assembly drawing.</li>
+                                <li>Repeat with Create single-part drawing for the part drawings.</li>
+                                <li>On the Drawings &amp; reports tab, open Document manager.</li>
+                                <li>Select the drawings, then click Export.</li>
+                                <li>Choose DWG, set the folder, and export.</li>
+                            </ol>
+                            <p>Existing drawings are never duplicated. One with the same type and mark is skipped.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_single_part_assembly_cu_and_ga_drawings" target="_blank" rel="noopener">Create single-part, assembly or cast unit drawings</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_export_to_dwg_or_dxf" target="_blank" rel="noopener">Export a drawing in 2D DWG, DXF or DGN format</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with what your fabricator expects and I will check the export settings.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Getting DWG files to a fabricator is two separate operations that people often merge into one question. First Tekla Structures creates drawings inside the model, as native drawings held in the model database. Then those drawings are exported to DWG files on disk.</p>        <p class="text-gray-700 leading-relaxed mb-4">Nothing about the export decides what is on the sheet. If the assembly drawing is missing views, dimensions or a title block, that is a drawing creation problem, and exporting it again in a different format will not help.</p>        <p class="text-gray-700 leading-relaxed mb-4">The other thing worth knowing before you begin: numbering comes first. Drawing creation depends on part marks, and Tekla Structures prompts you to number the model if you have not.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NUMBERING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Number the model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Marks identify the drawings. Run Perform numbering before you create anything, and expect a prompt if you forget. Creating drawings on an unnumbered model produces work you will throw away.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PROPERTIES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Load the right drawing properties</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Load predefined drawing properties that match the drawing type you are creating, set up the view creation settings, add the views you need, and save the drawing properties before you run the command.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LAYOUT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Have the sheet sorted first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Title block, sheet sizes and table sets belong in place before you create hundreds of drawings. Fixing the layout afterwards means recreating or updating every sheet.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">TYPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know which drawing you actually need</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A single-part drawing shows one piece of steel on its own. An assembly drawing shows the welded assembly. Fabricators normally want both, and they are created by two separate commands.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SELECTION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Set the selection switch</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Activate only the Select parts switch on the Selecting toolbar. A stray selection switch is the usual reason a creation command produces fewer drawings than expected.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BATCH SIZE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Start with a handful</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Create three or four drawings, check them, then run the whole model. Reviewing a bad template across four hundred sheets is a bad afternoon.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Part One: Creating the Drawings</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">There is a fast route for a handful of parts, and a controlled route for a whole job.</p>        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Select the parts</h4>
+                <p class="text-sm text-gray-600">Activate only the <strong>Select parts</strong> switch on the <strong>Selecting</strong> toolbar, then select the parts in the model.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Run the command from Quick Launch</h4>
+                <p class="text-sm text-gray-600">Type into the Quick Launch box and run one of <strong>Create single-part drawing</strong>, <strong>Create assembly drawing</strong> or <strong>Create cast unit drawing</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">To open a drawing automatically once it is created, hold down <strong>Ctrl+Shift</strong> while you create it. Useful when you are checking a template, not when you are creating four hundred sheets.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Let it skip what already exists</h4>
+                <p class="text-sm text-gray-600">If you already have a drawing with the same type and mark, Tekla Structures will not create a new one. Running the command again over the whole model is therefore safe: it fills the gaps rather than duplicating.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Find the results in Document manager</h4>
+                <p class="text-sm text-gray-600">The created drawings are listed in the <strong>Document manager</strong>. This is where you will select, open, revise, print and export them from now on.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">For a whole job, use the Master drawing catalog</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Master drawing catalog</strong>. A master drawing is a Tekla Structures drawing, or a set of drawing properties, that is used for creating new drawings that look the same as the master drawing.</p>
+                <p class="text-sm text-gray-600 mt-2">The catalog gathers all drawing creation commands in one place and supports cloning templates, saved settings, rule sets and existing wizard files. It is the difference between a consistent set of drawings and four hundred sheets that each look slightly different.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Single-Part Views Inside Assembly Drawings</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Many fabricators would rather have one assembly sheet showing the individual pieces than two separate stacks of paper. Tekla Structures supports that directly.</p>        <p class="text-gray-700 leading-relaxed mb-4">You can include in assembly drawings single-part drawing views of the individual parts that make up the assembly, either by using existing single-part drawings from <strong>Document manager</strong> or by creating new single-part drawing views inside the assembly drawing.</p>        <p class="text-gray-700 leading-relaxed mb-4">Decide this before you generate the set. Switching approach halfway leaves you with two conventions in one issue, and a fabricator asking which sheet is the current one.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Part Two: Exporting to DWG</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Three routes lead to the same dialog. Pick whichever fits what you are already doing.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Starting point</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">How to get there</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">From the File menu</td><td class="p-3 border-b border-gray-100 text-gray-600">On the File menu, click Export > Drawings, and select the drawings from the displayed Document manager list.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">From Document manager</td><td class="p-3 border-b border-gray-100 text-gray-600">Click Drawings &amp; reports > Document manager, select the drawings, right-click and select Export, or click the Export button at the bottom.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">From an open drawing</td><td class="p-3 border-b border-gray-100 text-gray-600">On the File menu, click Export drawings.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the file type and version</h4>
+                <p class="text-sm text-gray-600">In the <strong>File type</strong> list, select <strong>DWG</strong>, <strong>DXF</strong> or <strong>DGN (V8)</strong>. For DWG and DXF, select the version to use in the export. Several AutoCAD and DXF format versions are available, and 2010 is the default.</p>
+                <p class="text-sm text-gray-600 mt-2">Ask the receiving office which version their software reads comfortably. Exporting to the newest format available helps nobody if the fabricator opens it in an older application.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the output folder</h4>
+                <p class="text-sm text-gray-600">The default location for the exported files is the current model folder. Point it somewhere deliberate instead, so an issue to the fabricator is a folder you can zip and send.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Handle the file names</h4>
+                <p class="text-sm text-gray-600">On the export file settings, enter the export file name. If you are exporting several drawings, leave the file name box empty, and each drawing is named from its own mark rather than overwriting one file.</p>
+                <p class="text-sm text-gray-600 mt-2">Prefixes and suffixes are available on the <strong>Options</strong> tab. There are also drawing-type-specific advanced options such as <strong>XS_DRAWING_PLOT_FILE_NAME_A</strong> for assembly drawings and <strong>XS_DRAWING_PLOT_FILE_NAME_C</strong> for other types, for offices that need a strict naming convention.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the layer rules</h4>
+                <p class="text-sm text-gray-600">On the <strong>Layer rules</strong> tab for DWG and DXF, or the <strong>Level rules</strong> tab for DGN, define explicitly the layers or levels where different model and drawing objects are exported to.</p>
+                <p class="text-sm text-gray-600 mt-2">A rule can specify the objects, presentation filtering, object filtering, the target layer, colour, line style, line weight, and whether the objects go to paper space or coordinate space. This is what turns a Tekla drawing into a DWG that behaves properly in the fabricator drafting software.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Export and check one file</h4>
+                <p class="text-sm text-gray-600">Run the export, then open one exported file in a DWG viewer before sending the batch. Check the title block, the logo, the dimensions and the layers.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Traps Worth Knowing</h3>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The logo can arrive as an empty frame
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">When a drawing is exported to DWG, Tekla Structures copies the images into the same folder as the DWG file. If the image is not there, only an empty frame is shown. Keep the logo file with the exported drawings, or set the image path with the advanced option DXK_SYMBOLPATH so it is found reliably.</p>
+        </div>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Missing drawings usually means missing marks
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">If a creation command produced fewer drawings than there are parts, check numbering first, then the selection switch, then whether those parts already have a drawing of that type. Those three explain almost every case.</p>
+        </div>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Export does not fix content
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">A dimension missing in the DWG is a dimension missing in the Tekla drawing. Fix it in the drawing, or in the drawing properties that generated it, and export again.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_single_part_assembly_cu_and_ga_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create single-part, assembly, or cast unit drawings through Quick launch &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_drawings_in_master_drawing_catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create drawings in Master drawing catalog &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_master_drawing_types" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Master drawing types &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_including_single_part_views_in_assembly_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Include single-part drawings in assembly drawings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_export_to_dwg_or_dxf" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Export a drawing in 2D DWG, DXF, or DGN format &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_w_a_cu_drawing_properties" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Single-part, assembly and cast unit drawing properties &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_create_fabrication_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create fabrication drawings &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Older versions have an additional legacy export route documented separately as the old export, so the export dialog looks different before 2022.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
