@@ -13,7 +13,16 @@
     var ICON_SEARCH = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">' +
         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path></svg>';
 
-    var state = { pages: [], query: '', loaded: false };
+    var state = { pages: [], query: '', loaded: false, open: {} };
+    var OPEN_KEY = 'kb-nav-open';
+
+    // Sidebar groups follow the reading order of a job, not the alphabet:
+    // set the model up, then model it, then draw it, then report on it.
+    var CATEGORY_ORDER = [
+        'Getting Started', 'Installation', 'Licensing', 'Administration',
+        'Components', 'Catalogs', 'Extensions', 'Numbering', 'Views',
+        'Drawings', 'Reports & Templates', 'Interoperability'
+    ];
     var els = { nav: null, meta: null, inputs: [], hub: null, hubMeta: null };
 
     /* ---------- helpers ---------- */
@@ -71,15 +80,43 @@
         return phrase.length ? phrase : state.pages.filter(matches);
     }
 
-    function groupByFolder(pages) {
-        var order = [];
+    function groupByCategory(pages) {
         var groups = {};
+        var seen = [];
         pages.forEach(function (page) {
-            var key = page.folder || 'Other';
-            if (!groups[key]) { groups[key] = []; order.push(key); }
+            var key = page.category || page.folder || 'Other';
+            if (!groups[key]) { groups[key] = []; seen.push(key); }
             groups[key].push(page);
         });
-        return order.map(function (key) { return { folder: key, pages: groups[key] }; });
+        seen.sort(function (a, b) {
+            var ia = CATEGORY_ORDER.indexOf(a);
+            var ib = CATEGORY_ORDER.indexOf(b);
+            if (ia === -1 && ib === -1) { return a.localeCompare(b); }
+            if (ia === -1) { return 1; }
+            if (ib === -1) { return -1; }
+            return ia - ib;
+        });
+        return seen.map(function (key) { return { category: key, pages: groups[key] }; });
+    }
+
+    // Which groups are expanded survives navigation within the tab, so clicking
+    // a page does not fold the sidebar back up behind you.
+    function readOpen() {
+        try {
+            var raw = window.sessionStorage.getItem(OPEN_KEY);
+            return raw ? JSON.parse(raw) : {};
+        } catch (error) { return {}; }
+    }
+
+    function rememberGroup(category, open) {
+        state.open[category] = open;
+        try { window.sessionStorage.setItem(OPEN_KEY, JSON.stringify(state.open)); } catch (error) { /* storage unavailable */ }
+    }
+
+    function isGroupOpen(group) {
+        if (state.query) { return true; }
+        if (Object.prototype.hasOwnProperty.call(state.open, group.category)) { return state.open[group.category]; }
+        return group.pages.some(isActive);
     }
 
     /* ---------- sidebar ---------- */
@@ -130,17 +167,45 @@
             return;
         }
 
-        groupByFolder(visible).forEach(function (group) {
-            var wrap = el('div', 'kb-nav-group');
-            wrap.appendChild(el('div', 'kb-nav-group-title', group.folder));
+        groupByCategory(visible).forEach(function (group) {
+            var open = isGroupOpen(group);
+            var wrap = el('div', 'kb-nav-group' + (open ? ' is-open' : ''));
+            var bodyId = 'kb-nav-' + group.category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+            var toggle = el('button', 'kb-nav-group-toggle');
+            toggle.type = 'button';
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-controls', bodyId);
+            toggle.appendChild(el('span', 'kb-nav-group-label', group.category));
+            if (state.query) {
+                toggle.appendChild(el('span', 'kb-nav-group-count', String(group.pages.length)));
+            }
+            var sign = el('span', 'kb-nav-sign', open ? '\u2212' : '+');
+            sign.setAttribute('aria-hidden', 'true');
+            toggle.appendChild(sign);
+
+            var body = el('div', 'kb-nav-group-body');
+            body.id = bodyId;
+            body.hidden = !open;
+
             group.pages.forEach(function (page) {
-                var link = el('a', 'kb-nav-link' + (isActive(page) ? ' is-active' : ''));
+                var link = el('a', 'kb-nav-link' + (isActive(page) ? ' is-active' : ''), page.title);
                 link.href = ROOT + page.url;
-                link.appendChild(document.createTextNode(page.title));
-                if (page.category) { link.appendChild(el('small', null, page.category)); }
                 if (isActive(page)) { link.setAttribute('aria-current', 'page'); }
-                wrap.appendChild(link);
+                body.appendChild(link);
             });
+
+            toggle.addEventListener('click', function () {
+                var nowOpen = body.hidden;
+                body.hidden = !nowOpen;
+                wrap.classList.toggle('is-open', nowOpen);
+                toggle.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
+                sign.textContent = nowOpen ? '\u2212' : '+';
+                rememberGroup(group.category, nowOpen);
+            });
+
+            wrap.appendChild(toggle);
+            wrap.appendChild(body);
             els.nav.appendChild(wrap);
         });
     }
@@ -164,30 +229,20 @@
             return;
         }
 
-        groupByFolder(visible).forEach(function (group) {
-            var section = el('section', 'kb-hub-group');
-            section.appendChild(el('h2', 'kb-hub-group-title', group.folder));
-
-            var list = el('div', 'kb-hub-list');
+        var list = el('div', 'kb-hub-list');
+        groupByCategory(visible).forEach(function (group) {
             group.pages.forEach(function (page) {
                 var row = el('a', 'kb-hub-row');
                 row.href = ROOT + page.url;
-
-                row.appendChild(el('div', 'kb-hub-eyebrow',
-                    [page.category, page.product].filter(Boolean).join(' · ')));
+                row.appendChild(el('div', 'kb-hub-eyebrow', group.category));
                 row.appendChild(el('h3', 'kb-hub-title', page.title));
                 if (page.question) {
-                    row.appendChild(el('p', 'kb-hub-question', '“' + page.question + '”'));
-                }
-                if (page.summary) {
-                    row.appendChild(el('p', 'kb-hub-summary', page.summary));
+                    row.appendChild(el('p', 'kb-hub-question', page.question));
                 }
                 list.appendChild(row);
             });
-
-            section.appendChild(list);
-            els.hub.appendChild(section);
         });
+        els.hub.appendChild(list);
     }
 
     /* ---------- search wiring ---------- */
@@ -342,6 +397,7 @@
     }
 
     function init() {
+        state.open = readOpen();
         buildSidebar();
         setupDrawer();
         setupCopy();
