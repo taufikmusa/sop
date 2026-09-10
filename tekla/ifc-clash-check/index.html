@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running a Clash Check Against an IFC | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Others</div>
+                    <h1>Running a Clash Check Against an IFC</h1>
+                    <p>Clash Check Manager compares your steel with the reference model. The skill is in scoping the check so the result is a list somebody will actually work through.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do we run a clash check against an IFC file we received?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I find clashes between our steel and the reference model?</li>
+                                <li>Where is Clash Check Manager in Tekla Structures?</li>
+                                <li>Can I clash check against another Tekla Structures model?</li>
+                                <li>The clash list is thousands of rows long. How do I make it useful?</li>
+                                <li>Two parts sit in exactly the same place and no clash is reported.</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Clash Check Manager does this, and an IFC reference model is a supported source.</p>
+                            <p>Insert the IFC first. A clash check has nothing to compare against until it is there.</p>
+                            <ol>
+                                <li>Insert the IFC as a reference model.</li>
+                                <li>On the Manage tab, click Clash check.</li>
+                                <li>Choose what the check includes in the clash check settings.</li>
+                                <li>Select objects first if you want a limited check.</li>
+                                <li>Run the check and wait for both progress bars.</li>
+                                <li>Work the list by status and by clash type.</li>
+                            </ol>
+                            <p>Identical profiles in identical positions are not reported as clashes.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_finding_clashes_using_ccm" target="_blank" rel="noopener">Find clashes in a model</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_detecting_clashes" target="_blank" rel="noopener">Detect clashes</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know how big the model is and I will suggest how to split the check.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Clash Check Manager is the tool for this. It finds objects that collide, or that are too close to each other, and it works inside native Tekla Structures models, inside reference models, and between the two.</p>        <p class="text-gray-700 leading-relaxed mb-4">That last part is what makes it useful when an IFC lands in your inbox. Insert the file as a reference model and your steel and their concrete, services or architecture can be checked against each other directly, without exporting anything to a third application.</p>        <p class="text-gray-700 leading-relaxed mb-4">The work is not in running the check. It is in setting it up so the result is a list you can act on, rather than nine thousand rows nobody will ever read.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What Can Be Checked Against What</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">FORMATS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Supported reference formats</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">IFC and IFC4, DWG and DGN, SKP, and .tekla files, with overlay models excluded. An IFC delivery from a consultant is the normal case.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">TEKLA TO TEKLA</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Another Tekla Structures model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">It cannot be used directly. If you want to use another Tekla Structures model as a reference model, you must export it in the IFC format to be able to use it in clash check.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Between parts</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Your own steel checked against itself. Worth running before you look at anyone else model, because your own clashes are the ones you can fix today.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Between reference models</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Two consultant models checked against each other. Useful in a coordination role, less so when you only own the steel.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Objects in reference models</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Clashes inside a single reference model. This finds problems in the file you were sent, which is a conversation with the sender rather than a change on your side.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Reference models and components</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Your components checked against the reference geometry. This is where cleats, gussets and base plates meet somebody else duct.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ALIGNMENT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Get the origin right first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A reference model inserted at the wrong origin produces a clash list that is entirely fiction. Confirm alignment against a known grid intersection before running anything.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SIZE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide the scope honestly</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A whole-model check on a large job takes time and returns a list nobody works through. Checking one floor, one gridline band or one trade at a time produces results people actually fix.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CLEARANCE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Agree the clearances</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">You can define a minimum distance value within the range from 500 mm to -500.0 mm. A negative value allows a defined overlap without reporting it. Units follow your file settings.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXPECTATIONS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know what a clash is not</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Steel passing through a hole modelled by someone else as solid concrete is a clash in the software and correct in reality. Someone has to read the list with judgement.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OWNERSHIP</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide who fixes what</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Before you circulate a clash list, agree who owns each category. A list issued without that turns into a long email thread and no changed steel.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">POINT CLOUDS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Surveyed geometry counts too</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Point cloud clash checking is supported, which matters on refurbishment work where the existing structure is scanned rather than modelled.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Insert the reference model</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, select <strong>Import</strong> &gt; <strong>Insert reference model</strong>, and place the IFC. Check the alignment before going further.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open Clash Check Manager</h4>
+                <p class="text-sm text-gray-600">On the <strong>Manage</strong> tab, click <strong>Clash check</strong>. The <strong>Clash Check Manager</strong> dialog opens.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set what the check includes</h4>
+                <p class="text-sm text-gray-600">In the clash check settings, select which combinations to check: <strong>Between parts</strong>, <strong>Between reference models</strong>, <strong>Objects in reference models</strong> and <strong>Between reference models and components</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">Switch off the combinations you do not own. A steel detailer checking clashes inside somebody else architectural model is generating homework for a different office.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the clearances</h4>
+                <p class="text-sm text-gray-600">Define the minimum distance you want enforced, within the range from 500 mm to -500.0 mm. Zero finds only true collisions. A positive value also flags objects that are merely too close for access, welding or fireproofing.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose all or selected</h4>
+                <p class="text-sm text-gray-600">To check everything, run the check with nothing selected. To limit it, select the model objects first, then run. Selected-object checks are how you keep a large job manageable.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Run it</h4>
+                <p class="text-sm text-gray-600">Start the check and let it finish. A progress dialog shows completion for both Tekla Structures objects and reference model objects, so a check that appears stuck is usually still working through the reference side.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Work the list</h4>
+                <p class="text-sm text-gray-600">Sort and filter the results, then work through them by category rather than top to bottom. Clicking a row takes you to the objects involved in the model.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Reading the Results</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Each row in the clash list carries a state and a type. Both matter, and the states are what make a second run useful rather than a fresh start.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">State</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Active</td><td class="p-3 border-b border-gray-100 text-gray-600">A live clash, shown without a symbol.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">New</td><td class="p-3 border-b border-gray-100 text-gray-600">Found in this run and not present in the previous one.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Modified</td><td class="p-3 border-b border-gray-100 text-gray-600">The clash existed before, and something about it has changed.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Resolved</td><td class="p-3 border-b border-gray-100 text-gray-600">Marked as dealt with. Your record that somebody has handled it.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Missing</td><td class="p-3 border-b border-gray-100 text-gray-600">It was in the previous run and is not in this one.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Clash type</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it describes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Clash</td><td class="p-3 border-b border-gray-100 text-gray-600">The objects genuinely occupy the same space.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Is inside</td><td class="p-3 border-b border-gray-100 text-gray-600">One object sits entirely within another.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Min distance</td><td class="p-3 border-b border-gray-100 text-gray-600">No collision, but closer than the minimum distance you set.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Run the check regularly rather than once at the end. The New and Modified states then tell you what changed since last time, which is far more actionable than a fresh list of everything.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Limitation Worth Knowing</h3>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Identical objects in identical positions are invisible to the check
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Tekla User Assistance states it plainly: clashes are not detected if the profiles and positions are identical. So a beam modelled twice in exactly the same place, or your steel duplicated in the reference model you were sent, will never appear in the clash list. Duplicate geometry needs a different check, and it is worth looking for it deliberately.</p>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">This catches people out most often when the consultant model already contains the steelwork. Their beam and your beam are the same profile in the same place, so the clash check stays quiet while the model contains everything twice.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_finding_clashes_using_ccm" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Find clashes in a model &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_detecting_clashes" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Detect clashes &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_import" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Insert IFC models as reference models &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_inserting_a_reference_model" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Insert a reference model &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Reference model clash checking was improved in 2021, so behaviour and settings differ in versions before that release.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

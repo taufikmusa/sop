@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbering Settings Before You Model | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Modelling</div>
+                    <h1>Numbering Settings Before You Model</h1>
+                    <p>One model-wide set of rules decides what counts as the same part. Set it at the start of the job, not in the middle of it.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I set up the numbering settings? We need to know what makes two parts get the same number, and what to choose before we start the job.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where is the Numbering Setup dialog in Tekla Structures?</li>
+                                <li>Which settings decide whether two parts share the same position number?</li>
+                                <li>Should I use Compare to old or Take new number?</li>
+                                <li>What does the numbering tolerance actually do?</li>
+                                <li>Is it safe to change the numbering settings in the middle of a project?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Numbering settings decide what makes two parts count as the same part.</p>
+                            <p>Set them once at the start of a job. Changing them later moves marks that are already on drawings.</p>
+                            <ol>
+                                <li>On the Drawings &amp; reports tab, click Numbering settings.</li>
+                                <li>Choose Compare to old, or Take new number for changed parts.</li>
+                                <li>Tick Re-use old numbers if you want deleted numbers back.</li>
+                                <li>Set the tolerance for how close counts as identical.</li>
+                                <li>Tick the properties that should affect numbering, such as holes and part name.</li>
+                                <li>Click OK, then run Perform numbering.</li>
+                            </ol>
+                            <p>Leave Renumber all clear unless you truly mean to start over.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_general_numbering_settings" target="_blank" rel="noopener">General numbering settings</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_tips" target="_blank" rel="noopener">Tips for numbering</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know how your job is organised and I will suggest a starting set.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Numbering settings are the rules Tekla Structures uses to decide whether two objects are the same object. Everything downstream depends on them: how many marks the job has, how many single-part drawings you produce, and what the fabricator ends up cutting.</p>        <p class="text-gray-700 leading-relaxed mb-4">There are two separate things people mean by &ldquo;numbering settings&rdquo;, and mixing them up wastes a lot of time. The <strong>numbering series</strong>, which is a prefix and a start number, lives on each part. The <strong>numbering setup</strong>, which is the subject of this page, is one set of rules for the whole model.</p>        <p class="text-gray-700 leading-relaxed mb-4">The single most useful piece of advice about this dialog is about timing rather than content. Adjust the settings early in the project, before you create drawings or reports, and do not change them in the middle of a project.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Opening the Dialog</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Numbering settings</strong> &gt; <strong>Numbering settings</strong>. The <strong>Numbering Setup</strong> dialog opens.</p>        <p class="text-gray-700 leading-relaxed mb-4">This is a model-wide setting. Whatever you choose here applies to every part in the model, which is exactly why it deserves a decision at the start of a job rather than an adjustment halfway through.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Main Choices</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Setting</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it does</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">When to use it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Renumber all</td><td class="p-3 border-b border-gray-100 text-gray-600">All parts get a new number. All information on previous numbers is lost.</td><td class="p-3 border-b border-gray-100 text-gray-600">Almost never on a live job. Read the warning below before you touch it.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Re-use old numbers</td><td class="p-3 border-b border-gray-100 text-gray-600">Tekla Structures reuses the numbers of parts that have been deleted.</td><td class="p-3 border-b border-gray-100 text-gray-600">Keeps the mark range tight on a job with a lot of deletions. Risky once drawings and lists are in circulation.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Check for standard parts</td><td class="p-3 border-b border-gray-100 text-gray-600">Compares parts in the current model to a standard-part model, so recurring parts keep a fixed number.</td><td class="p-3 border-b border-gray-100 text-gray-600">Useful where the same catalogue items appear job after job.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Compare to old</td><td class="p-3 border-b border-gray-100 text-gray-600">The part gets the same number as a previously numbered similar part.</td><td class="p-3 border-b border-gray-100 text-gray-600">The stable choice. A modified part that matches an existing one falls back into that existing mark.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Take new number</td><td class="p-3 border-b border-gray-100 text-gray-600">The part gets a new number even if a similar numbered part already exists.</td><td class="p-3 border-b border-gray-100 text-gray-600">When a change has to be visible as a new mark on the shop floor, whatever it matches.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Keep number if possible</td><td class="p-3 border-b border-gray-100 text-gray-600">Modified parts maintain their previous numbers if possible.</td><td class="p-3 border-b border-gray-100 text-gray-600">The gentlest option for a job already in fabrication.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Tolerance</td><td class="p-3 border-b border-gray-100 text-gray-600">Objects get the same number if their dimensions differ less than the value entered.</td><td class="p-3 border-b border-gray-100 text-gray-600">Set it to the difference your shop genuinely does not care about, and no larger.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Synchronize with master model</td><td class="p-3 border-b border-gray-100 text-gray-600">Used in multi-user mode for the save-numbering-save sequence.</td><td class="p-3 border-b border-gray-100 text-gray-600">Multi-user models. It lets numbering be cancelled before the last save is made.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Renumber all is not an undo button
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Tekla User Assistance states plainly that Renumber all permanently removes the existing position numbers, and that any existing drawings will also be removed. On a job with drawings issued, that is a very expensive checkbox. Leave it clear unless starting the numbering over is genuinely what you want.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What Makes Two Parts Different</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">The lower part of the dialog is a list of properties, each with a checkbox saying whether it affects numbering. This is where you tune how fussy the comparison is.</p>        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GEOMETRY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Holes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">With this on, two otherwise identical beams with different hole patterns get different marks. Steel fabrication normally wants this on, because the holes are what the shop drills.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">IDENTITY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Part name</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Two identical plates called different things stay apart. Handy when the name carries meaning your shop relies on, and a nuisance when names are inconsistent.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORIENTATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Beam and column orientation</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Separate settings for beams and for columns. Turn these on when a member that is handed or rotated must be treated as a different piece.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ASSEMBLY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Assembly name and assembly phase</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Assembly phase is the usual way to keep marks from one delivery phase out of another, so phase two does not renumber into phase one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONTENT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Reinforcing bars and embedded objects</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">For concrete work. Two cast units with the same shape but different bar arrangements only separate if this is on.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">FINISH</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Surface treatment and welds</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Two members that differ only in paint specification or weld detail stay together unless you switch these on.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Agree the scheme before you open the dialog</h4>
+                <p class="text-sm text-gray-600">Decide with whoever runs fabrication what counts as the same part. Holes, finishes and handing are the three that cause arguments later, so settle them first.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the Numbering Setup dialog</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Numbering settings</strong> &gt; <strong>Numbering settings</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set how modified parts behave</h4>
+                <p class="text-sm text-gray-600">Choose between <strong>Compare to old</strong>, <strong>Take new number</strong> and <strong>Keep number if possible</strong>. For most jobs, comparing to old is the setting that keeps marks stable across revisions.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Decide about reusing and renumbering</h4>
+                <p class="text-sm text-gray-600">Set <strong>Re-use old numbers</strong> deliberately, not by accident. Leave <strong>Renumber all</strong> clear.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the tolerance</h4>
+                <p class="text-sm text-gray-600">Enter the value below which two objects count as identical. Objects get the same number if their dimensions differ less than the value entered, so a generous tolerance quietly merges parts that your shop may consider different.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Tick the properties that matter</h4>
+                <p class="text-sm text-gray-600">Work down the list of properties and switch on the ones that should force a different mark. Everything left off is a difference Tekla Structures will ignore.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Save and number</h4>
+                <p class="text-sm text-gray-600">Click <strong>OK</strong>, then on the <strong>Drawings &amp; reports</strong> tab click <strong>Perform numbering</strong> &gt; <strong>Number modified objects</strong>. Check the <strong>Numbering preview</strong> dialog, then click <strong>Assign numbers</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Write the settings down</h4>
+                <p class="text-sm text-gray-600">Record the agreed settings somewhere the whole team can see, and put the same settings into your firm folder so the next model starts from them instead of from the defaults.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Living With the Settings Afterwards</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Build a routine around numbering rather than treating it as an occasional event. Tekla User Assistance suggests numbering the model when you start your working day, or when you finish for the day. Marks that are refreshed daily never drift far from the drawings.</p>        <p class="text-gray-700 leading-relaxed mb-4">If Tekla Structures warns about overlapping position numbers, deal with it immediately. Objects with overlapping numbers will not be numbered, so the warning is describing parts that currently have no mark at all. The <strong>Numbering preview</strong> dialog is where you find them.</p>        <p class="text-gray-700 leading-relaxed mb-4">Resist the temptation to use numbering as a filing system. Numbering is not just another way of classifying parts. To classify, use Organizer, user-defined attributes or colours, and leave the numbering settings to do the one job they are good at.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Multi-user models need one more decision
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">In multi-user mode the Numbering Setup dialog has a Synchronize with master model (save-numbering-save) checkbox. Agree as a team whether it is on, because half the team numbering one way and half the other produces conflicts that look like software faults.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_general_numbering_settings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">General numbering settings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_modified_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Number parts and other model objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_preview_numbering" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Preview the numbering results &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_renumbering_the_model" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Renumber the model &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_tips" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tips for numbering &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2025/sys_multiuser_numbering_setup" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Numbering setup in multi-user mode &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026, with the multi-user note taken from the 2025 documentation, which is the most recent published version of that article. The dialog contents have been stable across recent versions.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

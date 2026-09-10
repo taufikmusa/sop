@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revising Drawings Without Renumbering Everything | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Drawing Setup</div>
+                    <h1>Revising Drawings Without Renumbering Everything</h1>
+                    <p>Part marks, drawing numbers and revision marks are three different things. Move the one you meant to move, and leave the marks the shop is already cutting to.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;We have a revision that affects only some parts. How do we revise those drawings without Tekla Structures renumbering all the parts in the model?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I revise a drawing without all the part marks changing?</li>
+                                <li>Running numbering after a small change renumbered parts I never touched.</li>
+                                <li>Where do I set the revision number on a drawing?</li>
+                                <li>Which numbering setting keeps existing part marks stable?</li>
+                                <li>How do I stop Tekla Structures from renumbering the whole model?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Two different numbers are involved, and keeping them apart is most of the answer.</p>
+                            <p>Part marks come from numbering. Drawing revisions come from Document manager.</p>
+                            <ol>
+                                <li>Open Numbering settings and leave Renumber all clear.</li>
+                                <li>Select Compare to old, or Keep number if possible.</li>
+                                <li>Click Perform numbering, then Number modified objects.</li>
+                                <li>Check the Numbering preview, then click Assign numbers.</li>
+                                <li>In Document manager, select the drawings and click Revision.</li>
+                                <li>Enter the mark and description, then click Create.</li>
+                            </ol>
+                            <p>Renumber all wipes existing numbers, and the documentation warns that existing drawings are removed too.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_renumbering_the_model" target="_blank" rel="noopener">Renumber the model</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_revisions" target="_blank" rel="noopener">Revise drawings</a></p>
+                            </div>
+                            <p class="kb-email-sign">Let me know what changed on the job and I will go through it with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A revision arrives, a few parts change, and someone runs numbering. Suddenly marks that were issued to the shop three weeks ago have moved. The fabricator is cutting to one set of numbers and the model now says something else.</p>        <p class="text-gray-700 leading-relaxed mb-4">The confusion behind it is that Tekla Structures carries several numbers that people all call &ldquo;the number&rdquo;. The part mark, the drawing number and the drawing revision mark are three separate things, produced by three separate mechanisms.</p>        <p class="text-gray-700 leading-relaxed mb-4">Getting a clean revision out means knowing which one you actually want to move, and then keeping your hands off the other two.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Three Numbers, Three Mechanisms</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Number</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Where it comes from</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What moves it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Part and assembly position number</td><td class="p-3 border-b border-gray-100 text-gray-600">The numbering series on the part, resolved by running numbering.</td><td class="p-3 border-b border-gray-100 text-gray-600">Running numbering. What changes and what stays depends entirely on the Numbering Setup dialog.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Drawing name and number</td><td class="p-3 border-b border-gray-100 text-gray-600">The drawing itself, listed in Document manager.</td><td class="p-3 border-b border-gray-100 text-gray-600">Editing it in Document manager, or the drawing properties that created it.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Revision mark</td><td class="p-3 border-b border-gray-100 text-gray-600">A revision record created against a drawing in Document manager.</td><td class="p-3 border-b border-gray-100 text-gray-600">You, deliberately, through the Revision handling dialog. Nothing creates it automatically.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">So &ldquo;revise the drawing number without renumbering the parts&rdquo; is not one setting. It is two habits: number conservatively, and revise explicitly.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Keeping Existing Part Marks Stable</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is the half that goes wrong. The Numbering Setup dialog decides whether a modified part keeps its identity or takes a fresh mark.</p>        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LEAVE IT OFF</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Renumber all</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">All parts get a new number and all information on previous numbers is lost. The documentation also states that any existing drawings will be removed. On a job with issued drawings this is not a recovery step, it is a restart.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">THE SAFE ONE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Compare to old</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The part gets the same number as a previously numbered similar part. A modified part that still matches something already numbered falls back into that existing mark rather than inventing a new one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GENTLEST</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Keep number if possible</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Modified parts maintain their previous numbers if possible. The right choice when material is already in fabrication and stability matters more than tidiness.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DELIBERATE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Take new number</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The part gets a new number even if a similar numbered part already exists. Use it when a change must be visible as a new mark on the shop floor, and know that you are choosing it.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAREFUL</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Re-use old numbers</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures reuses the numbers of parts that have been deleted. Tidy on a job with lots of deletions, and dangerous once those old numbers are already on paper somewhere.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DO NOT TOUCH</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The property checkboxes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Holes, part name, orientation, welds, surface treatment and the tolerance all decide what counts as identical. Changing any of them mid-project reshuffles marks across the whole model, and it looks exactly like a bug.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Procedure</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Confirm the numbering settings before you touch anything</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Numbering settings</strong> &gt; <strong>Numbering settings</strong>. Confirm <strong>Renumber all</strong> is clear, and that the comparison option is the one your job has been using all along.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Do not improve the settings during a revision
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">A revision is the worst moment to tidy up the numbering rules. Adjust the settings early in the project, before creating drawings or reports, and not in the middle of a project. If the settings are wrong, that is a separate conversation with the whole team.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number only what changed</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Perform numbering</strong> &gt; <strong>Number modified objects</strong>. This numbers the parts, assemblies, cast units and reinforcement created or modified since the last numbering, and leaves everything else alone.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Read the preview before you accept it</h4>
+                <p class="text-sm text-gray-600">The <strong>Numbering preview</strong> dialog shows the proposed position numbers before they are assigned. This is your last chance to notice that four hundred parts are about to change mark.</p>
+                <p class="text-sm text-gray-600 mt-2">When the proposal looks right, click <strong>Assign numbers</strong>. If it does not, stop and find out why rather than accepting and fixing later.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Let the drawings catch up</h4>
+                <p class="text-sm text-gray-600">Drawings update from the model once numbering is settled. Check the changes and status columns in <strong>Document manager</strong> to see which drawings are affected by the revision.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the revision record</h4>
+                <p class="text-sm text-gray-600">In <strong>Document manager</strong>, select the drawings to revise and click <strong>Revision</strong>. The <strong>Revision handling</strong> dialog opens.</p>
+                <p class="text-sm text-gray-600 mt-2">Enter the <strong>Mark</strong>, using numbers such as 1, 2, 3 or letters such as A, B, C, then fill in <strong>Created by</strong>, <strong>Date</strong>, <strong>Description</strong> and any of <strong>Checked by</strong>, <strong>Approved by</strong>, <strong>Delivery</strong>, <strong>Info 1</strong> and <strong>Info 2</strong> that your office uses. Click <strong>Create</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Put the mark on the sheet</h4>
+                <p class="text-sm text-gray-600">The revision mark now shows in <strong>Document manager</strong> and appears in the revision table if the drawing has one. To mark up the changed area on the drawing itself, open the drawing and use <strong>Revision mark</strong> on the <strong>Annotations</strong> tab.</p>
+                <p class="text-sm text-gray-600 mt-2">The revision must exist in Document manager first. The revision mark draws its information from that record, so there is nothing to place until it is created.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Export and issue</h4>
+                <p class="text-sm text-gray-600">Export the affected drawings to DWG from <strong>Document manager</strong>, and send only those. A revision issue that quietly includes untouched sheets invites the fabricator to work from the wrong one.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Editing a Revision You Already Created</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Revisions are records, not one-way switches. Select the drawing in <strong>Document manager</strong>, click <strong>Revision</strong>, choose the revision from the <strong>Rev.No.</strong> list, change what needs changing, and click <strong>Modify</strong>.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is the right way to correct a typo in a revision description. Deleting and recreating a revision to fix a spelling mistake loses the history that the revision existed at all.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">When Marks Moved Anyway</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">If parts you never touched have new marks, work through these in order.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Was Renumber all selected?</strong> Check the Numbering Setup dialog. This is the most common cause and the most damaging one.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Did the numbering settings change?</strong> Someone switching the holes or orientation checkbox will reshuffle marks across the entire model on the next numbering run, without touching a single part.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Was a numbering series edited?</strong> Changing a prefix or start number on parts that already carry marks moves them at the next run, by design.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Did a series overflow into another?</strong> If beams start at 1 and columns at 100, a job with 120 beam marks collides. Tekla Structures warns about overlapping position numbers, and objects with overlapping numbers will not be numbered at all.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_renumbering_the_model" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Renumber the model &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_general_numbering_settings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">General numbering settings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_modified_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Number parts and other model objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_preview_numbering" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Preview the numbering results &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_revisions" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Revise drawings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_adding_revision_marks" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Add revision marks in drawings &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Document manager replaced the older drawing list in earlier releases, so in versions before 2019 the revision commands sit in the Drawing List dialog instead.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

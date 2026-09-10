@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Block and Logo for A1 and A3 | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Drawing Setup</div>
+                    <h1>Title Block and Logo for A1 and A3</h1>
+                    <p>Template Editor draws the block, the layout editor decides where it sits on each sheet size, and one advanced option decides whether your logo ever prints.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do we set up our own drawing title block with the company logo, for A1 and A3 sheets?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I put our company logo in the drawing title block?</li>
+                                <li>The logo shows in Template Editor but not in the drawing.</li>
+                                <li>How do I use A1 for assembly drawings and A3 for single-part drawings?</li>
+                                <li>Where is the drawing layout editor in Tekla Structures?</li>
+                                <li>How do I add a revision table or a bill of materials to the sheet?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Two tools are involved, and that is what makes this feel harder than it is.</p>
+                            <p>Template Editor draws the title block. The drawing layout editor places it on each sheet size.</p>
+                            <ol>
+                                <li>In Template Editor, open the title block and click Insert, then Picture.</li>
+                                <li>Select the logo file, then pick two corners for it.</li>
+                                <li>Save the template into your firm folder.</li>
+                                <li>On the File menu, click Editors, then Drawing layout editor.</li>
+                                <li>Create a layout and add the drawing sizes A1 and A3.</li>
+                                <li>Click Add tables, place the title block, then click Save as.</li>
+                            </ol>
+                            <p>Set DXK_SYMBOLPATH to the logo folder, or the image shows only in the editor.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_edit_drawing_layouts" target="_blank" rel="noopener">Create and edit drawing layouts</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/tpled_adding_logos_to_template" target="_blank" rel="noopener">Adding a logo to a template</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with your sheet sizes and I will go through the layout with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A company title block is two jobs wearing one name. The graphics, the boxes, the text and the logo are drawn in <strong>Template Editor</strong>. Deciding which sheet sizes exist and where that title block sits on each of them happens in the <strong>drawing layout editor</strong>.</p>        <p class="text-gray-700 leading-relaxed mb-4">People usually get halfway. The title block gets built and looks perfect in Template Editor, then it either never appears on the sheet, or appears in the wrong place on A3 because only A1 was set up.</p>        <p class="text-gray-700 leading-relaxed mb-4">The vocabulary below is worth five minutes. Once these four words are clear, the rest of this page is mechanical.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Four Words That Matter</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Term</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Table</td><td class="p-3 border-b border-gray-100 text-gray-600">A Template Editor template placed in a drawing, containing information about model objects. Your title block is a table. So is a revision table, a bill of materials or a key plan.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Table set</td><td class="p-3 border-b border-gray-100 text-gray-600">A group of tables or templates included in a drawing of a particular type and size. This is the collection that appears together on one sheet.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Drawing size</td><td class="p-3 border-b border-gray-100 text-gray-600">A named sheet size such as A1 or A3, with its width and height. Different sizes can carry different table sets.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Drawing layout</td><td class="p-3 border-b border-gray-100 text-gray-600">The thing that ties it all together. A layout defines which tables to include in a drawing and where the tables are located, along with view margins, spacing, frames and foldmarks.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">The practical upshot: using different layouts you can set assembly drawings to use A1 and A2 sheets, and single-part drawings to use A3 and A4 sheets. That is exactly the arrangement most steel offices want.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Part One: Build the Title Block in Template Editor</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open Template Editor</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Editors</strong> &gt; <strong>Template editor</strong>. Open the title block template you want to change, or start from an existing one rather than a blank page.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the picture folder before you insert anything</h4>
+                <p class="text-sm text-gray-600">In Template Editor, click <strong>Options</strong> &gt; <strong>Preferences</strong> and go to the <strong>File Locations</strong> tab. On the <strong>Symbols, pictures</strong> row, add the folder holding your logo, separated from the existing entries by a semicolon.</p>
+                <p class="text-sm text-gray-600 mt-2">Tekla Structures looks for images in the model folder first, then in the symbols folder in the current environment. Anywhere else has to be registered here.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Insert the logo</h4>
+                <p class="text-sm text-gray-600">Click <strong>Insert</strong> &gt; <strong>Picture</strong>. The <strong>Select Picture File</strong> dialog opens. Select the file and click <strong>OK</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">Then define the insertion point: either click twice to define the opposing corners, or drag and release. The logo appears in the template and in the <strong>Content Browser</strong> as a <strong>Picture</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the file format</h4>
+                <p class="text-sm text-gray-600">Supported formats are BMP, GIF, GRD, JPG, PPM, PGM, PNG, RLE, TIFF and XKRL. A PNG at a sensible size is the safe choice.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Keep the image small
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Very large images update very slowly. Scale the logo down to roughly the size it will print at before you insert it, rather than dropping in a print-resolution file and shrinking it on screen.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the fields around it</h4>
+                <p class="text-sm text-gray-600">Fill in the rest of the title block with the value fields your office needs: project name, drawing number, scale, revision, checked by. These come from model and drawing attributes, so they fill themselves in on every sheet.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Save it where everyone gets it</h4>
+                <p class="text-sm text-gray-600">Save the template, then place it in your firm folder so every model uses the same one. A title block that lives in a single model folder is a title block you will rebuild next year.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Logo Shows in the Editor but Not in the Drawing</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is the single most common complaint on this subject, and it is not a fault. Template Editor and Tekla Structures each look for the image file in their own way, and both have to be told where it is.</p>        <p class="text-gray-700 leading-relaxed mb-4">You have already set the folder in Template Editor preferences. Now set the same folder for Tekla Structures using the advanced option <strong>DXK_SYMBOLPATH</strong>, by adding a line to <strong>user.ini</strong>:</p>        <div class="bg-[#1e1e1e] p-4 rounded-lg shadow-lg border-2 border-gray-200 mb-4">
+            <pre class="text-[#d4d4d4] font-mono text-xs overflow-x-auto whitespace-pre leading-relaxed">set DXK_SYMBOLPATH=%DXK_SYMBOLPATH%;C:\TeklaStructures\FIRM\Bitmaps</pre>
+        </div>        <p class="text-gray-700 leading-relaxed mb-4">Replace the path with your own folder, and keep the semicolon so the existing paths survive. Close Tekla Structures completely and reopen it for the change to take effect.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The same rule bites again on export
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">When a drawing is exported to DWG, Tekla Structures copies the images into the same folder as the DWG file. If the image is not there, only an empty frame is shown. Keep the image next to the exported files when you send drawings out.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Part Two: Set Up A1 and A3 in the Layout Editor</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the drawing layout editor</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, select <strong>Editors</strong> &gt; <strong>Drawing layout editor</strong>. You can also reach it from the <strong>Drawings &amp; reports</strong> tab under <strong>Drawing properties</strong> &gt; <strong>Drawing layout editor</strong>, or by typing its name into the Quick Launch box.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the layout</h4>
+                <p class="text-sm text-gray-600">Click <strong>Create layout</strong>, give it a name of up to 63 characters, and select the drawing size to start from. Click <strong>Create</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the sheet sizes you need</h4>
+                <p class="text-sm text-gray-600">Click the edit button next to the <strong>Drawing size</strong> list, then click the plus button under the existing sizes. Select a predefined size or type a name of your own, and double-click the <strong>Width</strong> and <strong>Height</strong> boxes to enter values. Click <strong>OK</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">Add A1 and A3 here as separate sizes. Each one can then carry its own arrangement of tables.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Place the title block</h4>
+                <p class="text-sm text-gray-600">Click <strong>Add tables</strong>, select your title block template, and click the point in the layout where it belongs. Add the revision table, bill of materials or key plan the same way.</p>
+                <p class="text-sm text-gray-600 mt-2">To remove a table, right-click it and select <strong>Delete</strong>, or select it and press the Delete key.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Adjust the frame</h4>
+                <p class="text-sm text-gray-600">In the drawing size settings, set the frame distances from the left, right, bottom and top edges, and pick the frame colour. This is also where foldmarks are handled.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose which drawing types use this layout</h4>
+                <p class="text-sm text-gray-600">Select the applicable drawing types in the layout editor side pane. This is how assembly drawings end up on A1 while single-part drawings end up on A3.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Save</h4>
+                <p class="text-sm text-gray-600">Click <strong>Save as</strong> on the ribbon, enter a name in the <strong>Save layout with a name</strong> box, and select the drawing sizes it applies to. There is a <strong>Synchronize listed sizes with paper sizes for printing</strong> option worth selecting so printing matches the sheet.</p>
+                <p class="text-sm text-gray-600 mt-2">Click <strong>Save</strong>.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Different Tables on A1 and on A3</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">An A1 assembly sheet and an A3 single-part sheet rarely want the same furniture. A full bill of materials that fits comfortably on A1 crowds an A3 sheet badly.</p>        <p class="text-gray-700 leading-relaxed mb-4">Because a table set belongs to a drawing size within a layout, you can give each size its own set. Use the same table layout with different drawing sizes when they genuinely match, and give a size its own table layout when it does not.</p>        <p class="text-gray-700 leading-relaxed mb-4">A workable pattern for a steel office: A1 and A2 carry the full title block, revision table and bill of materials; A3 and A4 carry a reduced title block and no bill of materials, because the part list is already in the drawing views.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where the Layouts Live</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Layout files are stored in the <strong>\attributes</strong> subfolder in the model folder, with a <strong>.lay</strong> extension, one file per custom layout.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is fine while you are developing them and useless as a company standard. Copy the layout files to the project or firm folders defined by the <strong>XS_FIRM</strong> and <strong>XS_PROJECT</strong> advanced options, and every model picks them up.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Move the template and the layout together
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">A layout refers to table templates by name. Copying the .lay file to the firm folder without copying the title block template it points at gives you a layout that loads and a sheet with a missing table.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_edit_drawing_layouts" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create and edit drawing layouts &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_layout_editor" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Define drawing layout &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/tpled_adding_logos_to_template" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Adding a logo to a template in Template Editor &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_adding_images_in_graphical_template" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Add images in a template &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/template-logo-image-from-firm-folder" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Template logo (image) from firm folder &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/creating-new-drawing-layouts" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Creating new drawing layouts &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/sys_project_and_firm_folders" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Project and firm folders &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. The layout editor was reworked in earlier releases, so in versions before 2019 the layout and table set dialogs look different, although the underlying layout, table set and drawing size structure is the same.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

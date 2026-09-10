@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking Connections and Bolt Sizes in an IFC | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Others</div>
+                    <h1>Checking Connections and Bolt Sizes in an IFC</h1>
+                    <p>Insert it, drill down the hierarchy, inquire the object. Then face the harder question: was the information ever put in the file.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;How do I check the connections and the bolt sizes in an IFC file we received?&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I read the properties of one object inside an IFC reference model?</li>
+                                <li>Can I see bolt diameters and grades in an IFC file?</li>
+                                <li>I can only select the whole IFC model, not a single part inside it.</li>
+                                <li>The IFC has no bolts in it at all. Is that a Tekla Structures problem?</li>
+                                <li>Where do the IFC property sets show up in Tekla Structures?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Insert the IFC as a reference model, then drill down and inquire the object you want.</p>
+                            <p>What you can read is limited to what the sender exported. Tekla Structures cannot invent missing data.</p>
+                            <ol>
+                                <li>On the File menu, click Import, then Insert reference model.</li>
+                                <li>Activate the Select reference models switch.</li>
+                                <li>Add the Select objects in components switch for single objects.</li>
+                                <li>Point the model, hold Shift and scroll the middle mouse button.</li>
+                                <li>Right-click the object and select Inquire.</li>
+                                <li>Read the property sets listed for that object.</li>
+                            </ol>
+                            <p>No bolts in the file usually means the sender left them out of the export.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_viewing_reference_model_hierarchy" target="_blank" rel="noopener">Examine reference model hierarchy</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_import" target="_blank" rel="noopener">Insert IFC models as reference models</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the file and I will look at what is actually inside it.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">An IFC file is not a Tekla Structures model. It is a delivery of whatever the sending office chose to put in it, in whatever detail their export settings allowed. Checking connections and bolt sizes in one is therefore two different questions.</p>        <p class="text-gray-700 leading-relaxed mb-4">The first is mechanical: how do you get down to a single object inside a reference model and read its properties. That has a clear answer and this page walks through it.</p>        <p class="text-gray-700 leading-relaxed mb-4">The second is uncomfortable: is the information in the file at all. Very often it is not, and no technique in Tekla Structures will recover it. Knowing quickly which situation you are in saves an afternoon of hunting for data that was never sent.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What an IFC Can and Cannot Tell You</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GEOMETRY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Shape is nearly always there</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Plates, cleats, stiffeners and gussets arrive as solid geometry if the sender modelled them. You can see the connection, measure it, and clash check against it.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BOLTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Bolts are optional, not automatic</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures can export bolts with nuts and washers, so a file from Tekla Structures may well contain them. Whether they were included is the sender decision, made in their export settings.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PROPERTIES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Sizes come from property sets</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A bolt diameter, grade or length is only readable if a property set carrying it was exported. Tekla User Assistance is explicit that model objects are exported on the basis of the export settings, including the property sets.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ENTITIES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Some parts are excluded deliberately</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">On the sending side, parts can be excluded from an export through their IFC entity settings. A missing member is not always a fault, and asking is faster than investigating.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCHEMA</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The schema affects what is possible</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">IFC export supports the IFC 2X3, IFC 4 and IFC 4.3 schemas. Ask which one you were sent when properties look thinner than you expected.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NOT NATIVE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">It stays a reference model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Inserted IFC objects are reference objects, not Tekla Structures parts, until you convert them. They will not appear in your reports or numbering while they remain references.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Insert the File</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the model that will hold the reference</h4>
+                <p class="text-sm text-gray-600">Open the Tekla Structures model you want to check against, so the reference sits alongside your own steel.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Insert it</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, select <strong>Import</strong> &gt; <strong>Insert reference model</strong>. The <strong>Reference models</strong> list and the <strong>Add model</strong> dialog open.</p>
+                <p class="text-sm text-gray-600 mt-2">You can also click the <strong>Reference models</strong> button in the side pane and then click <strong>Add model</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check the format</h4>
+                <p class="text-sm text-gray-600">IFC (.ifc) and ifcXML (.ifcXML) are supported, and you can use compressed (.ifcZIP) or uncompressed files. A zipped IFC does not need extracting first.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Place it correctly</h4>
+                <p class="text-sm text-gray-600">Get the placement and origin right at insertion. Everything you check afterwards, connections and clashes included, is only as meaningful as the alignment between the two models.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Getting Down to a Single Object</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is where most people stall. Clicking an IFC model selects the whole thing, and the properties of the whole thing tell you nothing about one bolt.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What you want to select</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Switches to activate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">The whole reference model</td><td class="p-3 border-b border-gray-100 text-gray-600">Select reference models, plus Select components.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">A single object inside it</td><td class="p-3 border-b border-gray-100 text-gray-600">Select reference models, plus Select objects in components.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">An assembly inside it</td><td class="p-3 border-b border-gray-100 text-gray-600">Select reference models, plus Select assemblies.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">There is a second route documented for walking the hierarchy, and it is the one worth learning because it works level by level. Activate the <strong>Select assemblies</strong> switch for assemblies, or the <strong>Select objects in assemblies</strong> switch for parts. Then point at the reference model, hold down <strong>Shift</strong> and scroll using the middle mouse button until you reach the hierarchy level where the reference object is.</p>        <p class="text-gray-700 leading-relaxed mb-4">A typical IFC hierarchy runs from <strong>IfcProject</strong> at the top, down through <strong>IfcBuildingStorey</strong>, to individual parts such as <strong>IfcWall</strong> or a steel member, and then to the objects below them.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Keep the cursor away from grid lines
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Hierarchy scrolling does not work if the cursor is too close to a grid. If Shift and the middle mouse button appear to do nothing, move the pointer onto solid geometry and try again.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Reading the Connection and the Bolt Size</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Inquire the object</h4>
+                <p class="text-sm text-gray-600">With the object selected at the right hierarchy level, right-click it and select <strong>Inquire</strong>. The inquire dialog shows the native reference object properties and attributes.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Read the property sets</h4>
+                <p class="text-sm text-gray-600">What appears is what the sender exported. For a bolt this is where a diameter, grade, length or standard would be, if the exporting office included the property set that carries them.</p>
+                <p class="text-sm text-gray-600 mt-2">Note the naming convention: an IFC property read in Tekla Structures carries an <strong>EXTERNAL.</strong> prefix in the inquire dialog. When you reuse the property name elsewhere, for example in conversion settings, write it as shown but without that prefix.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Look at the connection geometry itself</h4>
+                <p class="text-sm text-gray-600">Even with no properties attached, the plates and bolt solids can be measured. Use the measuring tools against the reference geometry to confirm plate thickness, edge distances and bolt spacing.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add your own attributes if you are tracking the check</h4>
+                <p class="text-sm text-gray-600">Double-click the object to open the reference model object details, where you can view and modify user-defined attributes you have added. Those attributes can then be used for filtering, which is a practical way to mark what you have already checked.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Report on it if you need a list</h4>
+                <p class="text-sm text-gray-600">To report a reference object attribute, inquire the object to see the property name, then in Template Editor add that property name to be reported in a Reference row. That turns a one-by-one check into a list.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">When the Data Simply Is Not There</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">If the inquire dialog shows geometry and almost no properties, stop looking. The file does not contain what you need, and the fix is on the sending side.</p>        <p class="text-gray-700 leading-relaxed mb-4">Ask the sending office three specific questions, because vague requests produce vague files.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Were bolts included in the export?</strong> Tekla Structures can export bolts with nuts and washers, so if the source is a Tekla Structures model, the capability exists.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Which property sets were exported?</strong> Object properties reach IFC through property set definitions chosen at export time. Naming the properties you need is far more effective than asking for &ldquo;more detail&rdquo;.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Which schema was used?</strong> IFC 2X3, IFC 4 and IFC 4.3 differ in what they carry. Knowing which one you have explains a lot of apparent gaps.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                A missing bolt is not evidence of a missing bolt
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Never conclude from an IFC that a connection has no bolts. Absence in an IFC is a statement about the export settings, not about the steelwork. Confirm with a drawing or with the sender before raising it as a design issue.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">If You Need Them as Real Parts</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Reference objects can be converted into native Tekla Structures objects, either through direct conversion at insert time or through conversion change management for selected objects. Once converted, they behave like your own parts: they number, they report, and they appear in drawings.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is a bigger decision than a check, and it changes who owns those parts in your model. For checking connections and bolt sizes, leave the file as a reference and inquire it in place.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_import" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Insert IFC models as reference models &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_inserting_a_reference_model" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Insert a reference model &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_viewing_reference_model_hierarchy" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Examine reference model hierarchy &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/gen_select_reference_models" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Select reference models, reference model objects and assemblies &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_reference_model_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Reference model objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">IFC export &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_conversion_management" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Convert IFC objects into native Tekla Structures objects &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Two sets of selection switches are documented for reaching reference model objects, and both are shown above, because which one behaves best depends on how the file is structured.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
