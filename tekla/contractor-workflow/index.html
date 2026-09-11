@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Contractor Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Contractor Workflow</h1>
+                    <p>Not what shape is it, but how much, on which level, in which pour, and is it ready. Organizer and reports are where a contractor lives.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a contractor? We build rather than fabricate, and we mainly need quantities and coordination.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I get quantity takeoff out of a Tekla Structures model?</li>
+                                <li>What is Organizer for, and how is it different from a report?</li>
+                                <li>How do I organise a model by level and by phase?</li>
+                                <li>How do I share the model with the rest of the project team?</li>
+                                <li>Can I get concrete volumes and formwork areas for procurement?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>A contractor uses the model to answer questions, not to fabricate from it.</p>
+                            <p>The two tools that matter most are Organizer and reports. Both read the live model.</p>
+                            <ol>
+                                <li>Set up the building hierarchy: project, site, building, level, space.</li>
+                                <li>Use phases to group objects the way you build them.</li>
+                                <li>Open Organizer and build the location and custom categories.</li>
+                                <li>Use Object Browser to query quantities and export to Excel.</li>
+                                <li>Run the takeoff reports for the breakdown you need.</li>
+                                <li>Share through Trimble Connect for the wider project team.</li>
+                            </ol>
+                            <p>Model the way you build: start at the lowest elevation and work upwards.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_organizer" target="_blank" rel="noopener">Organizer</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/us-contractor-quantity-takeoff" target="_blank" rel="noopener">Quantity takeoff for contractors</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with how your takeoff is broken down and I will shape it with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A contractor asks the model different questions from everyone else. Not &ldquo;what shape is this piece&rdquo; but &ldquo;how much of it is there, on which level, in which pour, and is it ready&rdquo;. The geometry is a means to an end, and the end is quantities, sequence and readiness.</p>        <p class="text-gray-700 leading-relaxed mb-4">That changes which part of Tekla Structures you live in. A detailer lives in drawings and numbering. A contractor lives in <strong>Organizer</strong> and <strong>reports</strong>, both of which read the live model rather than a snapshot, and in <strong>Trimble Connect</strong> for getting that information to everyone else.</p>        <p class="text-gray-700 leading-relaxed mb-4">The single most useful piece of advice in the published guidance is about modelling habit rather than any tool. Model in the same fashion you would construct the structure: begin with the lowest elevation first and work your way upwards. A model built in construction order answers construction questions without being reorganised first.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Organise the Model Before You Query It</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Quantities come out sensibly only if the model is arranged sensibly. There are two structures worth setting up, and they do different jobs.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Structure</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it gives you</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Building hierarchy</td><td class="p-3 border-b border-gray-100 text-gray-600">A traditional location breakdown structure, with a default hierarchy of project, site, building, level, space.</td><td class="p-3 border-b border-gray-100 text-gray-600">Quantities by where something is. The natural breakdown for a site team.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Phases</td><td class="p-3 border-b border-gray-100 text-gray-600">A logical grouping of objects, each phase carrying a number, a name and a few other attributes.</td><td class="p-3 border-b border-gray-100 text-gray-600">Quantities by when something happens. The natural breakdown for a programme.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">The published guidance ties the two directly to the reports: choose the takeoff by phase or the takeoff by hierarchy depending on which structure you set up. Decide which question you are answering, then build the structure that answers it.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LOD</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Agree the level of development first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The guidance opens with establishing the model organisation and the level of development for the model. A model detailed far beyond what the takeoff needs costs time nobody recovers.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORDER</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Model as you build</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Lowest elevation first, working upwards, in the sequence the structure goes up. It makes the model readable to people who think in construction sequence.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SOURCE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide whose model this is</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Contractors often receive models rather than build them. A received model organised for detailing may need categories added before it answers quantity questions.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONSISTENCY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Quantities are only as good as the inputs</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Materials, names and phases have to be applied consistently or the totals split across categories that should be one. This is unglamorous and it is most of the work.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">POURS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Cast in situ needs pour management on</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">If the job has cast-in-place concrete, pour objects are what carry the volumes and formwork areas. That functionality is off by default and has to be enabled.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SHARING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plan how information leaves the model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Excel from the Object Browser, reports, IFC and Trimble Connect are four different routes to four different audiences. Decide which goes to whom.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set up the organisation</h4>
+                <p class="text-sm text-gray-600">Establish the model organisation and the level of development. Define the building hierarchy down through project, site, building, level and space, and set up the phases you will group by.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model or receive the structure</h4>
+                <p class="text-sm text-gray-600">Model the concrete shapes, or insert the design models you were issued. Work from the lowest elevation upwards, repeating for each section, area or elevation.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add reinforcement if it is in scope</h4>
+                <p class="text-sm text-gray-600">Where reinforcement quantities are part of the takeoff, model it, following the reinforcement order of preference rather than hand-modelling bars.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open Organizer</h4>
+                <p class="text-sm text-gray-600">Organizer is the daily tool for managing model information, object property queries and object classification. It has two halves: <strong>Object Browser</strong> for viewing and reporting on model information from your selection, and <strong>categories</strong> for classifying objects.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Build the categories</h4>
+                <p class="text-sm text-gray-600">Location categories arrange model objects by building location and visualise those locations in the model. Custom categories group by other properties, and filters keep categories updating automatically as the model changes.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Query and export</h4>
+                <p class="text-sm text-gray-600">Use <strong>Object Browser</strong> to view properties in columns you can reorder, sort and group, then export the property values to Microsoft Excel for further processing. The columns export as displayed.</p>
+                <p class="text-sm text-gray-600 mt-2">Create property templates in Organizer to view the properties of selected objects, with grouping, sorting and colour sets for visualisation.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Run the takeoff reports</h4>
+                <p class="text-sm text-gray-600">Run the quantity reports from <strong>Reports</strong> on the <strong>Drawings &amp; reports</strong> tab, choosing the takeoff by phase or by hierarchy to match how you organised the model.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        A report is a snapshot, Organizer is live
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Organizer syncs with the model and updates as it changes. A report is a file written at the moment you ran it. Use Organizer while the model is moving, and reports when you need a fixed record of what the numbers were on a given day.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Share with the project</h4>
+                <p class="text-sm text-gray-600">Attach the model to a Trimble Connect project, download and upload reference models, and export model objects as IFC reference models so that architects, engineers, contractors and owners are working from the same geometry.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What a Contractor Gets That a Detailer Does Not Need</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">QUANTITIES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Live totals, not a drawing count</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Object Browser is a living view of the model that updates with it, which beats counting off drawings and beats a spreadsheet that was true last month.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SEQUENCE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Phases as a programme link</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Phases group objects logically and carry a number and a name, which makes them the natural hook between the model and the construction programme.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">POUR DATA</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Volumes and formwork areas</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">For cast-in-place work, pour objects report concrete volumes and formwork areas, which are procurement numbers rather than design numbers.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COORDINATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Everyone else geometry, in one place</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Reference models let you check the trades against each other, and clash checking finds the conflicts before they are built rather than after.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SITE LINK</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Trimble Connect as the shared floor</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Trimble Connect connects constructible data and lets architects, engineers, contractors, owners and operators collaborate on the project.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXCEL</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The format procurement actually uses</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Object Browser exports straight to Excel. Most commercial processes end in a spreadsheet, and fighting that is a losing battle.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Being Honest About Scope</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures is a detailing and constructible modelling tool. It reports on what is modelled, and it reports it very well. It is not a programme, an estimating package or a procurement system.</p>        <p class="text-gray-700 leading-relaxed mb-4">The quantity takeoff guidance in Tekla User Assistance is published as contractor material for the United States environment, with named report templates from that environment. The principles carry anywhere, the template names may not, so check what your own environment ships before looking for a report by name.</p>        <p class="text-gray-700 leading-relaxed mb-4">Where the model needs to drive something beyond reporting, the honest route is out: export to Excel, publish to Trimble Connect, or hand over IFC, and let the system built for that job do it.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_organizer" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Organizer &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_example_organizing_the_model_to_location_and_custom_categories_and_viewing_quantities" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Example: Organize the model into location and custom categories, and view quantities &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/us-contractor-quantity-takeoff" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">US Contractor: Quantity Takeoff &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/use-tekla-structures-with-trimble-connect" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Use Tekla Structures with Trimble Connect &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_pours" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Manage pours &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a report &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_building_hierarchy" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Building hierarchy &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026 for Organizer, pours, reports and building hierarchy. The quantity takeoff guidance is published as contractor material for the United States environment, so the named report templates may not exist in yours.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

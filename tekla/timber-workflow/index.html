@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Timber Workflow, End to End | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Timber Workflow, End to End</h1>
+                    <p>The timber tools arrive from Tekla Warehouse, not in the installation. Once they are in, timber models like steel with different properties.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a timber customer? We build in timber and cannot find any timber tools in the software.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where are the timber tools in Tekla Structures?</li>
+                                <li>How do I model CLT panels and show the lamella direction?</li>
+                                <li>Can Tekla Structures do timber, or is it only steel and concrete?</li>
+                                <li>How do I install the timber extension from Tekla Warehouse?</li>
+                                <li>What fabrication data can I get out of a timber model?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Timber tools are not built into Tekla Structures. They come from Tekla Warehouse.</p>
+                            <p>Install the extension first. Without it there is no timber ribbon tab and no timber objects.</p>
+                            <ol>
+                                <li>Sign in to Tekla Warehouse and open the Timber tools page.</li>
+                                <li>Download a version compatible with your Tekla Structures.</li>
+                                <li>Import the .tsep through the Extension manager, then restart.</li>
+                                <li>Model beams, columns, plates, walls and slabs from the new tab.</li>
+                                <li>Add screws and connections from the same package.</li>
+                                <li>Number, draw and report as with any other material.</li>
+                            </ol>
+                            <p>For CLT, the CLT Lamella Visualizer shows the slats and which face is the front.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_timber_objects" target="_blank" rel="noopener">Create timber objects</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/modeling-cross-laminated-timber-clt" target="_blank" rel="noopener">Modeling Cross Laminated Timber</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the timber system you build and I will check what is covered.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">The first thing to know about timber in Tekla Structures is the thing nobody tells you before you buy: the timber tools are not in the box. Tekla User Assistance is direct about it. You download the extension package from Tekla Warehouse, on the Timber tools page.</p>        <p class="text-gray-700 leading-relaxed mb-4">That package contains timber objects, screws and a marker tool, delivered as a ribbon tab. The basic timber objects are timber beams, timber columns, timber plates, timber walls and timber slabs.</p>        <p class="text-gray-700 leading-relaxed mb-4">Once it is installed, the good news is that timber is not a separate discipline to learn. Each timber object type is modelled similarly to its steel or concrete counterpart, with properties and parameters specific to timber objects. If you can model a steel frame, you can model a timber one.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXTENSION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Timber is an extension, not a configuration</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">No licence tier switches it on. The tools arrive by installing a package from Tekla Warehouse, the same way any other .tsep extension is installed.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VERSION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Check compatibility on the Warehouse page</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">An extension built for one Tekla Structures version is not automatically valid for the next. The version list on the Warehouse item is the authority, not this page and not your memory.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SYSTEM</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know which timber system you build</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Glulam portal frames, CLT panels, light timber frame walls and engineered joists are different products with different detailing. What the extension gives you is the object types; the detailing conventions are yours.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">FASTENERS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Screws are part of the package</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The extension includes screws, which matters because timber connections are fastener-led in a way steel connections are not.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CLT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">CLT has a tool of its own</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The CLT Lamella Visualizer is a plugin that creates surfaces around parts, set up for CLT walls and floors so the slats are visible and it is clear which is the front and which the back.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OUTPUT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide the deliverable early</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Timber fabrication data does not have a single dominant standard the way steel has DSTV. Ask your fabricator what their machinery reads before you promise a file.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Install the timber tools</h4>
+                <p class="text-sm text-gray-600">Sign in to Tekla Warehouse and find the Timber tools page. Download a version listed as compatible with your Tekla Structures version.</p>
+                <p class="text-sm text-gray-600 mt-2">Click <strong>Applications &amp; components</strong> in the side pane, then <strong>Manage extensions</strong> &gt; <strong>Extension manager</strong>. Click <strong>Import</strong>, browse to the <strong>.tsep</strong> file, select the versions, and restart Tekla Structures.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the model up</h4>
+                <p class="text-sm text-gray-600">Create the model and set the grids as for any other job. Nothing about the setup is timber-specific at this stage.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the timber members</h4>
+                <p class="text-sm text-gray-600">Use the timber ribbon tab the extension adds. Timber beams, timber columns, timber plates, timber walls and timber slabs each behave like their steel or concrete counterpart, with timber-specific properties.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Handle CLT panels</h4>
+                <p class="text-sm text-gray-600">For cross laminated timber, launch the <strong>CLT Lamella Visualizer</strong> by searching for <strong>M186</strong> in <strong>Applications &amp; components</strong>. It creates surfaces around the parts so the slats show and the front and back faces are distinguishable.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Panel orientation is not cosmetic
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">A CLT panel has a strong direction and a face that must end up on the correct side. Making that visible in the model, rather than trusting a note on a drawing, is the point of the visualizer.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Connect</h4>
+                <p class="text-sm text-gray-600">Use the screws included in the extension, plus steel connectors modelled as ordinary steel parts where your system uses brackets, hangers and plates.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number</h4>
+                <p class="text-sm text-gray-600">Timber parts number like anything else: set the numbering series on the parts, then run <strong>Perform numbering</strong> from the <strong>Drawings &amp; reports</strong> tab. Plan the prefixes so timber, steel connectors and any concrete stay in separate ranges.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Draw</h4>
+                <p class="text-sm text-gray-600">Create assembly and single-part drawings for the fabricator and general arrangement drawings for site, using the same drawing layouts and title blocks as the rest of your work.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Report and hand over</h4>
+                <p class="text-sm text-gray-600">Run material lists from <strong>Reports</strong>, and export IFC for coordination. Where your fabricator has machinery that reads a specific format, confirm whether an extension exists for it before assuming one does.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What This Page Cannot Promise</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance documents the timber objects and the CLT tooling. What it does not publish is a full timber production workflow equivalent to the steel NC file chain or the precast production exports.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is a real gap rather than an omission on this page. Timber machinery formats vary by manufacturer, and what is available to you depends on which extensions exist for your region and your equipment. Check Tekla Warehouse for your machinery, and ask your local Tekla Support what is current, rather than assuming a format is supported because the material is.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Prove the chain before you commit a job
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Model a single representative member, take it all the way through to whatever the fabricator needs, and confirm it arrives usable. Doing that on one member costs an afternoon. Discovering the gap at the end of a project costs considerably more.</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_timber_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create timber objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/modeling-cross-laminated-timber-clt" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Modeling Cross Laminated Timber (CLT) &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/clt_help" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">CLT in Tekla Structures &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/usa_wood_frames" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Wood Frames &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_installing_tsep_packages" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Install and manage .tsep extensions &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/twh_download_content" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Download and install content from Tekla Warehouse &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026 for the timber objects article and the extension install steps. The CLT and Wood Frames material is published as not version specific, and which timber extensions exist for your version is shown on their Tekla Warehouse pages.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

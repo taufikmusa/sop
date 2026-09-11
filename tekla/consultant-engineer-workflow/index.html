@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Consultant and Engineer Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Consultant and Engineer Workflow</h1>
+                    <p>No machine at the end of this one. The deliverables are an analysis model, drawings and an IFC, and the skill is keeping the physical and analysis models in step.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a consultant? We are engineers rather than fabricators and do not need shop data.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How does a structural engineer use Tekla Structures?</li>
+                                <li>What is the difference between the physical model and the analysis model?</li>
+                                <li>How do I export to an analysis application and bring the results back?</li>
+                                <li>Where do I set loads, load groups and load combinations?</li>
+                                <li>Should the consultant model carry fabrication detail or not?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>A consultant uses Tekla Structures differently: the deliverable is information, not fabrication data.</p>
+                            <p>The model feeds analysis, drawings and IFC. Those three are your output.</p>
+                            <ol>
+                                <li>Model the frame physically, as it will be built.</li>
+                                <li>Set the load modeling code, then create load groups and loads.</li>
+                                <li>Create filters to choose what belongs in the analysis model.</li>
+                                <li>Create the analysis model and check it.</li>
+                                <li>Create load combinations, then export to your analysis application.</li>
+                                <li>Import the results back and use them in connection design.</li>
+                            </ol>
+                            <p>The physical model and the analysis model are separate, and both need looking after.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/ana_structural_analysis_workflow_in_ts" target="_blank" rel="noopener">Structural analysis workflow in Tekla Structures</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_export" target="_blank" rel="noopener">IFC export</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the analysis package you use and I will check the link.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Every other workflow in this set ends at a machine. A fabricator produces NC files, a precaster produces Unitechnik, a rebar shop produces BVBS. A consultant produces none of those, and that changes what the model is for.</p>        <p class="text-gray-700 leading-relaxed mb-4">For a consulting engineer the model is a source of three things: an <strong>analysis model</strong> to check the structure behaves, <strong>drawings</strong> that communicate intent, and an <strong>IFC</strong> that lets everyone else build against your geometry. The fabrication detail belongs to whoever fabricates.</p>        <p class="text-gray-700 leading-relaxed mb-4">That shifts the emphasis. Where a detailer worries about marks and machine data, a consultant worries about keeping two models in step: the physical model, which is what gets built, and the analysis model, which is a structural model created from a physical model, used for analysing structural behaviour and load bearing, and for design.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Two Models, One Job</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">The distinction catches people who arrive from a pure analysis package, where there is only one model and it is analytical.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Model</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it represents</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Physical model</td><td class="p-3 border-b border-gray-100 text-gray-600">The structure as it will actually be built: real profiles, real positions, real connections.</td><td class="p-3 border-b border-gray-100 text-gray-600">Drawings, quantities, coordination, and the geometry everyone else references.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Analysis model</td><td class="p-3 border-b border-gray-100 text-gray-600">A structural model created from the physical model, with members, releases, supports and loads.</td><td class="p-3 border-b border-gray-100 text-gray-600">Analysing structural behaviour and load bearing, and design.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">One physical model can carry several analysis models. You create filters to select the parts to be included in an analysis model, so a sub-model of one frame, or of one load case, is a normal thing to have rather than a workaround.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CODE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Set the load modeling code first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The load modeling code establishes the building code, the safety factors and the load group types. Set it before creating loads, because it governs how everything after it is interpreted.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCOPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide what is analysed and what is not</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Not every part belongs in the analysis model. Filters decide what is included and which parts are treated as secondary, and getting that right is most of the work of a clean analysis model.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PACKAGE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know which analysis application you are feeding</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The workflow exports to an analysis application and imports the results back. Tekla Structural Designer is the documented example, and which others you can reach depends on your installation.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DELIVERABLE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Agree the IFC expectations early</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">IFC is your handover. What it carries depends on your export settings and property sets, so agree with the recipients what they need before the first issue, not after they complain.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DRAWINGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">GA drawings are the consultant output</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Where a fabricator lives in assembly and single-part drawings, you live in general arrangement drawings. Set the layouts, title blocks and sheet sizes up once in the firm folder.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CHANGE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plan for the design to move</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A consulting model changes after it has been issued, repeatedly. Build it so that a revision is a re-run rather than a rebuild, and keep the numbering and drawing settings stable through it.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Analysis Workflow</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance sets the analysis workflow out as a sequence. Condensed, it runs like this.</p>        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the load modeling code</h4>
+                <p class="text-sm text-gray-600">This establishes the building code, safety factors and load group types for the model.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create load groups, then loads</h4>
+                <p class="text-sm text-gray-600">Organise loads into groups first, then create the loads themselves. Groups are what load combinations are later built from.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create filters</h4>
+                <p class="text-sm text-gray-600">Filters select the parts to be included in an analysis model, and identify which parts are secondary. This is the step that decides whether your analysis model is the structure or a mess.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Define the included objects and create the analysis model</h4>
+                <p class="text-sm text-gray-600">Choose which physical model objects are included, then create the analysis model from those parts and loads.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Check and verify it in Tekla Structures</h4>
+                <p class="text-sm text-gray-600">Review the analysis model before it goes anywhere. Add primary beams where members need to be included, and modify properties such as end releases, support conditions and design parameters.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Check the model here, not in the analysis package
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">A release or support condition that is wrong in Tekla Structures will be wrong in the analysis application, and finding it there means coming back and doing this step anyway. Verify before you export.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create sub-models if you need them</h4>
+                <p class="text-sm text-gray-600">Alternative analysis models from the same physical model are normal. Use them rather than distorting one model to answer two questions.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create load combinations</h4>
+                <p class="text-sm text-gray-600">Build the combinations from the load groups created earlier.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Export to the analysis application</h4>
+                <p class="text-sm text-gray-600">Transfer the model to the analysis software. Add any specialised loads that belong on that side rather than in Tekla Structures.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">9</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Post-process and import the results</h4>
+                <p class="text-sm text-gray-600">Modify profiles and re-run the analysis as needed, then import the results back to Tekla Structures to examine them and use them in connection design. Import model changes back where the analysis moved sections.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Deliverables Side</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GA DRAWINGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">General arrangement drawings</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Set up your sheet sizes, title blocks and layouts once, keep them in the firm folder, and produce GA drawings from the model rather than drafting them separately.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">IFC</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The coordination handover</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Export all basic structural parts and objects on the basis of your export settings, including the property sets. IFC 2X3, IFC 4 and IFC 4.3 schemas are supported, so agree which one with the recipient.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REFERENCE MODELS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Working against other disciplines</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Insert the architectural and services models as references, inquire their objects, and clash check against them. Those two jobs have pages of their own in this vault.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REPORTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Quantities and checks</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Reports read straight from the model database, which makes them a quick sanity check on the design as well as a source of quantities.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CLOUD LINK</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Publish to Tekla Structural Designer</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">In Tekla Structures 2026 this is automatically available as a Preview feature, letting you publish to the cloud from Tekla Structures and receive the model from the cloud in Tekla Structural Designer. Being a preview feature, treat it as such on a live job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORGANIZER</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Keeping track of a changing model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Organizer categorises the model by location and by property, and the Object Browser reports on it live. Useful when the design is still moving and you need to see what changed.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where the Boundary Sits</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">The most common source of friction for a consultant on Tekla Structures is scope rather than software. The model can carry fabrication-level detail, and someone will eventually ask whether it should.</p>        <p class="text-gray-700 leading-relaxed mb-4">That is a commercial decision, not a technical one. What is worth knowing is that the tools are there: the same model that produced your GA drawings and IFC can carry connections, marks and machine data if your appointment extends that far. Nothing has to be remodelled to go further, which is a genuine advantage of detailing and analysis living in one place.</p>        <p class="text-gray-700 leading-relaxed mb-4">It also cuts the other way. If the fabricator is going to detail it, hand over the IFC and the drawings, and let their model be the one that carries marks. Two models both claiming to be the fabrication source is a problem no software setting fixes.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/ana_structural_analysis_workflow_in_ts" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Structural analysis workflow in Tekla Structures &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">IFC export &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_inserting_a_reference_model" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Insert a reference model &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_organizer" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Organizer &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a report &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rel_cover" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tekla Structures 2026 release notes &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Which analysis applications your installation can export to depends on your configuration and on the links installed, so check yours before planning around a particular package.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
