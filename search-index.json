@@ -1246,6 +1246,55 @@
         "profiling machine",
         "359 degree"
       ]
+    },
+    {
+      "id": "tekla-cold-formed-metal-workflow",
+      "title": "The Cold-Formed and Light Gauge Workflow",
+      "folder": "Tekla Structures",
+      "category": "Workflows",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/cold-formed-metal-workflow/",
+      "question": "What is the workflow to use Tekla Structures as a metal customer? We do cold-formed and light gauge work rather than heavy structural steel.",
+      "variants": [
+        "Does Tekla Structures support cold rolled purlins and side rails?",
+        "Where are the Metsec, Kingspan or Ayrshire components?",
+        "How do I model metal stud frame walls with openings?",
+        "Are the cold rolled manufacturer systems built in or from Tekla Warehouse?",
+        "How do I send an order file to the cold rolled manufacturer?"
+      ],
+      "summary": "Cold-formed and light gauge work: manufacturer systems and framing tools, what is built in versus on Tekla Warehouse, metal stud frames, and the order file that acts as production data.",
+      "keywords": [
+        "cold formed",
+        "cold rolled",
+        "light gauge",
+        "metal workflow",
+        "purlin",
+        "side rail",
+        "metal stud frame",
+        "stud wall",
+        "track runner",
+        "lintel",
+        "framing tools",
+        "Metsec",
+        "Kingspan",
+        "Ayrshire",
+        "Albion",
+        "BW Industries",
+        "Duggan Steel",
+        "Composite Metal Flooring",
+        "Thomas Panels and Profiles",
+        "Reid Steel",
+        "Steadmans",
+        "Ultrazed",
+        "intelligent joints",
+        "macros",
+        "file transfer",
+        "order file",
+        "Tekla Warehouse",
+        "Extension manager",
+        "US environment",
+        "model template"
+      ]
     }
   ]
 }
