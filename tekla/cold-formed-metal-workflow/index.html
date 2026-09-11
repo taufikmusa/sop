@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cold-Formed and Light Gauge Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Cold-Formed and Light Gauge Workflow</h1>
+                    <p>Purlins, rails, stud walls and modular framing. The work is component-led, the components are manufacturer-specific, and your region decides which ones you get.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a metal customer? We do cold-formed and light gauge work rather than heavy structural steel.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Does Tekla Structures support cold rolled purlins and side rails?</li>
+                                <li>Where are the Metsec, Kingspan or Ayrshire components?</li>
+                                <li>How do I model metal stud frame walls with openings?</li>
+                                <li>Are the cold rolled manufacturer systems built in or from Tekla Warehouse?</li>
+                                <li>How do I send an order file to the cold rolled manufacturer?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Cold-formed and light gauge work is component-led rather than command-led.</p>
+                            <p>The value sits in manufacturer systems and framing components, not in new tools.</p>
+                            <ol>
+                                <li>Confirm which manufacturer system your work actually uses.</li>
+                                <li>Check whether that system is built in or on Tekla Warehouse.</li>
+                                <li>Install any extension through the Extension manager, then restart.</li>
+                                <li>Model the walls, roofs, trusses and floors with those components.</li>
+                                <li>Use the manufacturer file transfer to validate before ordering.</li>
+                                <li>Number, draw and export as for any steel job.</li>
+                            </ol>
+                            <p>Most cold rolled systems are already in the software, and some come from Tekla Warehouse.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/cold-rolled-steel-systems-within-tekla-structures-models" target="_blank" rel="noopener">Cold rolled steel systems within Tekla Structures models</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_installing_tsep_packages" target="_blank" rel="noopener">Install and manage .tsep extensions</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with your manufacturer and I will check what exists for it.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">&ldquo;Metal&rdquo; covers several different businesses, so it is worth being precise about which one this page is for. It is written for <strong>cold-formed and light gauge steel</strong>: purlins and side rails, metal stud framing, modular cold-rolled walls, roofs, trusses and floors.</p>        <p class="text-gray-700 leading-relaxed mb-4">If your work is hot-rolled structural steel, the steel workflow page is the one you want instead. If it is sheet metal cladding or bespoke metalwork, much of what follows still applies to the modelling, but the manufacturer systems described here will not.</p>        <p class="text-gray-700 leading-relaxed mb-4">The shape of the cold-formed workflow is different from hot-rolled steel in one important way. You are not usually inventing connections. You are using a manufacturer system, with its own sections, its own accessories and its own rules, and Tekla Structures has tools built with those manufacturers to match.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What Actually Exists</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MANUFACTURERS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Systems built with the makers</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla has created tools in conjunction with major UK cold-rolled steel manufacturers so that models can use their systems, designed to work with each specific manufacturer rules. Named manufacturers include Albion, Ayrshire Metal, BW Industries, Composite Metal Flooring, Duggan Steel Group, Kingspan, Metsec, Thomas Panels and Profiles, Reid Steel, Steadmans Steel Sections and Ultrazed Steel.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">WHERE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Mostly built in, sometimes not</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The documentation puts it plainly: currently most cold rolled steel systems are available within the software, however some systems are available via Tekla Warehouse. Check before assuming either way.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COMPONENTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Intelligent joints and macros</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Intelligent joints and macros allow rapid modelling and updating of cold rolled accessories. This is the difference between placing a system and drawing every cleat by hand.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORDERING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">File transfer to the manufacturer</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Most manufacturers provide file transfer functionality to validate items before ordering, and it produces the necessary files required to place your order. That is your production output on this kind of job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">FRAMING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">General framing tools</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">An extension provides general framing tools for creating modular cold-rolled steel walls, roofs, trusses and floors, for work that is not tied to one manufacturer system.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STUDS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Metal stud frames</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A bundle of three custom components creates metal stud frame walls with or without openings using light gauge profiles: track runners top and bottom, vertical struts spaced per the user input, and lintels and sills at openings where appropriate.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REGION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">These tools are regional</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The cold rolled manufacturer list is a UK list. Metal Stud Frames is documented for the United States (Imperial) and United States (Metric) environments, available in the US environment model templates. Your environment decides what you see.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SYSTEM</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Pick the system before the model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Each manufacturer system carries its own sections and its own rules. Modelling generically and swapping to a system later means redoing the connections you already placed.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">UPDATES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Use the current release</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The guidance is explicit: always use the latest software release, because revisions made by manufacturers will generally not be back dated to older versions. A system that behaved one way two versions ago may have been corrected since.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Check the sections exist</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Confirm the profiles you buy are in the catalog, in the sizes and gauges you use. Cold-formed sections are more numerous and more manufacturer-specific than hot-rolled ones.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ANALYSIS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Know the design boundary</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Cold-rolled members can be modelled and analysed in Tekla Structural Designer, but cannot be designed there. The design normally stays with the manufacturer, and the model carries the result.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">OUTPUT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Ask what the shop needs</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">A manufacturer order file, NC data, drawings and IFC are different deliverables. On a system job the order file is often the one that matters most.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Identify the system</h4>
+                <p class="text-sm text-gray-600">Establish which manufacturer system the job uses, and whether the tools for it are already in your installation or need downloading from Tekla Warehouse.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Install anything missing</h4>
+                <p class="text-sm text-gray-600">For a Warehouse item, click <strong>Applications &amp; components</strong> in the side pane, then <strong>Manage extensions</strong> &gt; <strong>Extension manager</strong>. Click <strong>Import</strong>, browse to the <strong>.tsep</strong> file, select the versions, and restart Tekla Structures.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the primary structure</h4>
+                <p class="text-sm text-gray-600">Where there is a hot-rolled frame carrying the cold-formed work, model it first. The purlins, rails and stud walls attach to it, and they need something to attach to.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Place the system</h4>
+                <p class="text-sm text-gray-600">Use the manufacturer components and the framing tools to create the walls, roofs, trusses and floors. Let the intelligent joints and macros handle the accessories rather than modelling cleats individually.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Build the stud walls</h4>
+                <p class="text-sm text-gray-600">Where the work is metal stud framing, use the metal stud frame components, which create the walls with or without openings and place the track runners, struts, lintels and sills.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Validate with the manufacturer</h4>
+                <p class="text-sm text-gray-600">Use the file transfer functionality the manufacturer provides to validate the items before ordering. Doing this before drawings are issued catches a wrong section while it is still cheap to change.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number, draw and report</h4>
+                <p class="text-sm text-gray-600">From here the job behaves like any steel job: set the numbering series, number the model, create the drawings, and run the material lists.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Plan the numbering ranges across systems
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Cold-formed accessories multiply quickly, and a single wall can contain hundreds of near-identical pieces. Decide the numbering series and what counts as the same part before modelling, or the mark list becomes unusable.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Produce the order and coordination files</h4>
+                <p class="text-sm text-gray-600">Generate the manufacturer order files for the system work, NC data for any hot-rolled steel, and IFC for coordination with the other trades.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Being Honest About the Gaps</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is the workflow in this set with the most variation between offices, because so much of it depends on which manufacturer you buy from and which region you work in.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance documents that the manufacturer tools exist and names the manufacturers. It does not publish a single step-by-step cold-formed workflow article in the product guides, and the per-manufacturer detail lives with each system rather than in one place.</p>        <p class="text-gray-700 leading-relaxed mb-4">The two documented facts worth carrying away are these: most cold rolled systems are already in the software, and the ones that are not are on Tekla Warehouse. If a system you need appears in neither, your local Tekla Support is the place to ask what is planned.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/article/cold-rolled-steel-systems-within-tekla-structures-models" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Cold rolled steel systems within Tekla Structures models &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/usa_metal_stud_frames" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Metal Stud Frames &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/ins_installing_tsep_packages" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Install and manage .tsep extensions &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/not-version-specific/twh_download_content" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Download and install content from Tekla Warehouse &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_create_nc_files" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">NC files &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structural-designer/2026/mod_createcoldrolled" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create members with cold rolled sections (Tekla Structural Designer) &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">The cold rolled systems article and Metal Stud Frames are published as not version specific, and the manufacturer list is a UK list. Metal Stud Frames is documented for the United States environments. What you see depends on your environment and your version, so check both before relying on a component.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

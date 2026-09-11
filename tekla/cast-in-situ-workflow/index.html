@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cast In Situ Workflow, End to End | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Cast In Situ Workflow, End to End</h1>
+                    <p>What you model and what you pour are different shapes. Pour objects reconcile the two, and the whole thing is switched off until you turn it on.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a cast in situ customer? We pour concrete on site and want to know how the model should be organised.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>How do I model cast-in-place concrete and get pour quantities out?</li>
+                                <li>What is the difference between a pour object, a pour unit and a pour break?</li>
+                                <li>There is no Pour view on my Concrete tab. Where is it?</li>
+                                <li>Why did two concrete parts merge into one pour object?</li>
+                                <li>How do I get concrete volumes and formwork areas for site?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Cast in situ work runs on pour objects rather than on parts.</p>
+                            <p>Pour management is switched off by default. Nothing below works until you turn it on.</p>
+                            <ol>
+                                <li>Set XS_ENABLE_POUR_MANAGEMENT in Advanced options, then restart.</li>
+                                <li>Set the concrete parts to Cast in place.</li>
+                                <li>On the Concrete tab, click Pour view to see pours.</li>
+                                <li>Use pour phases so unrelated parts do not merge.</li>
+                                <li>Add pour breaks to split pours into what you actually cast.</li>
+                                <li>Reinforce, then report volumes and formwork areas.</li>
+                            </ol>
+                            <p>Parts that touch, share a material grade and share a pour phase merge automatically.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_pours" target="_blank" rel="noopener">Manage pours</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_pour_objects" target="_blank" rel="noopener">Pour objects</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with how your site sequences pours and I will map it with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Cast in situ is the concrete workflow where the thing you build and the thing you model are not the same shape. You model a column, a beam and a slab as separate parts because that is how you design and reinforce them. The site pours a lift, and that lift cuts across all three.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures reconciles those two views with <strong>pour objects</strong>. A pour object is a building object that consists of one or more cast-in-place concrete parts, or parts of them. Tekla Structures automatically merges multiple cast-in-place concrete parts into a pour object when they have the same material grade and pour phase number, and they touch or overlap one another.</p>        <p class="text-gray-700 leading-relaxed mb-4">A <strong>pour unit</strong> goes one step further: it is a pour object plus all related reinforcement, embeds and other objects that need to be in place before concrete can be poured on the building site. That is the real deliverable for a site team, because it answers &ldquo;what has to be finished before the truck arrives&rdquo;.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                It is off until you switch it on
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Pour management is disabled by default. It is enabled through Advanced options with XS_ENABLE_POUR_MANAGEMENT. If your Concrete tab has no Pour view and your parts refuse to merge, this is almost always why.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Three Words to Learn First</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Term</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Why you care</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Pour object</td><td class="p-3 border-b border-gray-100 text-gray-600">One or more cast-in-place concrete parts, or parts of them, merged where they share material grade and pour phase and touch or overlap.</td><td class="p-3 border-b border-gray-100 text-gray-600">This is what gets a volume. It is the shape of the concrete, not the shape of the design.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Pour unit</td><td class="p-3 border-b border-gray-100 text-gray-600">A pour object plus all related reinforcement, embeds and other objects needed in place before the pour.</td><td class="p-3 border-b border-gray-100 text-gray-600">This is what the site checks before pouring. It is the readiness list.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Pour break</td><td class="p-3 border-b border-gray-100 text-gray-600">A split that divides a pour object into smaller pour objects.</td><td class="p-3 border-b border-gray-100 text-gray-600">This is how the model learns your construction joints and pour sequence.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Pour breaks can be added to pour objects or to concrete parts whose cast unit type is <strong>Cast in place</strong>. That restriction is the same rule that governs the precast side from the other direction: the cast unit type decides which tools will talk to a part.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ENABLE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Turn pour management on first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Set XS_ENABLE_POUR_MANAGEMENT in Advanced options and restart. Everything on this page depends on it, and nothing warns you that it is off.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">TYPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Set the cast unit type to Cast in place</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Double-click a concrete part, go to the Cast unit section and choose Cast in place. Precast and cast-in-place parts cannot be mixed within a cast unit, and pour tools only work on the cast-in-place side.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PHASES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plan pour phases before modelling</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Parts merge into one pour object when material grade and pour phase match and they touch. Pour phase is the control you use to stop a column merging into a slab it is not poured with.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GRADES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Be consistent about material grade</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Two parts poured together but modelled with different grades will not merge. Two parts with the same grade that should not merge will. Grade is doing structural and logistical work at the same time.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SEQUENCE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Get the construction sequence from site</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Pour breaks encode the sequence. Guessing it and then correcting it later means revisiting quantities that people may already be ordering against.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REBAR</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide the reinforcement method</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Reinforcement components are the recommended first choice because they are adaptive and update when the part changes. Rebar sets cover the geometry components cannot.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Enable pour management</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, go to <strong>Settings</strong> &gt; <strong>Advanced options</strong> and set <strong>XS_ENABLE_POUR_MANAGEMENT</strong>. Restart Tekla Structures.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the concrete</h4>
+                <p class="text-sm text-gray-600">Model the columns, beams, walls, slabs and foundations as ordinary concrete parts, with the cast unit type set to <strong>Cast in place</strong>. Put that type into your default part properties so nothing is born wrong.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Switch the view to pours</h4>
+                <p class="text-sm text-gray-600">Double-click the view to open <strong>View properties</strong>, click <strong>Display</strong>, make sure the <strong>Parts</strong> checkbox is selected, and in the <strong>Cast in place</strong> list select <strong>Pours</strong>. Click <strong>Modify</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">For a quick toggle, click <strong>Pour view</strong> on the <strong>Concrete</strong> tab to switch the active view between Parts and Pours.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Continuous structures behave differently in part views
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Continuous concrete structures cannot be selected or highlighted in part views. If you are trying to select something poured as one piece and cannot, switch to the pour view rather than assuming the model is broken.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Control the merging with pour phases</h4>
+                <p class="text-sm text-gray-600">Define pour phases to prevent unwanted merging of concrete parts. This is the difference between a model that reports your pours and a model that reports one enormous blob of concrete.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the pour breaks</h4>
+                <p class="text-sm text-gray-600">Split pour objects into the pieces you will actually cast, following the construction joints and the sequence the site has agreed.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Reinforce</h4>
+                <p class="text-sm text-gray-600">Use reinforcement components wherever they fit, since they are adaptive, attached to a concrete part, and updated automatically if the dimensions of the reinforced part change. Use rebar sets for geometry the components do not cover.</p>
+                <p class="text-sm text-gray-600 mt-2">Reinforcement modelled across several parts is one of the reasons the pour view exists: it lets you reinforce the structure as it is built rather than as it is drawn.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Report the quantities</h4>
+                <p class="text-sm text-gray-600">Report pour information such as concrete volumes and formwork areas. These are the numbers that go to procurement and to the site, and they are only right once the phases and breaks are right.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Draw and coordinate</h4>
+                <p class="text-sm text-gray-600">Produce the general arrangement and reinforcement drawings, run the bending schedules, and export IFC for the other trades.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where This Meets the Other Workflows</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Cast in situ rarely stands alone. A frame with precast planks, a bridge with a cast deck and precast beams, or a core poured on site with steel framing around it are all one model containing two workflows.</p>        <p class="text-gray-700 leading-relaxed mb-4">The dividing line is the cast unit type. <strong>Cast in place</strong> parts belong to pour objects and use the tools on this page. <strong>Precast</strong> parts belong to cast units and use the precast tools. Precast components cannot be applied to cast-in-place cast units, which is the software telling you the same thing.</p>        <p class="text-gray-700 leading-relaxed mb-4">Reinforcement is shared ground: the same rebar sets, shape catalog and BVBS export serve both sides, which is why rebar has a workflow page of its own.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_pours" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Manage pours &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_pour_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Pour objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_pour_break" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a pour break &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_view_cast_in_place_concrete_structures" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">View cast-in-place concrete structures &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_example_creating_concrete_geometry_and_working_with_pours" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Example: Create concrete geometry and work with pours &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_creating_reinforcement" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create reinforcement &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_cast_unit" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create cast units &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. Pour management has been present for many releases but remains off by default, so an older model may simply never have had it switched on.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

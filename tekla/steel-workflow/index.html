@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Steel Workflow, End to End | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Steel Workflow, End to End</h1>
+                    <p>Model, connect, number, draw, export. Numbering is the pivot in the middle, and everything after it inherits whatever numbering decided.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a steel customer? We fabricate structural steel and want to know the order of work from model to shop floor.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where do I start as a steel fabricator new to Tekla Structures?</li>
+                                <li>How do I get NC files out to our CNC machines?</li>
+                                <li>What order should modelling, numbering and drawings happen in?</li>
+                                <li>How does a steel model reach the shop floor?</li>
+                                <li>What is DSTV, and do we need it?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Steel work in Tekla Structures follows one order, and the order matters.</p>
+                            <p>Model, connect, number, draw, then export. Numbering sits in the middle because everything after it depends on marks.</p>
+                            <ol>
+                                <li>Model the members using grids and the profile catalog.</li>
+                                <li>Add connections from the component catalog, or your own.</li>
+                                <li>Set the numbering series, then run Perform numbering.</li>
+                                <li>Create assembly and single-part drawings.</li>
+                                <li>On the File menu, click Export, then NC files.</li>
+                                <li>Export IFC for coordination with the other trades.</li>
+                            </ol>
+                            <p>Finish the detailing and create drawings before producing the NC files.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_create_nc_files" target="_blank" rel="noopener">NC files</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_single_part_assembly_cu_and_ga_drawings" target="_blank" rel="noopener">Create single-part, assembly or cast unit drawings</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with what your shop machines read and I will check the export with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Structural steel is the workflow Tekla Structures is most often bought for, and it is the most linear of them. You model the frame, you connect it, you number it, you draw it, and you send machine data to the shop. Each stage feeds the next, and skipping ahead costs more than it saves.</p>        <p class="text-gray-700 leading-relaxed mb-4">The pivot in the middle is <strong>numbering</strong>. A part mark is not typed in, it is calculated, and drawings, reports and NC files all read from those marks. Everything upstream of numbering is geometry. Everything downstream of it is paperwork and production data that inherits whatever numbering decided.</p>        <p class="text-gray-700 leading-relaxed mb-4">So the practical version of &ldquo;what is the workflow&rdquo; is this: get the model and the numbering rules right, and the rest is mostly running commands in order.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SETUP</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Environment, role and configuration</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">These are chosen at startup and they decide which catalogs, components and default settings you get. A steel shop running the wrong environment fights the software over profile names and connection defaults for the whole job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Profiles, materials and bolts</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Confirm the sections and bolt assemblies you actually buy are in the catalogs before modelling. Adding them halfway through means revisiting parts you thought were finished.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NUMBERING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Agree the scheme before the first beam</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Prefixes, start numbers and what counts as the same part are decisions for day one. Changing them once drawings exist moves marks the shop may already be cutting to.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STANDARDS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Put the office standards in the firm folder</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Drawing layouts, title blocks, report templates, custom components and export settings are the same on every job. Kept in the firm folder, every new model starts with them.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SHOP</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Ask the shop what it reads</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">NC data, DWG, PDF and IFC are different deliverables for different people. Find out which the shop floor, the fabricator and the erector each expect before you produce any of them.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MARKING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide pop-marks and contour marking early</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance advises adjusting contour mark and pop-mark settings before numbering and drawing creation, because those settings affect what the parts look like downstream.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set up the model</h4>
+                <p class="text-sm text-gray-600">Create the model, set the grids, and load the drawing and part properties your office standardised. Work from the firm folder rather than rebuilding settings per job.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the members</h4>
+                <p class="text-sm text-gray-600">Model beams, columns, braces and plates with the profile catalog. Get the geometry and the member sizes settled before adding connections, because connections react to what they are attached to.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Connect the frame</h4>
+                <p class="text-sm text-gray-600">Use system components from the <strong>Applications &amp; components</strong> catalog where they fit. Where nothing fits, model the detail by hand once and save it as a custom component so the next occurrence is a click.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the numbering series</h4>
+                <p class="text-sm text-gray-600">Double-click a part to open its properties in the property pane, and under <strong>Numbering series</strong> set the part prefix, the assembly prefix and the start numbers. Put these in the default part properties so new parts are born in the right series.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number the model</h4>
+                <p class="text-sm text-gray-600">On the <strong>Drawings &amp; reports</strong> tab, click <strong>Perform numbering</strong> &gt; <strong>Number modified objects</strong>. Read the <strong>Numbering preview</strong> dialog before clicking <strong>Assign numbers</strong>.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Number on a routine, not on an emergency
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Tekla User Assistance suggests numbering the model when you start your working day, or when you finish for the day. Marks refreshed daily never drift far from the drawings, and you notice a problem the day it appears rather than a week later.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the drawings</h4>
+                <p class="text-sm text-gray-600">Create single-part and assembly drawings for fabrication, and general arrangement drawings for erection. For a whole job use the <strong>Master drawing catalog</strong>, which keeps four hundred sheets consistent instead of four hundred sheets nearly consistent.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Run the reports</h4>
+                <p class="text-sm text-gray-600">Material lists, bolt lists and assembly lists come from <strong>Reports</strong> on the <strong>Drawings &amp; reports</strong> tab, read straight from the model database. Number first, because a report of an unnumbered model looks complete and is not.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Produce the NC data</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Export</strong> &gt; <strong>NC files</strong>. The documentation is clear about the order: complete the detailing and create drawings before producing the NC files.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">9</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Hand over for coordination</h4>
+                <p class="text-sm text-gray-600">Export IFC for the other trades, and DWG for anyone who works in a drafting package. These are deliverables, not production data, and they carry only what your export settings include.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">NC Files in Detail</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is the stage that turns your model into something a machine cuts, and it is where steel-specific knowledge earns its keep.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures produces NC files in the <strong>DSTV</strong> format, an industrial standard defined by the German Steel Construction Association. A DSTV file is a text file in ASCII format. Tekla Structures transforms the part length, hole positions, bevels, notches and cuts into sets of coordinates the machine tools can use to create the part in a shop.</p>        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Open the dialog</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Export</strong> &gt; <strong>NC files</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Load your settings</h4>
+                <p class="text-sm text-gray-600">Select predefined settings from the settings file list and click <strong>Load</strong>. Standardised settings in the firm folder beat re-entering them every job.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose the file types</h4>
+                <p class="text-sm text-gray-600">Select the <strong>Create</strong> checkbox next to <strong>DSTV for plates</strong>, <strong>DSTV for profiles</strong>, or both.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Edit the settings if needed</h4>
+                <p class="text-sm text-gray-600">Select an NC file settings row and click <strong>Edit...</strong>. The tabs are <strong>Files and part selection</strong>, <strong>Holes and cuts</strong>, <strong>Hard stamp</strong> and <strong>Advanced options</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">The <strong>Header...</strong> button customises the file header and can add text for individual parts using template attributes such as <strong>&lt;&lt;WEIGHT&gt;&gt;</strong>. <strong>Pop-marks...</strong> and <strong>Contour marking...</strong> have their own dialogs.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Choose the scope</h4>
+                <p class="text-sm text-gray-600">Select <strong>All parts</strong> for the whole model, or select parts in the model first and choose <strong>Selected parts</strong>. The advanced option <strong>XS_DSTV_NUMBER_OF_PARTS_BY_SELECTION</strong> controls the number of parts reported in the file header.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Collect the output</h4>
+                <p class="text-sm text-gray-600">Files are created with the extension <strong>.nc1</strong>, by default in the <strong>\DSTV_Profiles</strong> or <strong>\DSTV_Plates</strong> folder under the current model folder. Change this in the <strong>File location</strong> field on the <strong>Files and part selection</strong> tab.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        DXF is a separate step
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">This dialog produces DSTV. Converting DSTV to DXF is done afterwards with the DSTV to DXF Converter tool, not by picking a different format here.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where the Rest of the Detail Lives</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Several stages above have a page of their own in this vault, because each one generates its own questions once a job is running.</p>        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NUMBERING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Numbering settings and part marks</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">What makes two parts share a mark, where the prefix and start number live, and how to keep issued marks stable through a revision.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DRAWINGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Title blocks, DWG output and revisions</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Setting up A1 and A3 sheets with your logo, generating assembly and part DWG files, and revising drawings without renumbering the model.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CATALOGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Adding bolts and building components</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Getting a fastener into both catalogs so it can actually be placed, and turning a hand-modelled connection into a reusable custom component.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COORDINATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Working against an IFC</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Checking connections and bolt sizes in a file you were sent, and running a clash check against it.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">REPORTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Lists and weights</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Material, bolt and shipping lists, and which weight attribute belongs in a purchasing report rather than an erection one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SETUP</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Firm folder</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Making all of the above load automatically in every model, instead of being rebuilt or copied by hand.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_create_nc_files" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">NC files &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_nc_dstv_file_description" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">DSTV file description &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_single_part_assembly_cu_and_ga_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create single-part, assembly, or cast unit drawings through Quick launch &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_creating_drawings_in_master_drawing_catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create drawings in Master drawing catalog &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_modified_objects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Number parts and other model objects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_tips" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Tips for numbering &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a report &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">IFC export &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. The NC file dialog and the DSTV output have been stable for many releases, so the steps carry back, although the exact tab contents differ in older versions.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>

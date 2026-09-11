@@ -19,8 +19,8 @@
     // Sidebar groups follow the reading order of a job, not the alphabet:
     // set the model up, then model it, then draw it, then report on it.
     var CATEGORY_ORDER = [
-        'Getting Started', 'Installation', 'Licensing', 'Administration',
-        'Components', 'Catalogs', 'Concrete', 'Extensions', 'Numbering', 'Views',
+        'Getting Started', 'Workflows', 'Installation', 'Licensing', 'Administration',
+        'Components', 'Catalogs', 'Extensions', 'Numbering', 'Views',
         'Drawings', 'Reports & Templates', 'Interoperability'
     ];
     var els = { nav: null, meta: null, inputs: [], hub: null, hubMeta: null };

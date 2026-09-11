@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rebar Detailing Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Rebar Detailing Workflow</h1>
+                    <p>Components first, rebar sets second, hand-modelled bars last. The order is not a style preference, it is what decides how much rework the next design change costs.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a rebar customer? We detail and fabricate reinforcement and want to know the right order of work.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>What is the best way to create reinforcement in Tekla Structures?</li>
+                                <li>What is the difference between reinforcement components and rebar sets?</li>
+                                <li>How do I produce bending schedules from the model?</li>
+                                <li>How do I export reinforcement to the bending machines?</li>
+                                <li>My bars do not follow when the concrete section changes. Why?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Reinforcement has several methods, and the order of preference matters.</p>
+                            <p>Components first, rebar sets second, manual bars last. Components update themselves when the concrete changes.</p>
+                            <ol>
+                                <li>Model or receive the concrete the bars belong to.</li>
+                                <li>Use a reinforcement component wherever one fits the shape.</li>
+                                <li>Use rebar sets on the Rebar tab for the rest.</li>
+                                <li>Pick standard shapes from the Rebar shape catalog.</li>
+                                <li>Number, then create the drawings and bending schedules.</li>
+                                <li>On the File menu, click Export, then BVBS.</li>
+                            </ol>
+                            <p>Components are adaptive and update automatically when the reinforced part changes size.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_creating_reinforcement" target="_blank" rel="noopener">Create reinforcement</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_bvbs_exporting" target="_blank" rel="noopener">BVBS</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the schedule format your shop needs and I will check it.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Rebar detailing is the workflow where doing it the quick way early costs the most later. Reinforcement is the part of a concrete model that changes the most often, because it moves every time the concrete it sits in moves.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla Structures offers several ways to create reinforcement, and they are not equivalent. Some are adaptive and follow the concrete. Some are fixed and have to be redone by hand each time a section grows by twenty five millimetres.</p>        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance states the preference plainly: the most automated method is to use the various reinforcement components, and it recommends that you use reinforcement components to create reinforcement whenever possible. The reason is given in the same sentence: the components are adaptive, attached to a concrete part, and updated automatically if the dimensions of the reinforced part change.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Methods, In Order of Preference</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Method</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">When to reach for it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Reinforcement components</td><td class="p-3 border-b border-gray-100 text-gray-600">Adaptive components attached to a concrete part, updated automatically when the part dimensions change.</td><td class="p-3 border-b border-gray-100 text-gray-600">First choice, always. If a component fits the situation, use it.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Rebar sets</td><td class="p-3 border-b border-gray-100 text-gray-600">Bars grouped automatically by geometry, adaptive to concrete geometry and easy to modify using direct modification.</td><td class="p-3 border-b border-gray-100 text-gray-600">Second choice, for geometry no component covers. Flexible and versatile.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Rebar shape catalog</td><td class="p-3 border-b border-gray-100 text-gray-600">Predefined reinforcement shapes used to create a reinforcing bar group.</td><td class="p-3 border-b border-gray-100 text-gray-600">For standard shapes where you want a bar group quickly.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Single bars and bar groups</td><td class="p-3 border-b border-gray-100 text-gray-600">Bars created individually or as a group by hand.</td><td class="p-3 border-b border-gray-100 text-gray-600">Last resort. Nothing updates itself, so every concrete change is manual rework.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Meshes and strands</td><td class="p-3 border-b border-gray-100 text-gray-600">Reinforcement meshes, and prestressed strands.</td><td class="p-3 border-b border-gray-100 text-gray-600">Where the product is mesh or prestressed rather than loose bar.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Rebar assemblies</td><td class="p-3 border-b border-gray-100 text-gray-600">Multiple reinforcement objects combined, for example to create reinforcement cages.</td><td class="p-3 border-b border-gray-100 text-gray-600">Where a cage is prefabricated and handled as one item.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The quick way is the expensive way
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Hand-modelled bars look fastest on the first day. They are the reason a small section change on week six turns into two days of reinforcement rework. Spend the time finding a component or building a rebar set instead.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONCRETE FIRST</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Reinforcement needs something to sit in</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Whether you model the concrete or receive it, the bars attach to concrete parts or pour objects. Getting the concrete stable first saves reworking the bars behind it.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SHAPES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Agree the bending shapes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Your shop and your code have a set of standard shapes. The Rebar shape catalog holds predefined shapes, and Rebar shape manager is where user-defined bending shapes are set up.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SCHEDULES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide the schedule format early</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Bending schedules and pull-out pictures are built as templates in Template Editor. Getting the office standard one built and into the firm folder beats rebuilding it per job.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">SETTINGS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">rebar_config.inp controls drawing behaviour</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures uses the settings in rebar_config.inp, in the system folder defined by XS_SYSTEM, the firm folder or the project folder, to define reinforcement-related settings in drawings, including area-specific bending schedules.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXPORT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Confirm what the bending machines read</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">BVBS is the documented reinforcement export. Whether your shop reads BVBS 2.0 or 3.0, and what they expect in it, is worth asking before the first schedule is issued.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONTEXT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Precast, cast in situ or both</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The same reinforcement tools serve both, but the surrounding workflow differs. Cast in situ uses pour objects, precast uses cast units, and the bars follow whichever the job is.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Get the concrete in place</h4>
+                <p class="text-sm text-gray-600">Model the concrete, or insert the designer model and work against it. Confirm the section sizes are settled enough to reinforce, because every later change propagates into the bars.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Reach for a component first</h4>
+                <p class="text-sm text-gray-600">Look for a reinforcement component that covers the situation before modelling anything by hand. Components are attached to the concrete part and update automatically when it changes, which is the whole point.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Use rebar sets for the rest</h4>
+                <p class="text-sm text-gray-600">On the <strong>Rebar</strong> tab, use <strong>Longitudinal</strong>, <strong>Crossing</strong>, <strong>By face</strong> or <strong>By guidelines</strong>. Each rebar set has at least one guideline defining the distribution direction, and leg faces define where the bar legs are created.</p>
+                <p class="text-sm text-gray-600 mt-2">Keep the <strong>Direct modification</strong> switch active. Rebar set property files use the <strong>.rst</strong> extension.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Use the shape catalog for standard bars</h4>
+                <p class="text-sm text-gray-600">Create a reinforcing bar group by selecting a predefined reinforcement shape from the <strong>Rebar shape catalog</strong>. For shapes your code uses that are not there, define them in <strong>Rebar shape manager</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Group into cages where appropriate</h4>
+                <p class="text-sm text-gray-600">Combine multiple reinforcement objects into rebar assemblies, for example to create reinforcement cages, where the cage is made up and handled as one item.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number</h4>
+                <p class="text-sm text-gray-600">Reinforcement numbers alongside the rest of the model. Rebar assemblies number as assemblies, and rebar set grouping takes cast units into account: if a cast unit consists of multiple parts, the bars are grouped within the cast unit instead of the parts.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Produce the drawings and schedules</h4>
+                <p class="text-sm text-gray-600">Create the reinforcement drawings, and build the bending schedules or pull-out pictures as templates in Template Editor, controlling what information is shown.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Export to the bending machines</h4>
+                <p class="text-sm text-gray-600">On the <strong>File</strong> menu, click <strong>Export</strong> &gt; <strong>BVBS</strong>. The result is a text file in ASCII format with the extension <strong>.abs</strong>, carrying bent reinforcing bars, bar groups, meshes and hooks.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Know which BVBS version you are sending
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">BVBS 2.0 from 2000 is the base. Tekla Structures versions from 2021 onwards also support BVBS 3.0 from 2018, which adds coupler and thread data while keeping the syntax compatible with 2.0. A shop expecting one and receiving the other is a short conversation that is better had first.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where Reinforcement Meets the Other Workflows</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Rebar is the workflow that shows up inside all the concrete ones, which is why it has its own page rather than a paragraph in each.</p>        <p class="text-gray-700 leading-relaxed mb-4">In <strong>cast in situ</strong> work the bars belong to pour units: a pour object plus all the reinforcement, embeds and other objects that have to be in place before concrete can be poured. The pour view exists partly so that reinforcement spanning several parts can be modelled against the structure as built rather than as drawn.</p>        <p class="text-gray-700 leading-relaxed mb-4">In <strong>precast</strong> work the bars belong to cast units, and for automated production they have to be modelled according to production constraints, with longitudinal and cross wires differentiated and loose bars given their own classes so the factory can filter them.</p>        <p class="text-gray-700 leading-relaxed mb-4">In both, the export at the end is the same BVBS file. The difference is what the bars are attached to, not how they are made.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_creating_reinforcement" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create reinforcement &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_create_rebar_set" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a rebar set &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_reinforcement_create_using_reinforcing_bar_catalog" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a reinforcing bar group using Rebar shape catalog &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_user_defined_reinforcing_bar_shapes" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Define reinforcing bar bending shapes in Rebar shape manager &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_create_rebar_assembly" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a rebar assembly &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_template_for_bending_diagrams" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a template for bending schedules or pull-out pictures &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_reinforcement_rebar_config_inp" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Reinforcement settings for drawings (rebar_config.inp) &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_bvbs_exporting" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">BVBS &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026. BVBS 3.0 support begins with Tekla Structures 2021, so older versions write the 2.0 format only.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
