@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sheet Metal and Plate Work Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Sheet Metal and Plate Work Workflow</h1>
+                    <p>Cones, hoppers, rolled and double-curved plates, modelled in three dimensions and unfolded into flat patterns for the cutting table. Plus an honest line on what this is not.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a sheet metal customer? We work in plate rather than rolled sections and need flat patterns for cutting.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Can Tekla Structures do sheet metal work, or only structural steel?</li>
+                                <li>How do I model a cone, a hopper or a hood?</li>
+                                <li>How do I get a flat pattern out of a bent plate?</li>
+                                <li>How do I drive a plasma cutter from the model?</li>
+                                <li>Where is the bend allowance or the neutral line set?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Tekla Structures handles structural plate work rather than general sheet metal design.</p>
+                            <p>Bent plates, cones and rolled plates are modelled, then unfolded into flat patterns.</p>
+                            <ol>
+                                <li>On the Steel tab, click Plate, then the bent plate command.</li>
+                                <li>For hoods, hoppers and cones, use Create stand-alone bent plate.</li>
+                                <li>For rolled and double-curved shapes, use Create lofted plate.</li>
+                                <li>Unfold the part in the single-part drawing properties.</li>
+                                <li>On the File menu, click Export, then NC files.</li>
+                                <li>Convert the NC files to DXF to drive the cutter.</li>
+                            </ol>
+                            <p>Check unfold_corner_ratios.inp first, because it sets where the neutral line sits.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_create_standalone_bent_plate" target="_blank" rel="noopener">Create a stand-alone bent plate</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/unfolding-plates-and-profiles" target="_blank" rel="noopener">Unfolding plates and profiles</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with what you fabricate and I will check the limits with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This is the workflow where the honest answer has to come first, because &ldquo;sheet metal&rdquo; means different things to different shops, and Tekla Structures covers one of those meanings very well and another one not at all.</p>        <p class="text-gray-700 leading-relaxed mb-4">What it does cover is <strong>structural plate work</strong>: bent plates, cylindrical and conical shapes, hoods, hoppers, cones, transitions, rolled plates and double-curved plates, modelled in the structure, unfolded to a flat pattern, and sent out as cutting data for a plasma cutter or a profiling machine.</p>        <p class="text-gray-700 leading-relaxed mb-4">What it is not is a dedicated sheet metal product design package. There are no machine-specific bend tables per press brake, no ductwork libraries, no fitting catalogues for HVAC, and no thin-gauge enclosure tooling. If your work is ducting, cladding systems or consumer-product sheet metal, Tekla Structures is the wrong tool and knowing that today is worth more than a page of workarounds.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                The line to check before buying
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">If what you fabricate bolts or welds into a structure and arrives as cut and folded plate, this workflow fits. If what you fabricate is a product in its own right, made on a press brake to its own tolerances, it does not. Test that against your own order book before committing.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What Tekla Structures Gives You</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">BENT PLATES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Cylindrical and conical bent plates</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Created from two existing parts, or from two part faces. The parts must be contour plates, or beams whose profile is a plate, for example PL200*20. Enter one radius for a cylindrical plate, two for a conical one.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STAND-ALONE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Shapes with no input parts</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Stand-alone bent plates need no input parts selected. They are the tool for modelling cylindrical and conical parts such as hoods, hoppers and cones, built from picked points and a bend height.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LOFTED</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Rolled and double-curved plates</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">With lofted plates you can create rolled plates with varying shapes and plates with double-curved form. The shape comes from construction objects: line to line, line to arc, arc to arc, circle to circle, or polycurve to polycurve.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">UNFOLDING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Flat patterns from the model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Unfoldings can be created from parts modelled as a polybeam, which includes both profiles and plates. Lofted plates unfold too, under conditions set out below.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CUTTING DATA</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">NC and DXF for the machines</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">NC files carry DSTV for plates, and NC files can be converted to DXF to drive plasma cutters and other cutting devices. In the converted DXF, superfluous information such as dimension lines is removed, leaving the cutting contour, hole positions and adjustable text.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXTENSIONS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plate Work Tools</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The Plate Work Tools package on Tekla Warehouse adds Unfolded bent plate, which creates NC files with bent lines or unfolded plates in the model, and Unfolded bent plate drawing, which creates the unfolded single-part drawing with the bent line.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NEUTRAL LINE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Set the bend allowance before anything else</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The unfold_corner_ratios.inp file defines the location of the neutral line when profiles unfold. It affects the flat patterns and the NC files. Get this wrong and every developed length you cut is wrong by a consistent amount, which is the worst kind of wrong.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PARTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Bent plates need the right input</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Contour plates, or beams whose profile is a plate. Chamfered or cut faces cannot be used, only side faces, and curved beams and deformed parts cannot be used at all.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">LIMITS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">There is no full circle</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla Structures does not support full 360 degree stand-alone bent plates. You can create 359 degree plates instead. Plan your cylinders around that rather than discovering it mid-model.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MODIFICATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Direct modification needs to be on</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Switch on the Direct modification switch before you start creating stand-alone bent plates, because that is how you adjust them afterwards.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EXTENSIONS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Install Plate Work Tools early</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Download the Plate Work Tools installer package from Tekla Warehouse before you need it. The unfolded drawing extension works only on bent plates modelled using the Attach to part command, which is a modelling decision, not a later choice.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">MACHINE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Ask the shop what it reads</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">DXF for a plasma table, DSTV for a beam line, or a drawing for a manual brake are three different deliverables. Confirm which before you promise anything.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the unfolding rules</h4>
+                <p class="text-sm text-gray-600">Check <strong>unfold_corner_ratios.inp</strong>, which defines the location of the neutral line when profiles unfold, and therefore the developed length of everything you cut.</p>
+                <p class="text-sm text-gray-600 mt-2">Set the advanced options that control the unfolded drawing while you are there. <strong>XS_USE_OLD_POLYBEAM_LENGTH_CALCULATION</strong> and <strong>XS_CALCULATE_POLYBEAM_LENGTH_ALONG_REFERENCE_LINE</strong> should be FALSE. <strong>XS_DRAW_BENDING_LINE_DIMENSIONS_IN_UNFOLDING</strong> set to TRUE dimensions the bend lines, and <strong>XS_DRAW_ANGLE_AND_RADIUS_INFO_IN_UNFOLDING</strong> set to TRUE dimensions angles and radii.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Prove the neutral line on one real part
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">Model one plate, unfold it, cut it, fold it, and measure it. One afternoon of that is worth more than any amount of reading, because it validates the setting against your own machine and your own material.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model bent plates from existing parts</h4>
+                <p class="text-sm text-gray-600">On the <strong>Steel</strong> tab, click <strong>Plate</strong> &gt; <strong>Create cylindrical bent plate</strong> or <strong>Create conical bent plate</strong>. On the bent plate toolbar, choose <strong>By parts</strong> to select two parts, or <strong>By faces</strong> to select two side faces.</p>
+                <p class="text-sm text-gray-600 mt-2">Enter one radius for cylindrical, two for conical. Leave them blank and default bend radii are applied. After creation the input parts no longer exist separately: they merge into the bent plate, which inherits its properties from the first part you selected.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model hoods, hoppers and cones</h4>
+                <p class="text-sm text-gray-600">On the <strong>Steel</strong> tab, click <strong>Plate</strong> &gt; <strong>Create stand-alone bent plate</strong>. Pick the centre point for the first radius, the start and end points of the arc, the height of the bend, and a point defining the second radius against the plate preview.</p>
+                <p class="text-sm text-gray-600 mt-2">Bent plate properties include <strong>Name</strong>, <strong>Profile</strong>, <strong>Material</strong>, <strong>Finish</strong>, <strong>Class</strong>, <strong>Numbering series</strong> and the IFC export settings. Property files use the <strong>.bpl</strong> extension.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model rolled and double-curved plates</h4>
+                <p class="text-sm text-gray-600">Create the construction objects first, because the lofted plate shape is based on their geometry. Then on the <strong>Steel</strong> tab click <strong>Plate</strong> &gt; <strong>Create lofted plate</strong>, and from the toolbar choose <strong>Use two construction objects</strong> or <strong>Use one construction object and a point</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Unfold to a flat pattern</h4>
+                <p class="text-sm text-gray-600">In the <strong>Single-part drawing properties</strong>, click the <strong>View creation</strong> button and go to the <strong>Attributes</strong> tab to unfold the part in the drawing.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Lofted plates only unfold in some cases
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">The unfolding works for lofted plates which have been created from single geometry to single geometry, and for tangential polycurve lofted plates. A shape outside that will not unfold, and it is better to find out at the modelling stage than at the cutting stage.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Produce the unfolded drawings</h4>
+                <p class="text-sm text-gray-600">Use the <strong>Unfolded bent plate drawing</strong> extension to create the unfolded single-part drawing with the bent line for selected plates. It works on bent plates modelled using the <strong>Attach to part</strong> command.</p>
+                <p class="text-sm text-gray-600 mt-2">The drawings show bent line angles, with a negative value where the plate folds up and a positive value where it folds down.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number, then produce the cutting data</h4>
+                <p class="text-sm text-gray-600">Number the model as usual, then on the <strong>File</strong> menu click <strong>Export</strong> &gt; <strong>NC files</strong> and create <strong>DSTV for plates</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">The <strong>Unfolded bent plate</strong> extension can also create NC files with bent lines for selected bent plates, or create the unfolded bent plates in the model.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Convert for the cutting table</h4>
+                <p class="text-sm text-gray-600">Convert the NC files to DXF to drive plasma cutters and other cutting devices. In the converted DXF files all superfluous information, such as dimension lines, is removed, leaving the profile cutting contour, the hole positions and text you can adjust.</p>
+                <p class="text-sm text-gray-600 mt-2">The conversion settings live in the <strong>tekla_dstv2dxf_&lt;env&gt;.def</strong> file used by <strong>tekla_dstv2dxf.exe</strong>. The <strong>DXF Export (ML184)</strong> component combines the NC Files and DSTV to DXF Converter extensions and can also generate a report csv file, using the predefined settings named <strong>CS_DXF_Export</strong> in both.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Two Numbers That Decide Whether It Fits</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Before committing a shop to this workflow, two things are worth testing rather than assuming.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Developed length.</strong> The neutral line position from <strong>unfold_corner_ratios.inp</strong> is a single setting applied to your unfolding. A shop working across several materials, thicknesses and tooling setups may need more variation than one file gives, and there is no per-machine bend table in the way a dedicated sheet metal package provides. Test against the plates you actually fold.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Geometry coverage.</strong> Cylinders, cones, transitions, rolled and double-curved plates are covered. Anything that needs a full 360 degree stand-alone plate, a chamfered or cut face as a bend input, or a lofted shape outside the unfoldable cases, is not. Those are documented limits, not bugs, and each has a modelling workaround that is better decided early.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Where This Sits Next to the Other Workflows</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Plate work is rarely the whole job. It usually sits inside a steel job, which is why the numbering, drawings, reports and NC file stages above are the same ones on the steel workflow page.</p>        <p class="text-gray-700 leading-relaxed mb-4">The difference is what happens between modelling and the machine. On ordinary steel you model a member and cut it. On plate work you model a three-dimensional shape, unfold it into a flat one, and cut that. The unfolding step is the whole discipline, and it is where the accuracy is won or lost.</p>        <p class="text-gray-700 leading-relaxed mb-4">If your work is cold-formed purlins, rails or light gauge stud framing rather than plate, that is a different workflow again, driven by manufacturer component systems rather than by unfolding.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_create_standalone_bent_plate" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a stand-alone bent plate &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_bent_plate" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a conical or a cylindrical bent plate &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_create_steel_lofted_plate" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a steel lofted plate &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/unfolding-plates-and-profiles" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Unfolding plates and profiles &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/unfolded_bent_plate" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Unfolded bent plate &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/unfolded_bent_plate_drawing" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Unfolded bent plate drawing &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/com_steel_bent_plates" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Bent plate connections &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_create_nc_files" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">NC files &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/convert-nc-files-to-dxf" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Convert NC files to DXF &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/dstv_to_dxf_converter" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">DSTV to DXF Converter &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/dxf_export_ml184_help" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">DXF Export (ML184) &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026 for the modelling commands and the NC export. The unfolding article, the Plate Work Tools extensions and the DXF converter documentation are published as not version specific. Tekla Structures 2023 introduced a fully renewed DSTV to DXF converter, so behaviour differs before that release.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
