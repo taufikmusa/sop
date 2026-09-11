@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Owner and Developer Workflow | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Workflows</div>
+                    <h1>The Owner and Developer Workflow</h1>
+                    <p>You are probably not going to model anything. What decides whether the model is worth anything to you is what you require from the people who do, written down before they start.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as an owner or developer? We commission the buildings rather than detail them, and we want to know what the model is worth to us.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Do we need Tekla Structures as a client, or just the output from it?</li>
+                                <li>What should we ask our consultants and fabricators to deliver?</li>
+                                <li>How do we see progress and status without buying a modelling seat?</li>
+                                <li>Can we get quantities out of the model for cost checking?</li>
+                                <li>How do we receive and view the model our supply chain builds?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Most owners do not need a Tekla Structures seat. They need what comes out of one.</p>
+                            <p>Your job is specifying the deliverable and having somewhere to receive it.</p>
+                            <ol>
+                                <li>Name the IFC schema and the property sets you require.</li>
+                                <li>Ask for the model in a Trimble Connect project you can reach.</li>
+                                <li>Agree who owns the building hierarchy and the phases.</li>
+                                <li>Require quantities as reports, not a spreadsheet someone retyped.</li>
+                                <li>Ask for status through Project Status Visualization or an equivalent.</li>
+                                <li>Put all of that in the appointment, before work starts.</li>
+                            </ol>
+                            <p>Tools such as Task Manager are documented for contractors and project managers, not owners.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/section_plan_and_track_projects" target="_blank" rel="noopener">Plan and track projects</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/article/use-tekla-structures-with-trimble-connect" target="_blank" rel="noopener">Use Tekla Structures with Trimble Connect</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with what you want to see each month and I will turn it into requirements.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">This page is different from the others in this set, and the difference is worth saying out loud before anything else: <strong>an owner or developer is usually not a Tekla Structures user.</strong></p>        <p class="text-gray-700 leading-relaxed mb-4">Every other workflow here ends at something being made. A fabricator produces NC files, a precaster produces Unitechnik, a rebar shop produces BVBS. You do not make anything. You commission it, pay for it, and eventually own and operate it. That means the useful question is not &ldquo;how do we use Tekla Structures&rdquo; but &ldquo;what should we require from the people who do, and where do we receive it&rdquo;.</p>        <p class="text-gray-700 leading-relaxed mb-4">The good news is that the answer is concrete rather than vague. Everything an owner reasonably wants from a construction model already exists as a specific output of Tekla Structures. The failure mode is not technical, it is contractual: nobody asked for it in writing at the start, so it was never produced.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Buying a seat is rarely the answer
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">A Tekla Structures licence is a detailing tool. Buying one so that somebody in your office can open models is usually the expensive way to solve a problem that a shared Trimble Connect project and a well-written appointment solve better.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">What You Are Actually Asking For</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">GEOMETRY</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">An IFC you can open</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">IFC export supports the IFC 2X3, IFC 4 and IFC 4.3 schemas. Name the one you want. A model delivered in a schema your own tools cannot read is not a deliverable, it is a file.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">DATA</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Property sets, named</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Model objects are exported on the basis of the export settings, including the property sets. The properties you care about come across only if somebody chose to include them. Ask for them by name.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ACCESS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">A place to receive it</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Trimble Connect is a collaboration tool that connects the constructible data and enables architects, engineers, contractors, owners and operators to collaborate in building projects. Owners are named in that list on purpose.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">QUANTITIES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Numbers straight from the model</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Reports are created directly from the model database, so the information is always accurate. A quantity that came out of the model beats one that was retyped into a spreadsheet on the way to you.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STRUCTURE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">An agreed breakdown</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The building hierarchy runs project, site, building, building section, building storey, space. Agree it before modelling starts and every report you ever ask for lands in a shape you recognise.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STATUS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Progress you can see</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Project Status Visualization reviews the status of model objects in a specific time frame, for example displaying the erection schedule for groups of parts in different colours.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Write the requirements before the appointment is signed</h4>
+                <p class="text-sm text-gray-600">This is the whole job, and it happens before anyone models anything. Name the IFC schema, the property sets, the reporting breakdown, the reporting frequency and the platform you will receive everything on.</p>
+                <p class="text-sm text-gray-600 mt-2">Asking for these at practical completion gets you an apology. Asking for them in the appointment gets you the data.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set up the place everything lands</h4>
+                <p class="text-sm text-gray-600">Create the Trimble Connect project and make sure your own people can reach it. A Tekla Structures model can be uploaded directly as a <strong>.tekla</strong> file, and model objects can be exported as <strong>.ifc</strong> reference models into a Trimble Connect project.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Agree the breakdown structure</h4>
+                <p class="text-sm text-gray-600">Decide with the design and construction team who owns the building hierarchy and the phases, and what they mean. Phases are often used to indicate erection sequences, and they are the natural hook between the model and your programme.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Whoever sets the structure sets your reporting forever
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">If the contractor organises the model around their own trade packages and nobody asks otherwise, every quantity you receive for the next two years arrives in their shape rather than yours. This is a five-minute conversation at the start and a very expensive one later.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Receive and view the model</h4>
+                <p class="text-sm text-gray-600">Open what you were sent, in Trimble Connect or in whatever IFC viewer your organisation uses. Check that the property sets you asked for are actually present, on the first issue rather than the tenth.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Read the quantities</h4>
+                <p class="text-sm text-gray-600">Ask for reports generated from the model, and for the Organizer breakdown behind them. Organizer categorises the model by location and by property, and the Object Browser exports property values straight to Excel.</p>
+                <p class="text-sm text-gray-600 mt-2">What you are buying here is traceability: a number that can be pointed back at the objects it came from, rather than a total you have to take on trust.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Track progress</h4>
+                <p class="text-sm text-gray-600">Project Status Visualization identifies the parts scheduled to be fabricated during a specific time period, and can display the erection schedule for groups of parts in different colours. That is a far better monthly report than a photograph of a site.</p>
+                <p class="text-sm text-gray-600 mt-2">Where the supply chain runs a schedule in Microsoft Office Project or Primavera P6, Task Manager can import it and link the tasks to model objects, which turns the programme into something you can look at rather than read.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Keep what you will need later</h4>
+                <p class="text-sm text-gray-600">The model is also an asset record. Decide at the start what version you want handed over at completion, in which schema, with which properties, and where it will live afterwards. Deciding that at handover is too late, because by then the team that could produce it has demobilised.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Tools Your Supply Chain Uses On Your Behalf</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">You will hear these names in meetings. Knowing what each one does is enough; none of them is yours to operate.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Tool</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it does</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Why it matters to you</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Building hierarchy</td><td class="p-3 border-b border-gray-100 text-gray-600">Defines a location breakdown structure: project, site, building, building section, building storey, space.</td><td class="p-3 border-b border-gray-100 text-gray-600">It decides the shape of every quantity report you will ever receive.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Organizer</td><td class="p-3 border-b border-gray-100 text-gray-600">A daily tool for managing model information, object property queries and object classification, with live quantities in the Object Browser.</td><td class="p-3 border-b border-gray-100 text-gray-600">This is where your quantities come from, and it exports to Excel.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Phase Manager</td><td class="p-3 border-b border-gray-100 text-gray-600">Breaks the model into sections. Phases are often used to indicate erection sequences.</td><td class="p-3 border-b border-gray-100 text-gray-600">The link between the model and the construction programme.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Task Manager</td><td class="p-3 border-b border-gray-100 text-gray-600">Creates and manages scheduled tasks linked to model objects, and builds 4D simulations of the progression of the project. Imports from Microsoft Office Project and Primavera P6.</td><td class="p-3 border-b border-gray-100 text-gray-600">Turns the programme into something visual. Documented as a tool for contractors, sub-contractors and project managers.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Project Status Visualization</td><td class="p-3 border-b border-gray-100 text-gray-600">Reviews the status of model objects in a specific time frame, colouring parts by erection or fabrication schedule.</td><td class="p-3 border-b border-gray-100 text-gray-600">The closest thing to a progress report that cannot be spun.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Lotting and Sequencer</td><td class="p-3 border-b border-gray-100 text-gray-600">Lotting groups assemblies for transport by what a vehicle can carry. Sequencer creates sequences and assigns incremental numbers to parts.</td><td class="p-3 border-b border-gray-100 text-gray-600">Logistics and erection order, which is where site delays usually start.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Reports</td><td class="p-3 border-b border-gray-100 text-gray-600">Created directly from the model database, so the information is always accurate.</td><td class="p-3 border-b border-gray-100 text-gray-600">Your quantities, with an audit trail back to the objects.</td></tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Being Honest About the Documentation</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance documents every tool named above in detail. What it does not publish is an owner or developer workflow, and that absence is informative rather than accidental.</p>        <p class="text-gray-700 leading-relaxed mb-4">Task Manager is described as a tool for contractors, sub-contractors and project managers. Quantity takeoff guidance is published as contractor material. The product is written for the people who produce the model, not for the people who commission it. Where owners do appear in the documentation is in the description of Trimble Connect, as one of the parties collaborating on a project rather than as operators of the modelling software.</p>        <p class="text-gray-700 leading-relaxed mb-4">So treat this page as what it is: a translation of a detailing product into the questions an owner actually has. The underlying facts are all documented. The framing is not, and anyone who tells you there is an official owner workflow in Tekla Structures is describing something that does not exist.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Judge a proposal by the deliverables, not the software
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">A supply chain that promises a BIM model and cannot name the schema, the property sets or the reporting breakdown has not thought about your side of it. Those three answers tell you more about how the job will run than any amount of talk about which software is being used.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">If You Do End Up With a Seat</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Some developers, particularly those with an in-house construction arm or a repeated building type, genuinely do model. If that is you, the page you want is the contractor workflow rather than this one: building hierarchy, phases, Organizer, quantity takeoff and Trimble Connect are the same tools, used directly instead of specified.</p>        <p class="text-gray-700 leading-relaxed mb-4">The other honest route, where the volume justifies it, is to require the supply chain to model to your standard rather than their own. Your firm folder, your numbering scheme, your report templates, your property sets. That is a real strategy, it costs something to set up, and it pays back across a portfolio rather than on a single job.</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/section_plan_and_track_projects" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Plan and track projects &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_organizer" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Organizer &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/tm_intro_task_manager" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Task Manager &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_visualization" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Project status visualization &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_dividing_the_model_into_phases" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Phase Manager &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_defining_lots" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Lotting &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_defining_sequences" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Sequencer &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_building_hierarchy" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Building hierarchy &rarr;</a></div>
+                <div><a href="https://support.tekla.com/article/use-tekla-structures-with-trimble-connect" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Use Tekla Structures with Trimble Connect &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2025/int_trimble_connect_trimble_connector" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Trimble Connect &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_ifc_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">IFC export &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rep_creating_report" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a report &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026, with the Trimble Connector article taken from the 2025 documentation, which is the most recent published version of it. There is no owner or developer workflow published in the product guides; every tool above is documented for the people who build the model.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
