@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Precast Workflow, End to End | Tekla Structures FAQ Vault</title>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (window.tailwind) tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Open Sans"', 'sans-serif'] },
+                    colors: {
+                        trimble: {
+                            blue: '#0063A3', darkBlue: '#003054', midBlue: '#004F83',
+                            lightBlue: '#368FC7', darkGrey: '#252A2E', grey: '#464B52',
+                            lightGrey: '#90939F', accent: '#FBAD26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>window.KB_ROOT = '../../';</script>
+    <link rel="stylesheet" href="../../assets/kb.css">
+</head>
+<body>
+    <header class="std-header">
+        <div class="std-container">
+            <button type="button" id="kb-burger" class="kb-burger" aria-label="Show all pages" aria-expanded="false" aria-controls="kb-sidebar">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="../../" class="std-brand" style="text-decoration:none;">Tekla <span>Structures FAQ Vault</span></a>
+        </div>
+    </header>
+
+    <div class="kb-shell">
+        <aside class="kb-sidebar" id="kb-sidebar" aria-label="Knowledge base pages"></aside>
+        <div class="kb-overlay" id="kb-overlay"></div>
+
+        <div class="kb-main">
+
+            <section class="std-hero">
+                <div class="std-container">
+                    <div class="kb-eyebrow">Concrete</div>
+                    <h1>The Precast Workflow, End to End</h1>
+                    <p>Everything in precast hangs off one object: the cast unit. Here is the order of work from the first concrete part to the file your factory machines read.</p>
+                </div>
+            </section>
+
+            <main class="std-container pb-20">
+
+                <!-- ============ A. CUSTOMER QUESTION ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>A</b> Question</div>
+                    <div class="kb-question">
+                        <p>&ldquo;What is the workflow to use Tekla Structures as a precast customer? We are new to it and do not know what order to do things in, or where the model ends and production begins.&rdquo;</p>
+                        <div class="kb-question-variants">
+                            <p class="kb-question-variants-title">Also asked as</p>
+                            <ul>
+                                <li>Where do I start with precast concrete detailing in Tekla Structures?</li>
+                                <li>How does a precast model get from detailing to the factory?</li>
+                                <li>What is the difference between a cast unit and an assembly?</li>
+                                <li>Which configuration do I need for the precast production exports?</li>
+                                <li>How do I get production data out to Unitechnik or ELiPLAN?</li>
+                            </ul>
+                        </div>
+                        <p class="kb-question-meta">Generic form of a real customer question &mdash; names, company and project details removed. Tekla Structures 2026.</p>
+                    </div>
+                </section>
+
+                <!-- ============ B. EMAIL REPLY ============ -->
+                <section class="kb-block mb-16">
+                    <div class="kb-section-label"><b>B</b> Short Answer</div>
+                    <div class="kb-email">
+                        <div class="kb-email-bar">
+                            <span>Short answer</span>
+                            <button type="button" class="kb-copy-btn" data-kb-copy="#kb-email-body">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span data-kb-copy-label>Copy</span>
+                            </button>
+                        </div>
+                        <div class="kb-email-body" id="kb-email-body">
+                            <p>Precast in Tekla Structures runs on one central idea: the cast unit.</p>
+                            <p>A cast unit is the piece that gets cast, moved and erected. Everything downstream reads from it.</p>
+                            <ol>
+                                <li>Set each concrete part to Precast in the Cast unit section.</li>
+                                <li>Model the panels, then add embeds and reinforcement.</li>
+                                <li>On the Concrete tab, click Cast unit, then Create cast unit.</li>
+                                <li>Run numbering, which behaves differently for precast.</li>
+                                <li>Create cast unit drawings from the numbered model.</li>
+                                <li>Export production data to Unitechnik, ELiPLAN or BVBS.</li>
+                            </ol>
+                            <p>Precast and cast-in-place parts cannot be mixed inside one cast unit.</p>
+                            <div class="kb-email-links">
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/int_concrete_prefabrication" target="_blank" rel="noopener">Automated precast fabrication</a></p>
+                                <p class="kb-email-link"><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_cast_unit" target="_blank" rel="noopener">Create cast units</a></p>
+                            </div>
+                            <p class="kb-email-sign">Reply with the format your factory runs and I will map the export end with you.</p>
+                        </div>
+                        <div class="kb-email-foot">Copy takes the plain text only, with each link as &ldquo;Title: URL&rdquo; on its own line.</div>
+                    </div>
+                </section>
+
+                <!-- ============ C. DETAILED SOP ============ -->
+                <section>
+                    <div class="kb-section-label"><b>C</b> Detailed Answer</div>
+                    <p class="kb-sop-intro">The full background to the short answer above &mdash; what causes this, the steps in detail, the differences between versions, and the official sources.</p>
+
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Issue Summary</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Precast work in Tekla Structures is not a different program hiding behind a switch. It is the same modelling you would do for anything else, organised around one object that everything else hangs off: the <strong>cast unit</strong>.</p>        <p class="text-gray-700 leading-relaxed mb-4">A cast unit is the thing that actually gets cast in the factory, loaded onto a truck and lifted into place. Once a cast unit exists and carries the right type, the rest of the chain follows from it. Numbering numbers cast units. Cast unit drawings are drawn per cast unit. Production files are written per cast unit. Get the cast unit right and the workflow works; get it wrong and every stage after it is wrong in the same way.</p>        <p class="text-gray-700 leading-relaxed mb-4">So the honest answer to &ldquo;where do I start&rdquo; is not a menu. It is a decision: what is one piece, and is it precast or cast in place.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Cast Unit or Assembly: Know Which Word You Are Using</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Steel people arriving at precast trip over this in the first week. The two words describe the same idea in two materials, and Tekla Structures keeps them apart on purpose.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Term</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it groups</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Drawing it produces</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Assembly</td><td class="p-3 border-b border-gray-100 text-gray-600">A steel main part plus everything welded or bolted to it.</td><td class="p-3 border-b border-gray-100 text-gray-600">Assembly drawing.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Cast unit</td><td class="p-3 border-b border-gray-100 text-gray-600">Concrete parts cast as one monolithic piece, plus their reinforcement and cast-in embeds.</td><td class="p-3 border-b border-gray-100 text-gray-600">Cast unit drawing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla User Assistance puts the reason for cast units plainly: you need to create cast units when you have several concrete parts which should be cast as one monolithic structure. Cast units can include reinforcement as well as concrete parts.</p>        <p class="text-gray-700 leading-relaxed mb-4">You can only create cast unit drawings of concrete parts and cast-in embeds, meaning steel parts or assemblies added to a cast unit. A steel bracket that never joins a cast unit will not appear on one.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Before You Start</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONFIGURATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Check what your licence actually includes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The precast production exports are not in every configuration. Unitechnik and ELiPLAN are described as available in the core installation in the most extensive precast-related configurations, and the Precast Production Export extension lists Diamond, Graphite, Carbon, Partner, Primary, Precast Detailing, Production Planner - Concrete and Full. Confirm yours before you promise a factory a file.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CAST UNIT TYPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Decide precast or cast in place first</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">This is a part property, not an afterthought. Some functionality, numbering among it, is based on the cast unit type, so setting it late means redoing work rather than adding to it.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">FACTORY FORMAT</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Ask the factory what it reads</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Unitechnik, ELiPLAN, HMS, BVBS, UXML and PXML are different answers to different machines. The format decides how you must model, so find out before modelling rather than after.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">NUMBERING</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Plan the series before the first panel</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Cast unit prefixes and start numbers belong in the default properties before modelling starts. Concrete part numbering can also inherit from the cast unit, which surprises people who set it up backwards.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">COMPONENTS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Precast components need precast cast units</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Tekla User Assistance states it directly: precast components can only be applied to precast cast units. They cannot be applied to cast-in-place cast units. A component that refuses to apply is usually telling you the type is wrong.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">STANDARDS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Put the setup in the firm folder</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Cast unit drawing settings, report templates, embed libraries and export settings are the same on every job. They belong in the firm folder so the next model starts from them.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Workflow, Stage by Stage</h3>
+        <ol class="relative border-l-2 border-trimble-blue/20 ml-3 space-y-8">
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">1</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Set the cast unit type on the concrete parts</h4>
+                <p class="text-sm text-gray-600">Double-click a concrete part to open the part properties in the property pane and go to the <strong>Cast unit</strong> section. In the <strong>Cast unit</strong> list select <strong>Precast</strong>, then click <strong>Modify</strong>.</p>
+<strong>Cast in place</strong> means cast units constructed fully in their final location. <strong>Precast</strong> means cast units built at another location and transported to their final location. Put this into your default part properties so every new part is born correct.
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">2</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Model the concrete</h4>
+                <p class="text-sm text-gray-600">Model the walls, slabs, beams, columns and stairs as ordinary concrete parts. Nothing precast-specific happens yet, and that is fine. What matters here is that the geometry matches how the piece will actually be produced.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">3</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Add the embeds</h4>
+                <p class="text-sm text-gray-600">Model cast-in embeds as steel parts or assemblies and add them to the cast unit. For factories reading Unitechnik, the guidance is specific: each embed should be added as a sub-assembly to the main cast unit, with distinct classes, meaningful names or identification codes, and no more than two levels of hierarchy within sub-assemblies.</p>
+                <p class="text-sm text-gray-600 mt-2">Recurring standard embeds are worth building once as custom parts and keeping in the firm folder, rather than remodelling them on every job.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">4</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Reinforce</h4>
+                <p class="text-sm text-gray-600">On the <strong>Rebar</strong> tab, use <strong>Longitudinal</strong>, <strong>Crossing</strong>, <strong>By face</strong> or <strong>By guidelines</strong> to create rebar sets. A rebar set groups bars automatically by geometry, and each set has at least one guideline defining the distribution direction.</p>
+                <p class="text-sm text-gray-600 mt-2">Keep the <strong>Direct modification</strong> switch active while working with rebar sets. Rebar set property files use the <strong>.rst</strong> extension.</p>
+                <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+                    <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Model reinforcement the way the factory makes it
+                    </h5>
+                    <p class="mt-1 text-sm text-amber-700">For automated production, model reinforcement and mesh according to production constraints. Differentiate longitudinal and cross wires by the same class or the same name, and give loose or additional bars their own classes so the factory can filter them. Reinforcement modelled for a drawing and reinforcement modelled for a machine are not always the same thing.</p>
+                </div>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">5</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the cast units</h4>
+                <p class="text-sm text-gray-600">On the <strong>Concrete</strong> tab, click <strong>Cast unit</strong> &gt; <strong>Create cast unit</strong>, select the objects to include, and click the middle mouse button.</p>
+                <p class="text-sm text-gray-600 mt-2">The main part is the one with the largest volume of concrete. To change it, activate the <strong>Select objects in assemblies</strong> switch, select the part you want, right-click and choose <strong>Set as new main part of assembly</strong>.</p>
+                <p class="text-sm text-gray-600 mt-2">To check what is actually inside a cast unit, click the down arrow next to the <strong>Inquire</strong> icon, select <strong>Assembly objects</strong>, and select a part. Tekla Structures highlights the related objects by type in different colours.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">6</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Number the model</h4>
+                <p class="text-sm text-gray-600">Run numbering from the <strong>Drawings &amp; reports</strong> tab. Before you do, check the sort order: the default is XYZ, and you change it in the <strong>Numbering Setup</strong> dialog using the <strong>Sort by</strong> and <strong>Then by</strong> lists.</p>
+                <p class="text-sm text-gray-600 mt-2">Sort order matters more in precast than most people expect, because it decides the order marks are handed out across a building, and that order is what the factory and the site read.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">7</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Create the cast unit drawings</h4>
+                <p class="text-sm text-gray-600">Cast unit drawings are the dimensional, formwork or reinforcement drawings used in concrete design and construction. They show cast-in embeds, edge chamfers, and hard and soft insulation, and they also show bolts and welds in steel parts.</p>
+                <p class="text-sm text-gray-600 mt-2">Create them the same way as any other fabrication drawing, through the <strong>Master drawing catalog</strong> or the <strong>Create cast unit drawing</strong> command, and manage them in <strong>Document manager</strong>.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">8</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Run the reports</h4>
+                <p class="text-sm text-gray-600">Cast unit lists, reinforcement schedules and weight reports all come from the same <strong>Reports</strong> dialog on the <strong>Drawings &amp; reports</strong> tab, reading straight from the model database. Note that the volume and weight information of a cast unit remains accurate even when there are cuts inside it.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">9</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Export production data</h4>
+                <p class="text-sm text-gray-600">This is the stage that separates a precast job from an ordinary concrete job, and the format depends on your factory. The table below sets out which is which.</p>
+                <p class="text-sm text-gray-600 mt-2">Numbering has to be up to date before export. For ELiPLAN the documentation is explicit that you need to export all the parts that have been exported before, to ensure proper change management.</p>
+            </li>
+            <li class="ml-8 relative">
+                <span class="absolute flex items-center justify-center w-8 h-8 bg-trimble-blue rounded-full -left-[2.65rem] ring-4 ring-white shadow-sm">
+                    <span class="text-white font-bold text-sm">10</span>
+                </span>
+                <h4 class="flex items-center mb-1 text-lg font-bold text-trimble-darkBlue">Take the status back from the factory</h4>
+                <p class="text-sm text-gray-600">The traffic is not one way. For ELiPLAN, the transfer has four parts: exporting the data file from Tekla Structures, importing it into ELiPLAN, exporting a status data file from ELiPLAN, and importing that status file back into Tekla Structures.</p>
+                <p class="text-sm text-gray-600 mt-2">On import, click <strong>Create</strong>, and Tekla Structures updates the status and schedule data for parts in the model. That status lands in the user-defined attributes of the parts, which means you can filter and colour the model by what the factory has actually cast.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Choosing the Production Export</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">These are not alternatives to pick by preference. Each one exists because a particular kind of machine or planning system reads it.</p>        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Format</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">What it is for</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Where it comes from</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Unitechnik</td><td class="p-3 border-b border-gray-100 text-gray-600">The 3D geometry of cast units, for flat panels and slabs produced in pallet circulation plants. Versions 5.0c to 6.1 are supported. Cast-in-place units are not exported.</td><td class="p-3 border-b border-gray-100 text-gray-600">File &gt; Export &gt; Unitechnik. Output .uni files default to the \UT_Files folder under the model folder.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">ELiPLAN</td><td class="p-3 border-b border-gray-100 text-gray-600">Production data and geometry for CAM-operated hollow-core slab production, plus schedule and status data coming back. ELiPLAN is an ERP system from Elematic.</td><td class="p-3 border-b border-gray-100 text-gray-600">File &gt; Export &gt; ELiPLAN and File &gt; Import &gt; ELiPLAN. The file eliplan.eli defaults to the .\EP_files subfolder under the model folder, written in UTF-8.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">HMS</td><td class="p-3 border-b border-gray-100 text-gray-600">Hollow-core production through HMS CAM software.</td><td class="p-3 border-b border-gray-100 text-gray-600">Core installation, in the most extensive precast-related configurations.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">BVBS</td><td class="p-3 border-b border-gray-100 text-gray-600">Reinforcement geometry only: bent bars, bar groups, meshes and hooks, as an ASCII text file with the extension .abs.</td><td class="p-3 border-b border-gray-100 text-gray-600">File &gt; Export &gt; BVBS.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">UXML and PXML</td><td class="p-3 border-b border-gray-100 text-gray-600">Automated production and rebar cutting and bending. UXML feeds the UniCAM.10 production control system; PXML feeds Progress systems such as ebos, ProFit and erpbos.</td><td class="p-3 border-b border-gray-100 text-gray-600">The Precast Production Export extension, installed from Tekla Warehouse as a .tsep and run from Applications &amp; components.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Tekla Warehouse also carries <strong>Palletizer</strong> and <strong>Stacker</strong> planning tools, for pallet arrangement and truck-load optimisation.</p>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Numbering Behaves Differently in Precast</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Two things catch people who come to precast from steel.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>The cast unit type drives numbering.</strong> It is important to use the correct cast unit type, because some functionalities, numbering among them, are based on it. A piece left as cast in place will not number as a precast element, however it looks on screen.</p>        <p class="text-gray-700 leading-relaxed mb-4"><strong>Concrete parts can inherit their numbering from the cast unit.</strong> The advanced option <strong>XS_INHERIT_CONCRETE_PART_NUMBERING_SETTINGS_FROM_CAST_UNIT</strong> controls this and defaults to TRUE. With it on, the part number prefix for concrete parts includes the cast unit prefix and the start number: with a cast unit prefix of C and start number 100, the concrete part prefix becomes Concrete_C-100. With it off, the prefix is only Concrete.</p>        <p class="text-gray-700 leading-relaxed mb-4">It affects strip and pad footings, concrete beams and columns, concrete walls and slabs, and concrete polybeams. Decide which behaviour your office wants before the first job, not during the third.</p>        <div class="mt-8 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r shadow-sm">
+            <h5 class="text-sm font-bold text-amber-800 flex items-center">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Never mix the two types in one cast unit
+            </h5>
+            <p class="mt-1 text-sm text-amber-700">Precast and cast-in-place parts cannot be mixed within a cast unit. If a cast unit is refusing to behave, checking the type on every part inside it is the fastest first test.</p>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">The Modelling Rules the Export Cares About</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">A model that draws beautifully can still fail an export, because a production file describes something a drawing never has to: how a machine will build the piece. The Unitechnik guidance is the clearest published statement of what that demands, and much of it applies whichever format you end up using.</p>        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">CONTOUR</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">One unified contour per object</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Each object should have a unified contour, and there may be openings through the element. Multiple contours cause plotting and shuttering problems, so a panel modelled as two overlapping parts is a problem waiting for the factory to find.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">ORIENTATION</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Top in form</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Use the top-in-form setting within the model to control which way an object faces. The machine needs to know which side lands on the pallet.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EDGES</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Line attribute codes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Edge shapes that the shuttering robot has to recognise are modelled using line attribute codes, rather than left for someone to interpret.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">EMBEDS</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Sub-assemblies with distinct classes</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Each embed added as a sub-assembly to the main cast unit, given a distinct class and a meaningful name or identification code, and no deeper than two levels of hierarchy.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">PRODUCT TYPE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">The UT product type is mandatory</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">The UT product type must be set for each main part of a cast unit, chosen from options such as Solid wall, Element slab or Sandwich Element. An export that fails with no obvious reason is often a missing product type.</p>
+            </div>
+            <div class="stage-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div class="text-trimble-blue font-black text-xs uppercase tracking-widest mb-2">VALIDATE</div>
+                <h4 class="text-lg font-bold text-trimble-darkBlue mb-3">Check before you send</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Before exporting, verify the geometrical objects in the slab blocks, the main attributes for the HEADER and SLABDATE blocks, the contour orientation and line attributes, the mesh production constraints, and the embed plotting results.</p>
+            </div>
+        </div>
+    </div>
+    <div class="kb-sub mb-14">
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Version Notes</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Area</th>
+                <th class="text-left p-3 font-bold text-trimble-darkBlue border-b border-gray-200">Behaviour</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">BVBS</td><td class="p-3 border-b border-gray-100 text-gray-600">BVBS 2.0 from 2000 is the base version. Tekla Structures versions from 2021 onwards also support BVBS 3.0 from 2018, which adds coupler and thread data while keeping syntax compatible with 2.0.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Unitechnik</td><td class="p-3 border-b border-gray-100 text-gray-600">Versions 5.0c (1997), 5.2b (2000), 6.0.0 (2005) and 6.1.0 (2009) are selectable in the export dialog.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">Graphite configuration</td><td class="p-3 border-b border-gray-100 text-gray-600">In Tekla Structures 2026, detailing components can be created in the Graphite configuration in the same way as in Diamond.</td></tr>
+              <tr><td class="p-3 border-b border-gray-100 font-semibold">2026 exports</td><td class="p-3 border-b border-gray-100 text-gray-600">Tekla Structures 2026 carries enhancements in Unitechnik, ELiPLAN and BVBS. Read the release notes for your version before assuming an older setting still behaves the same way.</td></tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold text-trimble-darkBlue mb-6 border-b border-gray-200 pb-2">Official Reference</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-sm text-gray-600 mb-3">This guide follows the official Tekla User Assistance documentation:</p>
+            <div class="space-y-2">
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_concrete_prefabrication" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Automated precast fabrication &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/det_concrete_detailing_overview" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Concrete detailing &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_creating_a_cast_unit" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create cast units &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/rei_create_rebar_set" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Create a rebar set &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/mod_numbering_assemblies_and_cast_units" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Number assemblies, cast units, and rebar assemblies &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/dra_cast_unit_drawings" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Examples of cast unit drawings &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_unitechnik_exporting" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Unitechnik &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_best_practices_in_unitechnik_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Best practices in modeling, validating and exporting for Unitechnik &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_import_and_export_eliplan" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">ELiPLAN &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_best_practices_in_eliplan_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Best practices in ELiPLAN export &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2026/int_bvbs_exporting" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">BVBS &rarr;</a></div>
+                <div><a href="https://support.tekla.com/help/tekla-structures/not-version-specific/precast_production_export" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">Precast Production Export &rarr;</a></div>
+                <div><a href="https://support.tekla.com/doc/tekla-structures/2020/xs_inherit_concrete_part_numbering_settings_from_cast_unit" target="_blank" rel="noopener" class="text-trimble-blue font-bold hover:underline">XS_INHERIT_CONCRETE_PART_NUMBERING_SETTINGS_FROM_CAST_UNIT &rarr;</a></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">Verified against Tekla Structures 2026, except the Unitechnik best practice list, which is taken from the 2024 and 2026 documentation of that article, and the concrete part numbering advanced option, whose most recently published article is the 2020 one. Which exports your installation has depends on your configuration.</p>
+        </div>
+    </div>
+                </section>
+
+            </main>
+
+            <footer class="std-footer">
+                <div class="std-container">
+                    <p>&copy; 2026 Taufik Musa &middot; Tekla Structures FAQ Vault</p>
+                    <p class="footer-note">Personal reference notes compiled from official Tekla User Assistance. This is not an official Trimble or Tekla support channel. For product issues, licensing, or defects, please refer to Tekla User Assistance or contact your local Tekla Support.</p>
+                    <p class="footer-links"><a href="https://support.tekla.com" target="_blank" rel="noopener">Tekla User Assistance</a> &middot; <a href="https://github.com/taufikmusa/sop/blob/main/LICENSE" target="_blank" rel="noopener">License</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../../assets/kb.js"></script>
+</body>
+</html>
