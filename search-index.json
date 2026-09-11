@@ -1295,6 +1295,56 @@
         "US environment",
         "model template"
       ]
+    },
+    {
+      "id": "tekla-owner-developer-workflow",
+      "title": "The Owner and Developer Workflow",
+      "folder": "Tekla Structures",
+      "category": "Workflows",
+      "product": "Tekla Structures 2026",
+      "url": "tekla/owner-developer-workflow/",
+      "question": "What is the workflow to use Tekla Structures as an owner or developer? We commission the buildings rather than detail them, and we want to know what the model is worth to us.",
+      "variants": [
+        "Do we need Tekla Structures as a client, or just the output from it?",
+        "What should we ask our consultants and fabricators to deliver?",
+        "How do we see progress and status without buying a modelling seat?",
+        "Can we get quantities out of the model for cost checking?",
+        "How do we receive and view the model our supply chain builds?"
+      ],
+      "summary": "What an owner should require rather than operate: IFC schema and property sets, a Trimble Connect project, an agreed breakdown structure, model-generated quantities, and visual progress.",
+      "keywords": [
+        "owner workflow",
+        "developer",
+        "client",
+        "employer requirements",
+        "appointment",
+        "deliverable",
+        "IFC schema",
+        "IFC4",
+        "property sets",
+        "Trimble Connect",
+        "tekla file upload",
+        "reference model",
+        "building hierarchy",
+        "phases",
+        "Phase Manager",
+        "Organizer",
+        "Object Browser",
+        "quantity takeoff",
+        "reports",
+        "Task Manager",
+        "4D simulation",
+        "Primavera P6",
+        "Microsoft Office Project",
+        "Project Status Visualization",
+        "erection schedule",
+        "Lotting",
+        "Sequencer",
+        "asset record",
+        "handover",
+        "BIM deliverable",
+        "no owner workflow"
+      ]
     }
   ]
 }
